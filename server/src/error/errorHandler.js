@@ -5,6 +5,9 @@ class ErrorHandler {
         }
         console.log("Успешно подключено к Базе данных");
     }
+    connectServerError(e) {
+        throw new Error("Ошибка при запуске Сервера");
+    }
 }
 
 module.exports = new ErrorHandler();

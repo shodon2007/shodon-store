@@ -16,17 +16,19 @@ const conn = mysql.createConnection({
 conn.connect(errorHandler.connectDBHandler());
 
 class Database {
-    async sendQuery(query, ...params) {
+    async query(query, ...params) {
         try {
             const [res] = await conn.promise().query(query, params);
             return res;
         } catch (e) {
-            throw new Error("Ошибочка броо", e);
+            const data = await conn.promise().query(query, params);
+            console.log(data);
+            throw new Error("Ошибка в query db", query, e);
         }
     }
 
     async getCatalog() {
-        return this.sendQuery("SELECT * FROM catalog");
+        return this.query("SELECT * FROM type");
     }
 }
 

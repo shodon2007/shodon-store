@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const router = require("./routes/index.js");
+const errorHandler = require("./error/errorHandler.js");
 
 const app = express();
 const PORT = +(process.env.PORT ?? 9999);
@@ -18,6 +19,6 @@ function startServer(port) {
             console.log(`Сервер запущен http://localhost:${port}`);
         });
     } catch (e) {
-        throw new Error("Ошибка при запуске сервера");
+        errorHandler.connectServerError(e);
     }
 }
