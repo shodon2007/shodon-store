@@ -1,11 +1,10 @@
 const express = require("express");
+const catalogRouter = require("./catalogRouter");
+
 const { Router } = express;
 
-const routers = Router();
+const router = Router();
 
-routers.use("/", (req, res) => {
-    console.log("router working");
-    res.send("hello me");
-});
+router.use("/catalog", catalogRouter);
 
-module.exports = routers;
+module.exports = router;
