@@ -1,21 +1,23 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
+const router = require("./routes/index.js");
 
 const app = express();
-const PORT: number = +(process.env.PORT ?? 9999);
+const PORT = +(process.env.PORT ?? 9999);
 
-app.get("/", (req: any, res: any) => {
-    res.send("hello world express + ?typescrpt");
-});
+app.use(cors());
+app.use(express.json());
+app.use("/api", router);
 
 startServer(PORT);
 
-function startServer(port: number) {
+function startServer(port) {
     try {
         app.listen(port, () => {
             console.log(`Сервер запущен http://localhost:${port}`);
         });
-    } catch (e: any) {
+    } catch (e) {
         throw new Error("Ошибка при запуске сервера");
     }
 }
