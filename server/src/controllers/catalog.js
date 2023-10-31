@@ -12,6 +12,10 @@ class Catalog {
         }
         res.status(200).json(data);
     }
+    async postCatalog(req, res) {
+        console.log(req.headers);
+        res.status(200).send("hello world");
+    }
 }
 
 module.exports = new Catalog();

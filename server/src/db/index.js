@@ -22,7 +22,7 @@ class Database {
             return res;
         } catch (e) {
             const data = await conn.promise().query(query, params);
-            console.log(data);
+            console.error("ошибка", data);
             throw new Error("Ошибка в query db", query, e);
         }
     }
@@ -32,4 +32,4 @@ class Database {
     }
 }
 
-module.exports = new Database();
+module.exports = Database;

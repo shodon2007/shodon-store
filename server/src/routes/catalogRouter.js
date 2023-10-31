@@ -1,8 +1,9 @@
 const Router = require("express");
-const catalog = require("../controllers/catalog");
+const controller = require("../controllers/catalog");
 
 const router = Router();
 
-router.get("/", catalog.getCatalog);
+router.get("/", controller.getCatalog);
+router.post("/", controller.postCatalog);
 
 module.exports = router;
