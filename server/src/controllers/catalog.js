@@ -1,20 +1,27 @@
-const database = require("../db/index");
+const Database = require("../db/index");
+const jwt = require("jsonwebtoken");
+
+const db = new Database();
 
 class Catalog {
     async getCatalog(req, res) {
-        let data = [];
         try {
-            data = await database.getCatalog();
+            const data = await db.getCatalog();
+            res.status(200).json(data);
         } catch (e) {
             res.status(500).json({
                 message: "Ошибка при получении данных из db",
             });
         }
-        res.status(200).json(data);
     }
-    async postCatalog(req, res) {
-        console.log(req.headers);
-        res.status(200).send("hello world");
+    async createNewCatalog(req, res) {
+        try {
+            const decodedToken = jwt.verify(req.token, process.env.SECRET_KEY);
+
+            res.status(200).send("hello world");
+        } catch (e) {
+            res.status(500).json({ message: "Неизвестная ошибка" });
+        }
     }
 }
 

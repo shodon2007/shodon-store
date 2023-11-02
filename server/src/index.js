@@ -3,10 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const router = require("./routes/index.js");
 const errorHandler = require("./error/errorHandler.js");
+const checkToken = require("./middlewares/checkToken.js");
 
 const app = express();
 const PORT = +(process.env.PORT ?? 9999);
 
+app.use(checkToken);
 app.use(cors());
 app.use(express.json());
 app.use("/api", router);
