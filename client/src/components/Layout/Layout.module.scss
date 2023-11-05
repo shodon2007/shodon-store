@@ -1,0 +1,11 @@
+.layout {
+    height: 100dvh;
+    position: relative;
+}
+.app {
+    top: 30px;
+    position: relative;
+    height: calc(100dvh - 60px);
+    margin: 0 auto;
+    max-width: 1200px;
+}
