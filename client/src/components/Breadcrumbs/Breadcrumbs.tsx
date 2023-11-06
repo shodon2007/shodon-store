@@ -31,7 +31,9 @@ const Breadcrumbs = () => {
     return (
         <div className={classes.breadcrumbs}>
             {"type" in params || !path.slice(1) ? (
-                <Link to={"/"}>Каталог</Link>
+                <Link to={"/"}>
+                    <span>Каталог</span>
+                </Link>
             ) : (
                 <Link to={path.slice(1)}>{pathList[path]}</Link>
             )}

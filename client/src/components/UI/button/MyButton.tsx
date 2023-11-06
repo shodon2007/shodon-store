@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import classes from "./MyButton.module.scss";
 
-const MyButton: FC<any> = ({ children, active, ...props }) => {
+const MyButton: FC<any> = memo(({ children, active, ...props }) => {
     const btnClasses = [classes.btn];
     if (active) {
         btnClasses.push(classes.active);
@@ -11,6 +11,6 @@ const MyButton: FC<any> = ({ children, active, ...props }) => {
             {children}
         </button>
     );
-};
+});
 
 export default MyButton;

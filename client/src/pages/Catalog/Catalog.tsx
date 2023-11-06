@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classes from "./Catalog.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import catalogService from "../../services/catalog.service";
 import { URL } from "../../global";
 import { Link } from "react-router-dom";
+import Loading from "../../static/loading.webp";
 
 const Catalog: FC = () => {
     const { data, isLoading } = useQuery({
@@ -12,11 +13,11 @@ const Catalog: FC = () => {
     });
 
     if (isLoading) {
-        return <div>Загрузка</div>;
+        return <Sceleton />;
     }
 
     if (!data) {
-        return <div>ошибка</div>;
+        return <div>ашибка</div>;
     }
 
     return (
@@ -33,6 +34,19 @@ const Catalog: FC = () => {
             })}
         </div>
     );
+};
+
+const Sceleton = () => {
+    const sceletons = [];
+
+    for (let i = 0; i < 6; i++) {
+        sceletons.push(
+            <div className={classes.loading}>
+                <img src={Loading} alt="loading" />
+            </div>
+        );
+    }
+    return <div className={classes.catalog}>{sceletons.map((i) => i)}</div>;
 };
 
 export default Catalog;

@@ -1,15 +1,47 @@
-import { MouseEvent } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import classes from "./Auth.module.scss";
 import MyButton from "../../components/UI/button/MyButton";
 import MyInput from "../../components/UI/input/MyInput";
 import MyTitle from "../../components/UI/title/MyTitle";
+import authService from "../../services/auth.service";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { login } from "../../store/slice/userSlice";
+import { useNavigate } from "react-router";
 
 const Auth = () => {
-    function loginClick(e: MouseEvent) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const token = useSelector((state: RootState) => state.user.token);
+
+    useEffect(() => {
+        if (token) {
+            console.log("Пошел нафиг отсюда 🗿");
+            navigate("/");
+        }
+    });
+
+    async function loginClick(e: MouseEvent) {
         e.preventDefault();
+        const data = await authService.login(username, password);
+
+        if (data.status === 201 && data.token) {
+            dispatch(login(data.token));
+        } else {
+            alert(data.message);
+        }
     }
-    function registrationClick(e: MouseEvent) {
+    async function registrationClick(e: MouseEvent) {
         e.preventDefault();
+        const data = await authService.registration(username, password);
+
+        if (data.status === 201 && data.token) {
+            dispatch(login(data.token));
+        } else {
+            alert(data.message);
+        }
     }
 
     return (
@@ -17,12 +49,23 @@ const Auth = () => {
             <form className={classes.form}>
                 <div className={classes.inputs}>
                     <MyTitle>Войти</MyTitle>
-                    <MyInput type="text" placeholder="login" />
+                    <MyInput
+                        type="text"
+                        placeholder="login"
+                        value={username}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                            setUsername(e.target.value)
+                        }
+                    />
                     <MyInput
                         type="password"
                         minLength={8}
                         placeholder="password"
                         required
+                        value={password}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                            setPassword(e.target.value);
+                        }}
                     />
                 </div>
                 <div className={classes.buttons}>
