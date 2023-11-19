@@ -18,7 +18,8 @@ const generateAccessToken = (user_id, role) => {
 class Auth {
     async login(req, res) {
         try {
-            const { username, password } = req.body;
+            const { username, password } = req.query;
+            console.log(username, password);
             const userExists = await auth.checkUserExists(username);
 
             if (!userExists) {
@@ -33,18 +34,22 @@ class Auth {
 
             const token = generateAccessToken(user.id, user.role);
 
-            res.status(200).json({
+            console.log(token);
+
+            res.status(201).json({
                 message: `вы успешно вошли`,
                 username,
-                token: token,
+                token,
             });
         } catch (e) {
+            console.log(e);
             error.unknownLoginError(e, res);
         }
     }
     async registration(req, res) {
         try {
             const { username, password } = req.body;
+            console.log(username, password);
             const userExists = await auth.checkUserExists(username);
 
             if (userExists) {
@@ -61,6 +66,8 @@ class Auth {
                 return error.registrationError(res);
             }
 
+            const user = await auth.getUser(username);
+
             const token = generateAccessToken(user.id, user.role);
 
             res.status(201).json({
@@ -69,6 +76,7 @@ class Auth {
                 token,
             });
         } catch (e) {
+            console.log("error", e);
             return error.registrationError(res);
         }
     }

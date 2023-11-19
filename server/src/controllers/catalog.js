@@ -1,9 +1,7 @@
-const Database = require("../db/index");
+const db = require("../db/catalogDb");
 const jwt = require("jsonwebtoken");
 
-const db = new Database();
-
-class Catalog {
+class CatalogController {
     async getCatalog(req, res) {
         try {
             const data = await db.getCatalog();
@@ -25,4 +23,4 @@ class Catalog {
     }
 }
 
-module.exports = new Catalog();
+module.exports = new CatalogController();

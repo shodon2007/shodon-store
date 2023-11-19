@@ -26,10 +26,6 @@ class Database {
             throw new Error("Ошибка в query db", query, e);
         }
     }
-
-    async getCatalog() {
-        return this.query("SELECT * FROM type");
-    }
 }
 
 module.exports = Database;

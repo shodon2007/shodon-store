@@ -5,6 +5,14 @@ class AuthDB extends Database {
     constructor() {
         super();
     }
+    async getUser(username) {
+        const user = await this.query(
+            "select * from user where login = ?",
+            username
+        );
+
+        return user;
+    }
     async checkUserExists(username) {
         const user = await this.query(
             "select * from user where login = ?",

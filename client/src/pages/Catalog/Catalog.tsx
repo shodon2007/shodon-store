@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import classes from "./Catalog.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import catalogService from "../../services/catalog.service";
@@ -17,7 +17,7 @@ const Catalog: FC = () => {
     }
 
     if (!data) {
-        return <div>ашибка</div>;
+        return <div>ашибка, ну вообще врятли эта будет</div>;
     }
 
     return (
@@ -41,7 +41,7 @@ const Sceleton = () => {
 
     for (let i = 0; i < 6; i++) {
         sceletons.push(
-            <div className={classes.loading}>
+            <div className={classes.loading} key={i}>
                 <img src={Loading} alt="loading" />
             </div>
         );
