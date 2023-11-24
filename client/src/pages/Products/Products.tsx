@@ -1,23 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
+import { FC, useState } from "react";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import productService from "../../services/product.service";
 import { useParams } from "react-router";
 import classes from "./Products.module.scss";
-import { URL } from "../../global";
-import MyButton from "../../components/UI/button/MyButton";
+
+import ProductList from "../../components/ProductList/ProductList";
+import Filter from "../../components/Filter/Filter";
+import { TFilter } from "../../types/product";
 
 type TParams = {
     type: string;
 };
 
-const Products = () => {
+const Products: FC = () => {
     const { type } = useParams<TParams>();
+
     if (!type) {
         return "кароче ашибка";
     }
-
+    const [filter, setFilter] = useState<TFilter>({ type });
     const { data, isLoading } = useQuery({
         queryKey: ["products", type],
-        queryFn: () => productService.getProducts(type),
+        queryFn: () => productService.getProducts(filter),
     });
 
     if (isLoading) {
@@ -27,54 +31,12 @@ const Products = () => {
     if (!data) {
         return "ашибка";
     }
-
-    console.log(data);
-
     return (
         <div className={classes.products}>
-            <div className={classes.filter}>filter</div>
-            <div className={classes.list}>
-                {data.map((product) => {
-                    return (
-                        <div key={product.id} className={classes.product}>
-                            <img src={`http://${URL}${product.img}`} alt="" />
-                            <div className={classes.center}>
-                                <span className={classes.title}>
-                                    {product.name}
-                                </span>
-                                <br />
-                                <span className={classes.attributes}>
-                                    {product.attributes.map((i) => (
-                                        <span className={classes.attribute}>
-                                            {`${i.title}: ${i.description}`}
-                                        </span>
-                                    ))}
-                                </span>
-                            </div>
-                            <div className={classes.right}>
-                                <span className={classes.price}>
-                                    {updatePrice(product.price)}
-                                </span>
-                                <MyButton>в корзину</MyButton>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+            <Filter />
+            <ProductList list={data} />
         </div>
     );
 };
-
-function updatePrice(oldPrice: number): string {
-    let newPrice: string = String(oldPrice)
-        .split("")
-        .reverse()
-        .map((i, index, arr) =>
-            (index + 1) % 3 === 0 && index !== arr.length - 1 ? `.${i}` : i
-        )
-        .reverse()
-        .join("");
-    return newPrice + "₽";
-}
 
 export default Products;

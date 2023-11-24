@@ -5,11 +5,16 @@ export type TProduct = {
     name: string;
     price: number;
     type_id: number;
-    attributes: TAttributes[];
+    attributes: TAttribute[];
+    rate: string;
 }
 
-type TAttributes = {
+export type TAttribute = {
     id: number,
     title: string,
     description: string,
+}
+
+export type TFilter = {
+    type: string,
 }

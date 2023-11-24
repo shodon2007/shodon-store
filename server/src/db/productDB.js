@@ -1,7 +1,7 @@
 const Database = require(".");
 
 class ProductDB extends Database {
-    async getAll(filter) {
+    async getAll() {
         let devices = await this.query(
             `
             SELECT
@@ -19,17 +19,15 @@ class ProductDB extends Database {
                 device d
             LEFT JOIN
                 attribute a ON a.device_id = d.id
+            INNER JOIN
+                type ON d.type_id = type.id
             WHERE
                 d.price BETWEEN 0 AND 1000000
             GROUP BY
-                d.id, d.name;
+                d.id, d.name
                 `
         );
-
-        devices.forEach((item) => console.log(item.name, item.reviews));
         return devices;
-
-        // return products;
     }
 }
 
