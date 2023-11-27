@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import MyTitle from "../UI/title/MyTitle";
-import { TAttribute, TProduct } from "../../types/product";
+import { TAttribute, TAttributes, TProduct } from "../../types/product";
 import MyButton from "../UI/button/MyButton";
 import { URL } from "../../global";
 import Price from "../UI/price/Price";
@@ -15,6 +15,7 @@ type TList = {
 };
 
 const ProductList: FC<TList> = ({ list }) => {
+    console.log(list[0]);
     return (
         <div className={classes.list}>
             {list.map((product) => {
@@ -24,15 +25,18 @@ const ProductList: FC<TList> = ({ list }) => {
                         key={product.id}
                         className={classes.product}
                     >
-                        <img src={`http://${URL}${product.img}`} alt="image" />
+                        <img src={`${URL}${product.img}`} alt="image" />
                         <div className={classes.center}>
                             <MyTitle>{product.name}</MyTitle>
-                            <Attributes attributes={product.attributes} />
+                            <Attributes
+                                attributes={product.attributes}
+                                reviews={product.reviews}
+                            />
                             <Rate rate={product.rate} />
                         </div>
                         <div className={classes.right}>
                             <Price>{product.price}</Price>
-                            <MyButton>в корзину</MyButton>
+                            <MyButton>Купить</MyButton>
                         </div>
                     </Link>
                 );
@@ -41,7 +45,7 @@ const ProductList: FC<TList> = ({ list }) => {
     );
 };
 
-const Attributes = ({ attributes }: { attributes: TAttribute[] }) => {
+const Attributes = ({ attributes, reviews }: TAttributes) => {
     return (
         <div className={classes.attributes}>
             {attributes.map((i) => (
@@ -49,6 +53,9 @@ const Attributes = ({ attributes }: { attributes: TAttribute[] }) => {
                     {`${i.title}: ${i.description}`}
                 </span>
             ))}
+            <span className={classes.attribute} key={"reviews"}>
+                отзывы: {reviews}
+            </span>
         </div>
     );
 };

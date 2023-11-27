@@ -18,7 +18,7 @@ const Products: FC = () => {
     if (!type) {
         return "кароче ашибка";
     }
-    const [filter, setFilter] = useState<TFilter>({ type });
+    const [filter, setFilter] = useState<TFilter>({ type, filter: [] });
     const { data, isLoading } = useQuery({
         queryKey: ["products", type],
         queryFn: () => productService.getProducts(filter),
@@ -33,7 +33,7 @@ const Products: FC = () => {
     }
     return (
         <div className={classes.products}>
-            <Filter />
+            <Filter filter={filter} setFilter={setFilter} />
             <ProductList list={data} />
         </div>
     );

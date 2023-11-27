@@ -5,14 +5,16 @@ type TAuth = {
     status?: number,
     token?: string,
     message?: string,
+    username?: string,
 }
 
 class AuthService {
     async registration(username: string, password: string) {
         let res: TAuth = {};
-        await axios.post(`http://${URL}/api/auth`, { username, password })
+        await axios.post(`${URL}/api/auth`, { username, password })
             .then(data => {
                 res = {
+                    username: data.data.username,
                     status: data.status,
                     token: data.data.token,
                 }
@@ -33,6 +35,7 @@ class AuthService {
         await axios.get(`http://${URL}/api/auth`, { params: { username, password } })
             .then(data => {
                 res = {
+                    username: data.data.username,
                     status: data.status,
                     token: data.data.token,
                 }

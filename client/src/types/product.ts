@@ -7,6 +7,12 @@ export type TProduct = {
     type_id: number;
     attributes: TAttribute[];
     rate: string;
+    reviews: number;
+}
+
+export type TAttributes = {
+    attributes: TAttribute[];
+    reviews: number;
 }
 
 export type TAttribute = {
@@ -17,4 +23,5 @@ export type TAttribute = {
 
 export type TFilter = {
     type: string,
+    filter: any
 }

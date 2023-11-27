@@ -26,7 +26,7 @@ const Catalog: FC = () => {
                 return (
                     <Link to={catalog.name} key={i} className={classes.item}>
                         <div className={classes.img}>
-                            <img src={`//${URL}${catalog.img}`} alt="img" />
+                            <img src={`${URL}/${catalog.img}`} alt="img" />
                         </div>
                         <span>{catalog.name_ru}</span>
                     </Link>

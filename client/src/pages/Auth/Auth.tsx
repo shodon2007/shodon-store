@@ -27,8 +27,15 @@ const Auth = () => {
         e.preventDefault();
         const data = await authService.login(username, password);
 
-        if (data.status === 201 && data.token) {
-            dispatch(login(data.token));
+        console.log(data);
+
+        if (data.status === 201 && data.token && data.username) {
+            dispatch(
+                login({
+                    token: data.token,
+                    username: data.username,
+                })
+            );
         } else {
             alert(data.message);
         }
@@ -37,8 +44,13 @@ const Auth = () => {
         e.preventDefault();
         const data = await authService.registration(username, password);
 
-        if (data.status === 201 && data.token) {
-            dispatch(login(data.token));
+        if (data.status === 201 && data.token && data.username) {
+            dispatch(
+                login({
+                    token: data.token,
+                    username: data.username,
+                })
+            );
         } else {
             alert(data.message);
         }
@@ -48,7 +60,7 @@ const Auth = () => {
         <div className={classes.auth}>
             <form className={classes.form}>
                 <div className={classes.inputs}>
-                    <MyTitle>Войти</MyTitle>
+                    <MyTitle>Регистрация</MyTitle>
                     <MyInput
                         type="text"
                         placeholder="login"
