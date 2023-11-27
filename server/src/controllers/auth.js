@@ -34,8 +34,6 @@ class Auth {
 
             const token = generateAccessToken(user.id, user.role);
 
-            console.log(token);
-
             res.status(201).json({
                 message: `вы успешно вошли`,
                 username,
