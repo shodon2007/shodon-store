@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import {Options} from "./types/buildTypes";
 import buildResolves from "./buildResolves";
 import buildRules from "./buildRules";
+import buildPlugins from "./buildPlugins";
 function buildConfig(options: Options) {
     const config: webpack.Configuration = {
         mode: options.mode,
@@ -16,7 +17,8 @@ function buildConfig(options: Options) {
 
         module: {
             rules:buildRules(options)
-        }
+        },
+        plugins:buildPlugins(options),
     };
 
     return config;
