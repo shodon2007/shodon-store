@@ -1,4 +1,4 @@
-import path from "path";
+import 'webpack-dev-server';
 import webpack from 'webpack';
 import {Options} from "./types/buildTypes";
 import buildResolves from "./buildResolves";
@@ -19,6 +19,9 @@ function buildConfig(options: Options) {
             rules:buildRules(options)
         },
         plugins:buildPlugins(options),
+        devServer: {
+            historyApiFallback: true,
+        }
     };
 
     return config;
