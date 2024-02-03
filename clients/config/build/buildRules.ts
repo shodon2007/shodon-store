@@ -1,4 +1,4 @@
-import {Options} from "./types/buildTypes";
+import { Options } from "./types/buildTypes";
 import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
@@ -7,6 +7,11 @@ function buildRules(options: Options) {
         {
             test: /\.tsx?$/,
             use: 'ts-loader',
+        },
+        {
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: ['@svgr/webpack'],
         },
         {
             test: /\.scss$/i,

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { serverUrl } from "/shared/config/server/server";
+import { serverUrl } from "../../shared/config/server/server";
 import { useGetCatalog } from "/shared/hooks/useGetCatalog/useGetCatalog";
 
 import cls from "./Catalog.module.scss";
