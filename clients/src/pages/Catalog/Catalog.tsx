@@ -1,54 +1,30 @@
 import { FC } from "react";
+
+import { serverUrl } from "/shared/config/server/server";
+import { useGetCatalog } from "/shared/hooks/useGetCatalog/useGetCatalog";
+
 import cls from "./Catalog.module.scss";
-// import { useQuery } from "@tanstack/react-query";
-// import catalogService from "../../services/catalog.service";
-// import { URL } from "../../global";
-// import { Link } from "react-router-dom";
-// import Loading from "../../static/loading.webp";
 
 const Catalog: FC = () => {
-    // const { data, isLoading } = useQuery({
-    //     queryKey: ["catalog"],
-    //     queryFn: () => catalogService.getCatalog(),
-    // });
 
-    // if (isLoading) {
-    //     return <Sceleton />;
-    // }
+    const { data: catalog, isLoading } = useGetCatalog();
 
-    // if (!data) {
-    //     return <div>ашибка, ну вообще врятли эта будет</div>;
-    // }
+    if (isLoading) {
+        return <span>Загрузка...</span>
+    }
 
     return (
         <div className={cls.catalog}>
-            Потом добавлю
-            {/*{data.map((catalog, i) => {*/}
-            {/*    return (*/}
-            {/*        <Link to={catalog.name} key={i} className={classes.item}>*/}
-            {/*            <div className={classes.img}>*/}
-            {/*                <img src={`${URL}/${catalog.img}`} alt="img" />*/}
-            {/*            </div>*/}
-            {/*            <span>{catalog.name_ru}</span>*/}
-            {/*        </Link>*/}
-            {/*    );*/}
-            {/*})}*/}
+            {catalog.data.map(elem => {
+                return <div className={cls.item} key={elem.id}>
+                    <div className={cls.img}>
+                        <img src={`${serverUrl}${elem.img}`} alt={elem.name} />
+                    </div>
+                    <span className={cls.name}>{elem.name_ru}</span>
+                </div>;
+            })}
         </div>
     );
-};
-
-const Sceleton = () => {
-    const sceletons = [];
-
-    for (let i = 0; i < 6; i++) {
-        sceletons.push(
-            <div className={cls.loading} key={i}>
-                загрузка
-                {/*<img src={Loading} alt="loading" />*/}
-            </div>
-        );
-    }
-    return <div className={cls.catalog}>{sceletons.map((i) => i)}</div>;
 };
 
 export default Catalog;

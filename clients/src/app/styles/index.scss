@@ -1,13 +1,18 @@
-@import 'variables';
-@import 'reset';
-@import 'themes/normal';
-@import 'themes/dark';
+@import "variables";
+@import "reset";
+@import "themes/normal";
+@import "themes/dark";
 
 .app {
-  font: var(--font-m);
+	font: var(--font-m);
 
-  background: var(--bg-color);
-  color: var(--primary-color);
+	background: var(--bg-color);
+	color: var(--primary-color);
 
-  min-height: 100dvh;
+	min-height: 100dvh;
+
+	& > .body {
+		width: 1200px;
+		margin: 0 auto;
+	}
 }
