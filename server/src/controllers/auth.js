@@ -18,8 +18,8 @@ const generateAccessToken = (user_id, role) => {
 class Auth {
     async login(req, res) {
         try {
+            console.log("Пришел запрос на login ");
             const { username, password } = req.query;
-            console.log(username, password);
             const userExists = await auth.checkUserExists(username);
 
             if (!userExists) {
@@ -33,6 +33,7 @@ class Auth {
             }
 
             const token = generateAccessToken(user.id, user.role);
+            console.log("этот чел зарегался");
 
             res.status(201).json({
                 message: `вы успешно вошли`,

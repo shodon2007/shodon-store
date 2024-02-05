@@ -1,4 +1,7 @@
+$headerHeight: height(".header");
 .header {
+    background-color: #1a2733;
+    width: 1200px;
     padding: 0 10px;
     color: white;
     height: 30px;
@@ -6,6 +9,7 @@
     align-items: center;
     justify-content: space-between;
     z-index: 5;
+    transition: all 0.3s ease;
 
     a {
         cursor: pointer;

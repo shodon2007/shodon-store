@@ -15,7 +15,6 @@ type TList = {
 };
 
 const ProductList: FC<TList> = ({ list }) => {
-    console.log(list[0]);
     return (
         <div className={classes.list}>
             {list.map((product) => {

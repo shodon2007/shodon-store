@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    overflow-y: auto;
 }
 
 .product {

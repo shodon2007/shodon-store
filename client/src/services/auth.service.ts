@@ -32,7 +32,7 @@ class AuthService {
     async login(username: string, password: string) {
         let res: TAuth = {};
 
-        await axios.get(`http://${URL}/api/auth`, { params: { username, password } })
+        await axios.get(`${URL}/api/auth`, { params: { username, password } })
             .then(data => {
                 res = {
                     username: data.data.username,
