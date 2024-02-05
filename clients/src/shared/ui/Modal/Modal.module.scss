@@ -9,7 +9,7 @@
 	pointer-events: none;
 }
 
-.isOpen {
+.Modal.isOpen {
 	z-index: 10;
 	pointer-events: all;
 }
@@ -20,13 +20,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(0 0 0 / 60%);
+	background-color: rgba(0, 0, 0, 0.6);
+	cursor: pointer;
 }
 
 .content {
 	width: 400px;
-	background-color: white;
+	height: max-content;
 	padding: 10px;
-	border: 3px solid black;
 	border-radius: 10px;
+	cursor: auto;
 }

@@ -1,7 +1,6 @@
 import {
     QueryClient,
     QueryClientProvider,
-    useQuery,
 } from '@tanstack/react-query';
 import { FC } from 'react';
 
