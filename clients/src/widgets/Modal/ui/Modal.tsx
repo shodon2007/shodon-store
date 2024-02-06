@@ -1,8 +1,7 @@
-import { FC, MouseEvent, ReactNode, useEffect, useRef } from "react";
+import { Context, FC, MouseEvent, ReactNode, createContext, useEffect, useRef } from "react";
 import classNames from "/shared/lib/classNames";
 import cls from "./Modal.module.scss";
 import { createPortal } from "react-dom";
-import UseTheme from "/app/theme/useTheme";
 
 interface ModalProps {
     className?: string;
@@ -11,20 +10,22 @@ interface ModalProps {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+export interface ModalContextInterface {
+    closeModal?: () => void;
+}
+
+export const ModalContext: Context<ModalContextInterface> = createContext({});
+
 const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
-    const { theme } = UseTheme();
+    function closeModal() {
+        setOpen(false);
+    }
 
     const mods = {
         [cls.isOpen]: open,
     }
 
-    function closeModal() {
-        console.log('setopen click')
-        setOpen(false);
-    }
-
     function contentClick(e: MouseEvent<HTMLDivElement>) {
-        console.log('content click')
         e.stopPropagation();
     }
 
@@ -32,7 +33,9 @@ const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
         <div className={classNames(cls.Modal, mods, [])}>
             <div className={cls.overview} onClick={closeModal}>
                 <div className={cls.content} onClick={e => contentClick(e)}>
-                    {children}
+                    <ModalContext.Provider value={{ closeModal: closeModal }}>
+                        {children}
+                    </ModalContext.Provider>
                 </div>
             </div>
         </div>,

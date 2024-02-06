@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, ReactNode, useEffect, useState } from "react";
+import { ChangeEvent, Dispatch, FC, MouseEvent, ReactNode, useContext, useEffect, useState } from "react";
 import cls from "./Auth.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, login } from "/app/providers/redux";
@@ -8,11 +8,12 @@ import Login from "./Login";
 import Registration from "./Registration";
 
 const Auth = () => {
+    const [tabValue, setTabValue] = useState('войти');
+
     const tabComponents: Record<string, ReactNode> = {
         войти: <Login />,
         зарегестрироваться: <Registration />
     }
-    const [tabValue, setTabValue] = useState('войти');
 
     return (
         <div className={cls.auth}>

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { Link } from "react-router-dom";
 
 import classNames from '/shared/lib/classNames';
-import Modal from '/shared/ui/Modal/Modal';
+import { Modal } from '/widgets/Modal';
 import Auth from '/pages/Auth/Auth';
 import ThemeButton from '/shared/ui/ThemeButton/ThemeButton';
 

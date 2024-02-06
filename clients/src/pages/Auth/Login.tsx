@@ -1,8 +1,13 @@
-import { ChangeEvent, MouseEvent, MouseEventHandler, useState } from 'react';
-import cls from './Auth.module.scss';
+import { ChangeEvent, MouseEvent, MouseEventHandler, useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '/app/providers/redux';
+import { ModalContext } from "/widgets/Modal";
+
 import authApi from '/shared/api/authApi';
+import Button from '/shared/ui/Button/Button';
+import Input from '/shared/ui/Input/Input';
+
+import cls from './Auth.module.scss';
 
 
 const Login = () => {
@@ -10,12 +15,14 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
 
+    const closeModal = useContext(ModalContext);
+
     async function loginClick(e: MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         const data = await authApi.login(username, password);
 
         if (data.error) {
-            alert(data.message)
+            return alert(data.message)
         }
 
         dispatch(
@@ -24,12 +31,13 @@ const Login = () => {
                 username: data.username,
             })
         );
+        closeModal.closeModal();
     }
 
     return (
         <form className={cls.form}>
             <div className={cls.inputs}>
-                <input
+                <Input
                     type="text"
                     placeholder="login"
                     value={username}
@@ -37,7 +45,7 @@ const Login = () => {
                         setUsername(e.target.value)
                     }
                 />
-                <input
+                <Input
                     type="password"
                     minLength={8}
                     placeholder="password"
@@ -48,7 +56,7 @@ const Login = () => {
                     }}
                 />
             </div>
-            <button className={cls.button} onClick={(e) => loginClick(e)}>Войти</button>
+            <Button className={cls.button} onClick={(e) => loginClick(e)}>Войти</Button>
         </form>
     )
 };
