@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Product } from "/shared/api/productApi";
 import { serverUrl } from "/shared/config/server/server";
+import cls from './Device.module.scss';
 
 interface DeviceProps {
     product: Product
@@ -19,8 +20,9 @@ const Device: FC<DeviceProps> = ({ product }) => {
     } = product;
 
 
-    return <div>
-        <img src={`${serverUrl}/img${img}`} />
+    return <div className={cls.device}>
+        <img className={cls.image} src={`${serverUrl}/img${img}`} />
+        <span>{name}</span>
     </div>;
 };
 

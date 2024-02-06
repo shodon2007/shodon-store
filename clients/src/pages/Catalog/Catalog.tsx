@@ -4,6 +4,7 @@ import { serverUrl } from "../../shared/config/server/server";
 import { useGetCatalog } from "/shared/hooks/useGetCatalog/useGetCatalog";
 
 import cls from "./Catalog.module.scss";
+import { Link } from "react-router-dom";
 
 const Catalog: FC = () => {
 
@@ -16,12 +17,12 @@ const Catalog: FC = () => {
     return (
         <div className={cls.catalog}>
             {catalog.data.map(elem => {
-                return <div className={cls.item} key={elem.id}>
+                return <Link to={`/${elem.name}`} className={cls.item} key={elem.id}>
                     <div className={cls.img}>
-                        <img src={`${serverUrl}${elem.img}`} alt={elem.name} />
+                        <img src={`${serverUrl}/img${elem.img}`} alt={elem.name} />
                     </div>
                     <span className={cls.name}>{elem.name_ru}</span>
-                </div>;
+                </Link>;
             })}
         </div>
     );

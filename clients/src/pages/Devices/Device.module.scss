@@ -1,0 +1,14 @@
+.device {
+	height: 300px;
+	padding: 10px;
+	background-color: var(--primary-color);
+	color: var(--bg-color);
+	display: grid;
+	grid-template-columns: 300px auto;
+	gap: 5px;
+}
+
+.image {
+	max-width: 300px;
+	height: 280px;
+}
