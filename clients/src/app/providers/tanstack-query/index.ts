@@ -1,5 +1,5 @@
-import ReactQuery from "./ui/tanstack-query";
+import ReactQuery from './ui/tanstack-query'
 
 export {
-    ReactQuery
+  ReactQuery
 }

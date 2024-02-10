@@ -1,10 +1,10 @@
-import store, { AppDispatch, RootState } from "./ui/redux";
-import { login, logout } from "./ui/userSlice";
+import store, { type AppDispatch, type RootState } from './ui/redux'
+import { login, logout } from './ui/userSlice'
 
 export {
-    store,
-    RootState,
-    AppDispatch,
-    login,
-    logout,
+  store,
+  type RootState,
+  type AppDispatch,
+  login,
+  logout
 }

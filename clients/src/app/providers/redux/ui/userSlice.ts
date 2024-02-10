@@ -1,35 +1,35 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-export type User = {
-    username: string,
-    token: string,
+export interface User {
+  username: string
+  token: string
 }
 
-const USERNAME_KEY = 'username';
-const TOKEN_KEY = 'token';
+const USERNAME_KEY = 'username'
+const TOKEN_KEY = 'token'
 
 export const userSlice = createSlice({
-    name: 'user',
-    initialState: <User>{
-        username: localStorage.getItem(USERNAME_KEY) ?? '',
-        token: localStorage.getItem(TOKEN_KEY) ?? '',
+  name: 'user',
+  initialState: {
+    username: localStorage.getItem(USERNAME_KEY) ?? '',
+    token: localStorage.getItem(TOKEN_KEY) ?? ''
+  } as User,
+  reducers: {
+    login (state, action: PayloadAction<User>) {
+      state.token = action.payload.token
+      state.username = action.payload.username
+      localStorage.setItem(TOKEN_KEY, state.token)
+      localStorage.setItem(USERNAME_KEY, state.username)
     },
-    reducers: {
-        login(state, action: PayloadAction<User>) {
-            state.token = action.payload.token;
-            state.username = action.payload.username;
-            localStorage.setItem(TOKEN_KEY, state.token);
-            localStorage.setItem(USERNAME_KEY, state.username);
-        },
-        logout(state) {
-            localStorage.removeItem(TOKEN_KEY);
-            localStorage.removeItem(USERNAME_KEY);
-            state.username = '';
-            state.token = '';
-        }
+    logout (state) {
+      localStorage.removeItem(TOKEN_KEY)
+      localStorage.removeItem(USERNAME_KEY)
+      state.username = ''
+      state.token = ''
     }
-});
+  }
+})
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout } = userSlice.actions
 
-export default userSlice.reducer;
+export default userSlice.reducer
