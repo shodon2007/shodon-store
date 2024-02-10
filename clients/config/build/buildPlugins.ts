@@ -1,4 +1,4 @@
-import {Options} from "./types/buildTypes";
+import { Options } from "./types/buildTypes";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -8,7 +8,10 @@ function buildPlugins(options: Options) {
         new HtmlWebpackPlugin({
             template: options.paths.html,
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
+
     ];
 
     return webpackPlugins;

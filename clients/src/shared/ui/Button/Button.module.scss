@@ -3,4 +3,9 @@
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.Button:hover {
+	background-color: var(--primary-focus-color);
 }

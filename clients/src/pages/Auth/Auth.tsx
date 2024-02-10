@@ -1,8 +1,5 @@
-import { ChangeEvent, Dispatch, FC, MouseEvent, ReactNode, useContext, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import cls from "./Auth.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState, login } from "/app/providers/redux";
-import authApi from "/shared/api/authApi";
 import Tab from "../../shared/ui/Tab/Tab";
 import Login from "./Login";
 import Registration from "./Registration";

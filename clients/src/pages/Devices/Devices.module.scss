@@ -1,7 +1,7 @@
 .devices {
 	display: flex;
-	gap: 10px;
 	height: 100%;
+	gap: 10px;
 }
 
 .products {
@@ -11,5 +11,4 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-auto-rows: 300px;
-	gap: 10px;
 }

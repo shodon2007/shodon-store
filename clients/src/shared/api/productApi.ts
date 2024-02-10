@@ -1,7 +1,14 @@
 import axios from 'axios'
-import { URLS } from '../config/server/server'
+import { URLS } from '/shared/config/server/server'
+
+export interface Attribute {
+  id: number,
+  title: string,
+  description: string,
+}
 
 export interface Product {
+  name_ru: string
   name: string
   id: number
   price: number
@@ -10,10 +17,11 @@ export interface Product {
   rate: string
   reviews: string
   type_id: number
+  attributes: Attribute[]
 }
 
 class ProductApi {
-  async getAllProducts () {
+  async getAllProducts() {
     return await axios.get<Product[]>(URLS.products).then(data => data.data)
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, MouseEventHandler, useContext, useState } from 'react';
+import { ChangeEvent, MouseEvent, useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '/app/providers/redux';
 import { ModalContext } from "/widgets/Modal";
@@ -21,6 +21,7 @@ const Login = () => {
         e.preventDefault();
         const data = await authApi.login(username, password);
 
+        console.log('это обработалось')
         if (data.error) {
             return alert(data.message)
         }

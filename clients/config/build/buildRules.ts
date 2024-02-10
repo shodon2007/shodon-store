@@ -16,9 +16,7 @@ function buildRules(options: Options) {
         {
             test: /\.scss$/i,
             use: [
-                // Creates `style` nodes from JS strings
                 options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-                // Translates CSS into CommonJS
                 {
                     loader: 'css-loader',
                     options: {
@@ -30,7 +28,6 @@ function buildRules(options: Options) {
                         }
                     },
                 },
-                // Compiles Sass to CSS
                 "sass-loader",
             ],
         },

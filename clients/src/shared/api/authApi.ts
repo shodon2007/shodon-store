@@ -1,6 +1,6 @@
 import axios from 'axios'
 import ApiGeneral from './generalApi'
-import { URLS } from '../../../../../../../shared/config/server/server'
+import { URLS } from '/shared/config/server/server'
 
 interface Auth {
   username: string
@@ -9,7 +9,7 @@ interface Auth {
 }
 
 class AuthApi extends ApiGeneral {
-  async login (username: string, password: string) {
+  async login(username: string, password: string) {
     try {
       const response = await axios.get<Auth>(URLS.auth, { params: { username, password } })
       return {
@@ -28,7 +28,7 @@ class AuthApi extends ApiGeneral {
     }
   };
 
-  async registration (username: string, password: string) {
+  async registration(username: string, password: string) {
     let resp
     try {
       resp = await axios.post<Auth>(URLS.auth, { username, password })

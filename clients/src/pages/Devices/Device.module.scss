@@ -4,7 +4,19 @@
 	background-color: var(--primary-color);
 	color: var(--bg-color);
 	display: grid;
-	grid-template-columns: 300px auto;
+	grid-template-columns: 300px auto max-content;
+	gap: 5px;
+}
+
+.center {
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
 	gap: 5px;
 }
 

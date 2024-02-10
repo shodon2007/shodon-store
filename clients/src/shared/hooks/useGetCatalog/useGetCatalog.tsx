@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios";
-import { product } from "/app/types/product";
+import { Product } from "/shared/api/productApi";
 
 const useGetCatalog = () => {
     const query = useQuery({
         queryKey: ['catalog'],
         queryFn: () => {
-            return axios.get<product[]>('http://localhost:3000/api/catalog');
+            return axios.get<Product[]>('http://localhost:3000/api/catalog');
         },
     });
 

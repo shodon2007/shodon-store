@@ -1,8 +1,8 @@
-import { serverUrl } from '../../../../../../../shared/config/server/server'
+import { serverUrl } from '/shared/config/server/server'
 
 class ApiGeneral {
   public url: string
-  constructor () {
+  constructor() {
     this.url = serverUrl
   }
 }
