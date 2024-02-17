@@ -1,4 +1,4 @@
-const db = require("../db/catalogDb");
+const db = require("../db/catalogDB");
 const jwt = require("jsonwebtoken");
 
 class CatalogController {
