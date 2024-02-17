@@ -1,0 +1,6 @@
+{
+	"i18n-ally.localesPaths": ["src/shared/config/i18n"],
+	"eslint.workingDirectories": [
+		"./src"
+	]
+}
