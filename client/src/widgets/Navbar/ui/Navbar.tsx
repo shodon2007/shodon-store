@@ -10,12 +10,17 @@ import cls from './Navbar.module.scss';
 
 import BasketSvg from './svg/basket.svg';
 import ProfileSvg from './svg/profile.svg';
+import LogoutSvg from './svg/logout.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, logout } from '/app/providers/redux';
 
 interface NavbarProps {
     className?: string
 }
 
 const Navbar: FC<NavbarProps> = ({ className }) => {
+    const userSlice = useSelector((state: RootState) => state.userSlice);
+    const dispatch = useDispatch();
     const [modal, setModal] = useState(false);
 
     return (
@@ -26,7 +31,11 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
                 <Link to={'/basket'} className={cls.link}>
                     <BasketSvg className={cls.svg} />
                 </Link>
-                <ProfileSvg className={cls.svg} onClick={() => setModal(true)} />
+                {userSlice.token
+                    ? <LogoutSvg className={cls.svg} onClick={() => dispatch(logout())} />
+                    : <ProfileSvg className={cls.svg} onClick={() => setModal(true)} />
+                }
+
             </nav>
             <Modal open={modal} setOpen={setModal}>
                 <Auth />

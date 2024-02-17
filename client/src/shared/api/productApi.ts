@@ -7,12 +7,15 @@ export interface Attribute {
   description: string
 }
 
-export interface Product {
-  name_ru: string
-  name: string
-  id: number
+export interface CatalogItem {
+  name_ru: string,
+  img: string,
+  id: number,
+  name: string,
+}
+
+export interface Product extends CatalogItem {
   price: number
-  img: string
   brand_id: number
   rate: string
   reviews: string
@@ -22,7 +25,13 @@ export interface Product {
 
 class ProductApi {
   async getAllProducts () {
-    return await axios.get<Product[]>(URLS.products).then(data => data.data)
+    return await axios.get(URLS.products).then(data => {
+      const products: Product[] = data.data.map((el: any) => {
+        el.attributes = JSON.parse(el.attributes);
+        return el;
+      })
+      return products;
+    })
   }
 }
 
