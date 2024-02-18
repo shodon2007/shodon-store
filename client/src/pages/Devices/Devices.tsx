@@ -25,7 +25,7 @@ const Devices: FC = () => {
     // const [filter, setFilter] = useState<TFilter>({ type, filter: [] });
     const { data, isLoading } = useQuery({
         queryKey: ["products", type],
-        queryFn: () => productApi.getAllProducts()
+        queryFn: () => productApi.getAllProducts(type)
     });
 
     if (isLoading) {

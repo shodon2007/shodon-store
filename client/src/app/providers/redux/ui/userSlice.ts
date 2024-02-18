@@ -1,19 +1,21 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 export interface User {
-  username: string
-  token: string
-}
+  username: string;
+  token: string;
+};
 
-const USERNAME_KEY = 'username'
-const TOKEN_KEY = 'token'
+const USERNAME_KEY = 'username';
+const TOKEN_KEY = 'token';
+
+const initialState: User = {
+  username: localStorage.getItem(USERNAME_KEY) ?? '',
+  token: localStorage.getItem(TOKEN_KEY) ?? ''
+}
 
 export const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    username: localStorage.getItem(USERNAME_KEY) ?? '',
-    token: localStorage.getItem(TOKEN_KEY) ?? ''
-  } as User,
+  initialState: initialState,
   
   reducers: {
     login (state, action: PayloadAction<User>) {
