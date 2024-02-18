@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ButtonHTMLAttributes, FC } from "react";
 
 import classNames from "/shared/lib/classNames";

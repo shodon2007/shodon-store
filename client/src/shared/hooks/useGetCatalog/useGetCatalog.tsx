@@ -1,6 +1,4 @@
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios";
-import { Product } from "/shared/api/productApi";
 import catalogApi from "/shared/api/catalogApi";
 
 const useGetCatalog = () => {
@@ -10,7 +8,6 @@ const useGetCatalog = () => {
             return catalogApi.getCatalog();
         },
     });
-
 
     return query;
 }

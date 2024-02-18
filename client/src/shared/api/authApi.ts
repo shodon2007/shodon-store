@@ -26,7 +26,7 @@ class AuthApi extends ApiGeneral {
         }
       }
     }
-  };
+  }
 
   async registration (username: string, password: string) {
     let resp

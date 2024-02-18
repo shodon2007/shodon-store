@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 import ApiGeneral from './generalApi'
 import { URLS } from '/shared/config/server/server'
 import { CatalogItem } from './productApi'

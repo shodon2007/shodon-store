@@ -9,7 +9,7 @@ import { Theme } from "/app/theme/ThemeContext";
 
 interface ThemeButtonProps {
     className?: string;
-};
+}
 
 const ThemeButton: FC<ThemeButtonProps> = () => {
     const { theme, toggleTheme } = UseTheme();

@@ -25,21 +25,11 @@ export interface Product extends CatalogItem {
 
 class ProductApi {
   async getAllProducts (type: string) {
-    return await axios.get(URLS.products, {
+    return await axios.get<Product[]>(URLS.products, {
       params: {
-        filters: {
-          type,
-        },
+        filters: {type}
       }
-    }).then(data => {
-      const products: Product[] = data.data.map((el: any) => {
-        if (typeof el.attributes === 'string') {
-          el.attributes = JSON.parse(el.attributes);
-        }
-        return el;
-      })
-      return products;
-    })
+    }).then(res => res.data);
   }
 }
 

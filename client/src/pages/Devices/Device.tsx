@@ -11,14 +11,9 @@ interface DeviceProps {
 
 const Device: FC<DeviceProps> = ({ product }) => {
     const {
-        brand_id,
-        id,
         img,
         name,
         price,
-        rate,
-        reviews,
-        type_id,
         attributes,
     } = product;
 

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 // import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 // import productService from "../../services/product.service";
 import { useParams } from "react-router";

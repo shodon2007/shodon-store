@@ -3,7 +3,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 export interface User {
   username: string;
   token: string;
-};
+}
 
 const USERNAME_KEY = 'username';
 const TOKEN_KEY = 'token';
