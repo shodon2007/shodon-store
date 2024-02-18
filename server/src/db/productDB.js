@@ -1,7 +1,7 @@
 const Database = require(".");
 
 class ProductDB extends Database {
-    async getAll() {
+    async getAll(type) {
         let devices = await this.query(
             `
             SELECT
@@ -30,10 +30,10 @@ class ProductDB extends Database {
             INNER JOIN
                 type ON d.type_id = type.id
             WHERE
-                d.price BETWEEN 0 AND 1000000
+                type.name = ?
             GROUP BY
                 d.id, d.name
-                `
+                `, type
         );
 
         return devices;
