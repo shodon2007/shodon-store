@@ -1,17 +1,24 @@
 import { FC } from "react";
 
-import { serverUrl } from "../../shared/config/server/server";
 import { useGetCatalog } from "/shared/hooks/useGetCatalog/useGetCatalog";
 
 import cls from "./Catalog.module.scss";
 import { Link } from "react-router-dom";
+import { AxiosError } from "axios";
+import { CatalogItem } from "/shared/api/productApi";
+import { serverUrl } from "/shared/api/generalApi";
 
 const Catalog: FC = () => {
 
-    const { data: catalog, isLoading } = useGetCatalog();
+    const { data: catalog, isLoading, error, isError, status } = useGetCatalog();
 
     if (isLoading) {
         return <span>Загрузка...</span>
+    }
+
+    if (isError) {
+        console.log(status);
+        return error.message;
     }
 
     return (

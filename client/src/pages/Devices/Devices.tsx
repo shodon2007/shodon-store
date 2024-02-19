@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import productApi from "/shared/api/productApi";
 import Device from "./Device";
 import Filter from "/widgets/Filter/ui/Filter";
+import { useGetDevices } from "/shared/hooks/useGetCatalog/useGetDevices";
 
 // import ProductList from "../../components/ProductList/ProductList";
 // import Filter from "../../components/Filter/Filter";
@@ -23,23 +24,21 @@ const Devices: FC = () => {
     //     return "кароче ашибка";
     // }
     // const [filter, setFilter] = useState<TFilter>({ type, filter: [] });
-    const { data, isLoading } = useQuery({
-        queryKey: ["products", type],
-        queryFn: () => productApi.getAllProducts(type)
-    });
+    const { data, isLoading, isError, error } = useGetDevices(type);
 
     if (isLoading) {
-        return "загрузка";
+        return "загрузка...";
     }
 
-    if (!data) {
-        return "ашибка";
+    if (isError) {
+        return error.message;
     }
+
     return (
         <div className={cls.devices}>
             <Filter />
             <div className={cls.products}>
-                {data.map(device => {
+                {data.data.map(device => {
                     return <Device product={device} key={device.id} />
                 })}
             </div>

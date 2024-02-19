@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Product } from "/shared/api/productApi";
-import { serverUrl } from "/shared/config/server/server";
 import cls from './Device.module.scss';
 import Title from "/shared/ui/Title/Title";
 import Button from "/shared/ui/Button/Button";
+import { serverUrl } from "/shared/api/generalApi";
 
 interface DeviceProps {
     product: Product

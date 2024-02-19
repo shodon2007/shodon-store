@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { URLS } from '/shared/config/server/server'
+import ApiGeneral from './generalApi'
 
 export interface Attribute {
   id: number
@@ -23,13 +23,14 @@ export interface Product extends CatalogItem {
   attributes: Attribute[]
 }
 
-class ProductApi {
+class ProductApi extends ApiGeneral {
   async getAllProducts (type: string) {
-    return await axios.get<Product[]>(URLS.products, {
+    console.log('hello', this.urls.products);
+    return await this.api.get<Product[]>(this.urls.products, {
       params: {
         filters: {type}
       }
-    }).then(res => res.data);
+    });
   }
 }
 

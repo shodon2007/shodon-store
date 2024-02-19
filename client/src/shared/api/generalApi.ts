@@ -1,10 +1,17 @@
-import { serverUrl } from '/shared/config/server/server'
+import axios from "axios";
+
+// const serverUrl = 'https://store-server.shodon.ru';
+export const serverUrl = "http://localhost:3000";
 
 class ApiGeneral {
-  public url: string
-  constructor () {
-    this.url = serverUrl
-  }
+	public urls = {
+		catalog: `/api/catalog`,
+		auth: `/api/auth`,
+		products: `/api/product/all`,
+	};
+	public api = axios.create({
+		baseURL: serverUrl,
+	});
 }
 
-export default ApiGeneral
+export default ApiGeneral;

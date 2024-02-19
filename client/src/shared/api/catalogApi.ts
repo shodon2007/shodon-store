@@ -1,12 +1,11 @@
-import axios from 'axios'
-import ApiGeneral from './generalApi'
-import { URLS } from '/shared/config/server/server'
-import { CatalogItem } from './productApi'
+import axios, { AxiosError } from "axios";
+import ApiGeneral from "./generalApi";
+import { CatalogItem } from "./productApi";
 
 class CatalogApi extends ApiGeneral {
-  async getCatalog () {
-    return await axios.get<CatalogItem[]>(URLS.catalog)
-  }
+	async getCatalog() {
+    return await this.api.get<CatalogItem[]>(this.urls.catalog)
+	}
 }
 
-export default new CatalogApi()
+export default new CatalogApi();
