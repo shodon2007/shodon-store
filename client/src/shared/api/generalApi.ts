@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const serverUrl = 'https://store-server.shodon.ru';
-export const serverUrl = "http://localhost:3000";
+export const serverUrl = 'https://store-server.shodon.ru';
+// export const serverUrl = "http://localhost:3000";
 
 class ApiGeneral {
 	public urls = {

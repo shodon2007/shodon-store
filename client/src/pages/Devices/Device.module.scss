@@ -7,6 +7,11 @@
 	grid-template-columns: 300px auto max-content;
 	gap: 5px;
 	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.device:hover {
+	background-color: var(--primary-focus-color);
 }
 
 .center {

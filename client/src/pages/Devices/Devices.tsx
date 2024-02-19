@@ -34,11 +34,13 @@ const Devices: FC = () => {
         return error.message;
     }
 
+    console.log(data);
+
     return (
         <div className={cls.devices}>
             <Filter />
             <div className={cls.products}>
-                {data.data.map(device => {
+                {data.map(device => {
                     return <Device product={device} key={device.id} />
                 })}
             </div>

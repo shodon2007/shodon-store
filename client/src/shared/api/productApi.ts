@@ -25,7 +25,6 @@ export interface Product extends CatalogItem {
 
 class ProductApi extends ApiGeneral {
   async getAllProducts (type: string) {
-    console.log('hello', this.urls.products);
     return await this.api.get<Product[]>(this.urls.products, {
       params: {
         filters: {type}

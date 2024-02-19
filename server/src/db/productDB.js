@@ -37,11 +37,12 @@ class ProductDB extends Database {
         );
 
         devices = devices.map(el => {
+            const fixEl = el;
             if (el.attributes === 'string') {
-                el.attributes = JSON.parse(el.attributes);
+                fixEl.attributes = JSON.parse(el.attributes);
             }
 
-            return el;
+            return fixEl;
         })
 
         return devices;

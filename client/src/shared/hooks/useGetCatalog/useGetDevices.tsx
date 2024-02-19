@@ -6,7 +6,7 @@ const useGetDevices = (type: string) => {
         queryKey: ["products", type],
         queryFn: async () => {
             const res = await productApi.getAllProducts(type);
-            return res;
+            return res.data;
         }
     });
 
