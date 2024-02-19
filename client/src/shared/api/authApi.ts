@@ -1,49 +1,33 @@
-import axios from 'axios'
-import ApiGeneral from './generalApi'
+import axios, { AxiosError, AxiosResponse } from "axios";
+import ApiGeneral from "./generalApi";
 
 interface Auth {
-  username: string
-  message: string
-  token: string
+	username: string;
+	message: string;
+	token: string;
+}
+
+interface AuthError {
+  message: string;
 }
 
 class AuthApi extends ApiGeneral {
-  async login (username: string, password: string) {
+	async login(username: string, password: string): Promise<AxiosResponse<Auth>|AxiosError<AuthError>> {
     try {
-      const response = await this.api.get<Auth>(this.urls.auth, { params: { username, password } })
-      return {
-        username: response.data.username,
-        token: response.data.token,
-        message: response.data.message,
-        error: false
-      }
-    } catch (e) {
-      if (e.name === 'AxiosError') {
-        return {
-          error: true,
-          message: e.response.data.message
-        }
-      }
+      return await this.api.get<Auth>(this.urls.auth, {
+        params: { username, password },
+      });
+    } catch (error) {
+      return error;
     }
-  }
-  async registration (username: string, password: string) {
-    let resp
-    try {
-      resp = await axios.post<Auth>(this.urls.auth, { username, password })
-    } catch (e) {
-      return {
-        error: true,
-        message: e.response.data.message
-      }
+	}
+	async registration(username: string, password: string): Promise<AxiosResponse<Auth>|AxiosError<AuthError>> {
+		try {
+      return await this.api.post<Auth>(this.urls.auth, { username, password });
+    } catch(e) {
+      return e;
     }
-
-    return {
-      error: false,
-      message: resp.data.message,
-      username: resp.data.username,
-      token: resp.data.token
-    }
-  }
+	}
 }
 
-export default new AuthApi()
+export default new AuthApi();

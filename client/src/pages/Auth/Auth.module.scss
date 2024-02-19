@@ -1,7 +1,7 @@
 .auth {
 	display: flex;
 	flex-direction: column;
-	background-color: #1a2733;
+	background-color: var(--bg-color);
 	padding: 20px 30px;
 	width: 300px;
 	gap: 20px;

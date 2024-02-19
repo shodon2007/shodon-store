@@ -14,22 +14,22 @@ const Registration = () => {
     const dispatch = useDispatch();
     const closeModal = useContext(ModalContext);
 
-
-
     async function registrationClick(e: MouseEvent) {
         e.preventDefault();
-        const data = await authApi.registration(username, password);
+        const res = await authApi.registration(username, password);
 
-        if (data.error) {
-            return alert(data.message);
+        if (res instanceof Error && res.name === 'AxiosError') {
+            return alert(res.response.data.message);
         }
 
-        dispatch(
-            login({
-                token: data.token,
-                username: data.username,
-            })
-        );
+        if ('data' in res) {
+            dispatch(
+                login({
+                    token: res.data.token,
+                    username: res.data.username,
+                })
+            );
+        }
 
         closeModal.closeModal();
     }

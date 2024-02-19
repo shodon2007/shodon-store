@@ -12,7 +12,7 @@ import './app/styles/index.scss'
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(<div className={'app dark'}>
+root.render(<>
     <BrowserRouter>
         <Provider store={store}>
             <ThemeProvider>
@@ -22,4 +22,4 @@ root.render(<div className={'app dark'}>
             </ThemeProvider>
         </Provider>
     </BrowserRouter>
-</div>);
+</>);

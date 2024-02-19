@@ -5,12 +5,11 @@
 	font-size: 16px;
 }
 
-.btn {
-	background-color: transparent;
-	color: white;
+.btn.selected {
+	color: var(--bg-color);
 }
 
-.btn.selected {
-	color: #1a2733;
-	background-color: white;
+.btn:not(.selected) {
+	background-color: transparent;
+	color: var(--primary-color);
 }

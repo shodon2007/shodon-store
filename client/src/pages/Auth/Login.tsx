@@ -19,19 +19,25 @@ const Login = () => {
 
     async function loginClick(e: MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
-        const data = await authApi.login(username, password);
+        const res = await authApi.login(username, password);
 
-        console.log('это обработалось')
-        if (data.error) {
-            return alert(data.message)
+
+        if (res instanceof Error && res.name === 'AxiosError') {
+            return alert(res.response.data.message);
         }
 
-        dispatch(
-            login({
-                token: data.token,
-                username: data.username,
-            })
-        );
+        if ('data' in res) {
+            dispatch(
+                login({
+                    token: res.data.token,
+                    username: res.data.username,
+                })
+            );
+        }
+
+        setUsername('');
+        setPassword('');
+
         closeModal.closeModal();
     }
 
