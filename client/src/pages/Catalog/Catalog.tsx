@@ -1,12 +1,10 @@
 import { FC } from "react";
 
-import { useGetCatalog } from "/shared/hooks/useGetCatalog/useGetCatalog";
+import { useGetCatalog } from "src/shared/hooks/useGetCatalog/useGetCatalog";
 
 import cls from "./Catalog.module.scss";
 import { Link } from "react-router-dom";
-import { AxiosError } from "axios";
-import { CatalogItem } from "/shared/api/productApi";
-import { serverUrl } from "/shared/api/generalApi";
+import { serverUrl } from "src/shared/api/generalApi";
 
 const Catalog: FC = () => {
 

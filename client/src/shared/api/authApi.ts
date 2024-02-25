@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 import ApiGeneral from "./generalApi";
 
 interface Auth {

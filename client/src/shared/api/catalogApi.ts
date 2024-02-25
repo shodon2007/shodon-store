@@ -1,4 +1,3 @@
-import axios, { AxiosError } from "axios";
 import ApiGeneral from "./generalApi";
 import { CatalogItem } from "./productApi";
 

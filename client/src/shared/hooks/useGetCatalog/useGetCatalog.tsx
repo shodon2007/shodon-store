@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import catalogApi from "/shared/api/catalogApi";
+import catalogApi from "src/shared/api/catalogApi";
 
 const useGetCatalog = () => {
     const query = useQuery({

@@ -26,9 +26,9 @@ const Device: FC<DeviceProps> = ({ product }) => {
             <Title>{name}</Title>
             <div className={cls.attributes}>
                 {attributes.map(elem => {
-                    return <div key={elem.id}>
-                        <span>{elem.title}</span>:
-                        <span>{elem.description}</span>
+                    return <div key={elem.id} className={cls.attribute}>
+                        <span className={cls.attribute_title}>{elem.title}</span>:
+                        <span className={cls.attribute_description}>{elem.description}</span>
                     </div>
                 })}
             </div>

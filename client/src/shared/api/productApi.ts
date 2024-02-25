@@ -1,4 +1,3 @@
-import axios from 'axios'
 import ApiGeneral from './generalApi'
 
 export interface Attribute {
@@ -25,11 +24,13 @@ export interface Product extends CatalogItem {
 
 class ProductApi extends ApiGeneral {
   async getAllProducts (type: string) {
-    return await this.api.get<Product[]>(this.urls.products, {
+    const res = await this.api.get<Product[]>(this.urls.products, {
       params: {
         filters: {type}
       }
     });
+    console.log(res);
+    return res;
   }
 }
 

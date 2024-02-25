@@ -6,7 +6,7 @@ function buildResolves(options: Options) {
     const resolves: webpack.ResolveOptions = {
         extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"],
         alias: {
-            '': options.paths.src,
+            'src': options.paths.src,
         }
     }
 

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import productApi from "/shared/api/productApi";
+import productApi from "src/shared/api/productApi";
 
 const useGetDevices = (type: string) => {
     const query = useQuery({

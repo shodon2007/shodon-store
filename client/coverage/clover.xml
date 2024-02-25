@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708239714678" clover="3.2.0">
-  <project timestamp="1708239714678" name="All files">
-    <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3" elements="8" coveredelements="8" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
-    <file name="classNames.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\classNames.ts">
+<coverage generated="1708839157831" clover="3.2.0">
+  <project timestamp="1708839157831" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="11" coveredelements="11" complexity="0" loc="5" ncloc="5" packages="2" files="2" classes="2"/>
+    <package name="lib">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="4" count="9" type="stmt"/>
-      <line num="7" count="5" type="stmt"/>
-      <line num="8" count="4" type="stmt"/>
-    </file>
+      <file name="classNames.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\classNames.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui.Button">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Button.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\ui\Button\Button.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

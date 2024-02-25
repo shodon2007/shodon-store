@@ -27,15 +27,24 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
         <div className={classNames(cls.Navbar, {}, [className])}>
             <Link to={'/'} className={cls.title}>shodon store</Link>
             <nav className={cls.nav}>
-                <ThemeButton />
-                <Link to={'/basket'} className={cls.link}>
-                    <BasketSvg className={cls.svg} />
-                </Link>
                 {userSlice.token
-                    ? <LogoutSvg className={cls.svg} onClick={() => dispatch(logout())} />
-                    : <ProfileSvg className={cls.svg} onClick={() => setModal(true)} />
+                    ? (
+                        <>
+                            <ThemeButton />
+                            <Link to={'/basket'} className={cls.link}>
+                                <BasketSvg className={cls.svg} />
+                            </Link>
+                            <LogoutSvg className={cls.svg} onClick={() => dispatch(logout())} />
+                        </>
+                    )
+                    : (
+                        <>
+                            <div></div>
+                            <ThemeButton />
+                            <ProfileSvg className={cls.svg} onClick={() => setModal(true)} />
+                        </>
+                    )
                 }
-
             </nav>
             <Modal open={modal} setOpen={setModal}>
                 <Auth />
