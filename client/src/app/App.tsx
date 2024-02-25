@@ -1,7 +1,7 @@
-import useTheme from "/app/theme/useTheme";
-import AppRouter from "/app/providers/routes/ui/AppRouter";
-import { Navbar } from "/widgets/Navbar";
-import classNames from "/shared/lib/classNames";
+import useTheme from "src/app/theme/useTheme";
+import AppRouter from "src/app/providers/routes/ui/AppRouter";
+import { Navbar } from "src/widgets/Navbar";
+import classNames from "src/shared/lib/classNames";
 
 const App = () => {
     const { theme } = useTheme();

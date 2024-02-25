@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import classNames from "/shared/lib/classNames";
+import classNames from "src/shared/lib/classNames";
+import Button from "src/shared/ui/Button/Button";
 
 import cls from "./Tab.module.scss";
-import Button from "../Button/Button";
 
 interface TabProps {
     tabs: string[];

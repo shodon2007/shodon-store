@@ -1,11 +1,11 @@
 import { ChangeEvent, MouseEvent, useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '/app/providers/redux';
-import { ModalContext } from "/widgets/Modal";
+import { login } from 'src/app/providers/redux';
+import { ModalContext } from "src/widgets/Modal";
 
-import authApi from '/shared/api/authApi';
-import Button from '/shared/ui/Button/Button';
-import Input from '/shared/ui/Input/Input';
+import authApi from 'src/shared/api/authApi';
+import Button from 'src/shared/ui/Button/Button';
+import Input from 'src/shared/ui/Input/Input';
 
 import cls from './Auth.module.scss';
 

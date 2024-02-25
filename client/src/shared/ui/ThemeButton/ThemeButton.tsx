@@ -4,8 +4,9 @@ import LightSvg from './lightmode.svg';
 import DarkSvg from './darkmode.svg';
 
 import cls from "./ThemeButton.module.scss";
-import UseTheme from "/app/theme/useTheme";
-import { Theme } from "/app/theme/ThemeContext";
+import UseTheme from "src/app/theme/useTheme";
+import { Theme } from "src/app/theme/ThemeContext";
+import Button from "src/shared/ui/Button/Button";
 
 interface ThemeButtonProps {
     className?: string;
@@ -20,9 +21,9 @@ const ThemeButton: FC<ThemeButtonProps> = () => {
     }
 
     return (
-        <button className={cls.themeButton} onClick={toggleTheme}>
+        <Button className={cls.themeButton} onClick={toggleTheme}>
             {themeSvg[theme]}
-        </button>
+        </Button>
     );
 };
 export default ThemeButton;

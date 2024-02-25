@@ -1,6 +1,6 @@
 import { type RouteProps } from 'react-router-dom';
-import Catalog from '/pages/Catalog/Catalog';
-import Devices from '/pages/Devices/Devices';
+import Catalog from 'src/pages/Catalog/Catalog';
+import Devices from 'src/pages/Devices/Devices';
 export enum AppRoutes {
     DEVICES = 'devices',
     CATALOG = 'catalog',

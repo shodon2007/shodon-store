@@ -1,8 +1,10 @@
 import { ReactNode, useState } from "react";
-import cls from "./Auth.module.scss";
-import Tab from "../../shared/ui/Tab/Tab";
+
+import Tab from "src/shared/ui/Tab/Tab";
 import Login from "./Login";
 import Registration from "./Registration";
+
+import cls from "./Auth.module.scss";
 
 const Auth = () => {
     const [tabValue, setTabValue] = useState('войти');

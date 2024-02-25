@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
 import { Link } from "react-router-dom";
 
-import classNames from '/shared/lib/classNames';
-import { Modal } from '/widgets/Modal';
-import Auth from '/pages/Auth/Auth';
-import ThemeButton from '/shared/ui/ThemeButton/ThemeButton';
+import classNames from 'src/shared/lib/classNames';
+import { Modal } from 'src/widgets/Modal';
+import Auth from 'src/pages/Auth/Auth';
+import ThemeButton from 'src/shared/ui/ThemeButton/ThemeButton';
 
 import cls from './Navbar.module.scss';
 
@@ -12,7 +12,7 @@ import BasketSvg from './svg/basket.svg';
 import ProfileSvg from './svg/profile.svg';
 import LogoutSvg from './svg/logout.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, logout } from '/app/providers/redux';
+import { RootState, logout } from 'src/app/providers/redux';
 
 interface NavbarProps {
     className?: string
