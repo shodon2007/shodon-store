@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`testing Button.tsx testing children 1`] = `
+<button
+  class="Button "
+>
+  hello world baby
+</button>
+`;
+
+exports[`testing Button.tsx testing children string 1`] = `
+<button
+  class="Button "
+>
+  hello world
+</button>
+`;
+
+exports[`testing Button.tsx testing empty children 1`] = `
+<button
+  class="Button "
+/>
+`;
+
+exports[`testing Button.tsx testing empty children 2`] = `
+<button
+  class="Button "
+/>
+`;
+
 exports[`testing button tsx 1`] = `
 <button
   class="Button "

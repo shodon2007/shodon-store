@@ -6,7 +6,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 const Input: FC<InputProps> = ({ className, ...props }) => {
     return (
-        <input {...props} className={classNames(cls.Input, {}, [className])} />
+        <input
+            data-testid='input'
+            {...props}
+            className={classNames(cls.Input, {}, [className])}
+        />
     );
 };
 export default Input;

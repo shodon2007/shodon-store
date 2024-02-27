@@ -15,7 +15,6 @@ const Catalog: FC = () => {
     }
 
     if (isError) {
-        console.log(status);
         return error.message;
     }
 
