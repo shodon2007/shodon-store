@@ -1,3 +1,4 @@
+import { FilterType } from './filterApi'
 import ApiGeneral from './generalApi'
 
 export interface Attribute {
@@ -23,10 +24,11 @@ export interface Product extends CatalogItem {
 }
 
 class ProductApi extends ApiGeneral {
-  async getAllProducts (type: string) {
+  async getAllProducts (filters: FilterType, type: string) {
     const res = await this.api.get<Product[]>(this.urls.products, {
       params: {
-        filters: {type}
+        filters,
+        type,
       }
     });
     console.log(res);

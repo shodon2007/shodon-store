@@ -20,7 +20,7 @@ class FilterDB extends Database {
             }
         });
 
-        return Object.entries(newData);
+        return newData;
     }
 }
 

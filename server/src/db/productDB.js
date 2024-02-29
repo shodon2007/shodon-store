@@ -5,7 +5,7 @@ const path = require('path');
 const productSql = fs.readFileSync(path.resolve(__dirname, 'product.sql'), 'utf-8');
 
 class ProductDB extends Database {
-    async getAll(type) {
+    async getAll(filters, type) {
         let devices = await this.query(productSql, type);
 
         devices = devices.map(el => {

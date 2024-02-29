@@ -2,8 +2,8 @@ const productDB = require("../db/productDB");
 
 class ProductController {
     async getAll(req, res) {
-        const {filters} = req.query;
-        const data = await productDB.getAll(filters.type);
+        const {filters, type} = req.query;
+        const data = await productDB.getAll(filters, type);
 
         if (data) {
             return res.status(200).json(data);

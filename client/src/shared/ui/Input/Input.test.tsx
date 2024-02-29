@@ -6,5 +6,6 @@ describe('testing Input.tsx', () => {
         render(<Input className='hello world' />);
         const input = screen.getByTestId('input');
         expect(input).toBeInTheDocument();
+        expect(input).toHaveClass('Input hello world')
     })
 })
