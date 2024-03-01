@@ -1,34 +1,42 @@
-import { FC, useState } from "react";
-// import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-// import productService from "../../services/product.service";
+import { FC, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import cls from "./Devices.module.scss";
-import Device from "./Device";
-import { useGetDevices } from "src/shared/hooks/useGetDevices";
 import { useSearchParams } from "react-router-dom";
-import { useGetFilter } from "src/shared/hooks/useGetFilter";
-import { FilterType } from "src/shared/api/filterApi";
-import { Filter } from "src/widgets/Filter";
 
-// import ProductList from "../../components/ProductList/ProductList";
-// import Filter from "../../components/Filter/Filter";
-// import { TFilter } from "../../types/product";
+import { FilterType } from "src/shared/api/filterApi";
+import { useGetDevices } from "src/shared/hooks/useGetDevices";
+import { Filter } from "src/widgets/Filter";
+import Device from "./Device";
+
+import cls from "./Devices.module.scss";
 
 type Params = {
     type: string;
 };
 
-const Devices: FC = () => {
-    // const [searchParams, setSearchParams] = useSearchParams();
+function getAllFilterSettings(searchParams: URLSearchParams): FilterType {
+    const res: FilterType = {};
+    searchParams.forEach((value, key) => {
+        if (res[key]) {
+            res[key].push(value);
+        } else {
+            res[key] = [value];
+        }
+    })
+    return res;
+}
 
+const Devices: FC = () => {
+    const [searchParams] = useSearchParams();
+
+    const filtersSettings = getAllFilterSettings(searchParams);
+
+    const [filters, setFilters] = useState<FilterType>(filtersSettings);
     const { type } = useParams<Params>();
-    const [filter, setFilter] = useState<FilterType>({});
-    //
-    // if (!type) {
-    //     return "кароче ашибка";
-    // }
-    // const [filter, setFilter] = useState<TFilter>({ type, filter: [] });
-    const { data, isLoading, isError, error } = useGetDevices(filter, type);
+    const { data, isLoading, isError, error, refetch } = useGetDevices(filters, type);
+
+    useEffect(() => {
+        refetch();
+    }, [filters]);
 
     if (isLoading) {
         return "загрузка...";
@@ -38,11 +46,9 @@ const Devices: FC = () => {
         return error.message;
     }
 
-    console.log(data);
-
     return (
         <div className={cls.devices}>
-            <Filter />
+            <Filter filters={filters} setFilters={setFilters} />
             <div className={cls.products}>
                 {data.map(device => {
                     return <Device product={device} key={device.id} />
