@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import LightSvg from './lightmode.svg';
 import DarkSvg from './darkmode.svg';
 
 import cls from "./ThemeButton.module.scss";
-import UseTheme from "src/app/theme/useTheme";
+import UseTheme from "../model/useTheme";
 import { Theme } from "src/app/theme/ThemeContext";
 import Button from "src/shared/ui/Button/Button";
 
@@ -15,7 +15,7 @@ interface ThemeButtonProps {
 const ThemeButton: FC<ThemeButtonProps> = () => {
     const { theme, toggleTheme } = UseTheme();
 
-    const themeSvg = {
+    const themeSvg: Record<Theme, ReactNode> = {
         [Theme.DARK]: <DarkSvg className={cls.svg} />,
         [Theme.NORMAL]: <LightSvg className={cls.svg} />
     }

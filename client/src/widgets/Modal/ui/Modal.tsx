@@ -2,7 +2,7 @@ import { Context, FC, MouseEvent, ReactNode, createContext } from "react";
 import classNames from "src/shared/lib/classNames";
 import cls from "./Modal.module.scss";
 import { createPortal } from "react-dom";
-import UseTheme from "src/app/theme/useTheme";
+import {useTheme} from "src/features/toggleTheme";
 
 interface ModalProps {
     className?: string;
@@ -18,7 +18,7 @@ export interface ModalContextInterface {
 export const ModalContext: Context<ModalContextInterface> = createContext({});
 
 const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
-    const { theme } = UseTheme();
+    const { theme } = useTheme();
 
     function closeModal() {
         setOpen(false);

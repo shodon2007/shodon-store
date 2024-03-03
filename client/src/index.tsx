@@ -12,7 +12,7 @@ import './app/styles/index.scss'
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(<>
+root.render(
     <BrowserRouter>
         <Provider store={store}>
             <ThemeProvider>
@@ -22,4 +22,4 @@ root.render(<>
             </ThemeProvider>
         </Provider>
     </BrowserRouter>
-</>);
+);

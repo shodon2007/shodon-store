@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import classNames from 'src/shared/lib/classNames';
 import { Modal } from 'src/widgets/Modal';
 import Auth from 'src/pages/Auth/Auth';
-import ThemeButton from 'src/shared/ui/ThemeButton/ThemeButton';
+import { ThemeButton } from 'src/features/toggleTheme';
 
 import cls from './Navbar.module.scss';
 

@@ -1,4 +1,4 @@
-import useTheme from "src/app/theme/useTheme";
+import {useTheme} from "src/features/toggleTheme";
 import AppRouter from "src/app/providers/routes/ui/AppRouter";
 import { Navbar } from "src/widgets/Navbar";
 import classNames from "src/shared/lib/classNames";
