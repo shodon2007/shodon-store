@@ -53,12 +53,6 @@ const Devices: FC = () => {
                 {data.map(device => {
                     return <Device product={device} key={device.id} />
                 })}
-                  {data.map(device => {
-                    return <Device product={device} key={device.id} />
-                })}
-                  {data.map(device => {
-                    return <Device product={device} key={device.id} />
-                })}
             </div>
         </div>
     );
