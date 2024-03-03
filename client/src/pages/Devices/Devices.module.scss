@@ -1,13 +1,13 @@
-.devices {
+.devicesPage {
 	display: flex;
 	height: 100%;
 	gap: 10px;
 }
 
-.products {
+.devices {
 	flex: 1 1 auto;
 	overflow-y: scroll;
-	height: calc(100dvh - 100px);
+	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-auto-rows: 300px;

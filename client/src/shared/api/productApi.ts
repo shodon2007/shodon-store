@@ -2,7 +2,7 @@ import { FilterType } from './filterApi'
 import ApiGeneral from './generalApi'
 
 export interface Attribute {
-  id: number
+  id?: number
   title: string
   description: string
 }

@@ -1,9 +1,11 @@
-import { Dispatch, FC, SetStateAction, memo, useEffect } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import classNames from "src/shared/lib/classNames";
 import cls from "./Filter.module.scss";
 import { useGetFilter } from "src/shared/hooks/useGetFilter";
 import { useParams, useSearchParams } from "react-router-dom";
 import { FilterType } from "src/shared/api/filterApi";
+import toggleAttribute from "../model/toggleAttribute";
+import { Attribute } from "src/shared/api/productApi";
 
 interface FilterProps {
     className?: string;
@@ -11,7 +13,7 @@ interface FilterProps {
     setFilters: Dispatch<SetStateAction<FilterType>>
 }
 
-const Filter: FC<FilterProps> = memo(({ filters, setFilters }) => {
+const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
     const [, setSearchParams] = useSearchParams();
     const { type } = useParams();
 
@@ -22,42 +24,11 @@ const Filter: FC<FilterProps> = memo(({ filters, setFilters }) => {
     }, [filters]);
 
     if (isLoading) {
-        return <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+        return <div>Загрузка данных</div>
     }
 
-
-    function addAttributeToFilter(title: string, description: string) {
-        setFilters((prev) => {
-            const newFilter = { ...prev };
-
-            if (prev[title]) {
-                newFilter[title].push(description);
-            } else {
-                newFilter[title] = [description];
-            }
-
-            return newFilter;
-        });
-    }
-
-    function removeAttributeInFilter(title: string, description: string) {
-        setFilters((prev) => {
-            const newFilter = { ...prev };
-
-            if (prev[title]) {
-                newFilter[title] = newFilter[title].filter(el => el != description);
-            }
-
-            return newFilter;
-        });
-    }
-
-    function toggleAttribute(checked: boolean, title: string, description: string) {
-        if (checked) {
-            return addAttributeToFilter(title, description);
-        } else {
-            return removeAttributeInFilter(title, description);
-        }
+    function toggleAttributeHandler(checked: boolean, attribute: Attribute) {
+        setFilters((prev) => toggleAttribute(prev, attribute, checked))
     }
 
     return (
@@ -71,7 +42,7 @@ const Filter: FC<FilterProps> = memo(({ filters, setFilters }) => {
                             <div key={index}>
                                 <input
                                     type="checkbox"
-                                    onChange={(e) => toggleAttribute(e.target.checked, title, description)}
+                                    onChange={(e) => toggleAttributeHandler(e.target.checked, {title, description})}
                                     checked={checked}
                                 />
                                 <span>{description}</span>
@@ -83,5 +54,5 @@ const Filter: FC<FilterProps> = memo(({ filters, setFilters }) => {
             })}
         </div>
     );
-});
+};
 export default Filter;

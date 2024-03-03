@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { FilterType } from "src/shared/api/filterApi";
 import { useGetDevices } from "src/shared/hooks/useGetDevices";
 import { Filter } from "src/widgets/Filter";
-import Device from "./Device";
+import Device from "src/widgets/DeviceCard/ui/Device";
 
 import cls from "./Devices.module.scss";
 
@@ -47,10 +47,16 @@ const Devices: FC = () => {
     }
 
     return (
-        <div className={cls.devices}>
+        <div className={cls.devicesPage}>
             <Filter filters={filters} setFilters={setFilters} />
-            <div className={cls.products}>
+            <div className={cls.devices}>
                 {data.map(device => {
+                    return <Device product={device} key={device.id} />
+                })}
+                  {data.map(device => {
+                    return <Device product={device} key={device.id} />
+                })}
+                  {data.map(device => {
                     return <Device product={device} key={device.id} />
                 })}
             </div>

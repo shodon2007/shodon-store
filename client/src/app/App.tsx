@@ -10,7 +10,9 @@ const App = () => {
         <div className={classNames("app", {}, [theme])}>
             <div className='body'>
                 <Navbar />
-                <AppRouter />
+                <div className="content">
+                    <AppRouter />
+                </div>
             </div>
         </div>
     );

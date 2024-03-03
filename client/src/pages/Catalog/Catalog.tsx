@@ -8,7 +8,7 @@ import { serverUrl } from "src/shared/api/generalApi";
 
 const Catalog: FC = () => {
 
-    const { data: catalog, isLoading, error, isError, status } = useGetCatalog();
+    const { data: catalog, isLoading, error, isError } = useGetCatalog();
 
     if (isLoading) {
         return <span>Загрузка...</span>
