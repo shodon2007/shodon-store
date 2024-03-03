@@ -13,19 +13,18 @@
 	background: var(--bg-color);
 	color: var(--primary-color);
 
-	max-height: 100dvh;
-
 	& > .body {
 		display: flex;
 		flex-direction: column;
+		height: 100dvh;
 		max-width: 1200px;
 		margin: 0 auto;
-		max-height: 100dvh;
 	}
 
 	& > .body > .content {
-		max-height: 100%;
+		display: flex;
 		flex: 1 1 auto;
+		overflow: auto;
 	}
 }
 

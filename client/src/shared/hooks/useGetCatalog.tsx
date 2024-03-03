@@ -5,7 +5,7 @@ const useGetCatalog = () => {
     const query = useQuery({
         queryKey: ['catalog'],
         queryFn: () => {
-            return catalogApi.getCatalog();
+            return catalogApi.getCatalog().then(res => res.data);
         },
     });
 

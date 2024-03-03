@@ -11,7 +11,7 @@ const Catalog: FC = () => {
     const { data: catalog, isLoading, error, isError } = useGetCatalog();
 
     if (isLoading) {
-        return <span>Загрузка...</span>
+        return <span>Загрузка каталога, подождите...</span>
     }
 
     if (isError) {
@@ -20,7 +20,7 @@ const Catalog: FC = () => {
 
     return (
         <div className={cls.catalog}>
-            {catalog.data.map(elem => {
+            {catalog.map(elem => {
                 return <Link to={`/${elem.name}`} className={cls.item} key={elem.id}>
                     <div className={cls.img}>
                         <img src={`${serverUrl}/img${elem.img}`} alt={elem.name} />

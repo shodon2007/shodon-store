@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, logout } from 'src/app/providers/redux';
 
 interface NavbarProps {
-    className: string
+    className?: string
 }
 
 const Navbar: FC<NavbarProps> = ({ className }) => {

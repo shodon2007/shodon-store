@@ -1,12 +1,12 @@
 .devicesPage {
+	flex: 1 0 auto;
 	display: flex;
-	height: 100%;
 	gap: 10px;
 }
 
 .devices {
 	flex: 1 1 auto;
-	overflow-y: scroll;
+	overflow: auto;
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
