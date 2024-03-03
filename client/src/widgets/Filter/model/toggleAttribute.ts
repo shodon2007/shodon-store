@@ -9,9 +9,9 @@ function toggleAttribute(filters: FilterType, attribute: Attribute, checked: boo
     } = attribute;
 
     if (checked) {
-        newFilter[title] = newFilter[title] ? [...newFilter[title], description] : [description];
+        newFilter[title] = newFilter[title] ? newFilter[title].filter(el => el != description): [];
     } else {
-        newFilter[title] = newFilter[title].filter(el => el != description);
+        newFilter[title] = newFilter[title] ? [...newFilter[title], description] : [description];
     }
 
     return newFilter;

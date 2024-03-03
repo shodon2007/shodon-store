@@ -10,8 +10,6 @@ class FilterDB extends Database {
             type
         );
 
-        console.log(data);
-
         const newData = {};
 
         data.forEach((item) => {

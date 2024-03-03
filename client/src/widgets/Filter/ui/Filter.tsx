@@ -6,6 +6,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { FilterType } from "src/shared/api/filterApi";
 import toggleAttribute from "../model/toggleAttribute";
 import { Attribute } from "src/shared/api/productApi";
+import Button, { buttonTheme } from "src/shared/ui/Button/Button";
 
 interface FilterProps {
     className?: string;
@@ -24,10 +25,10 @@ const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
     }, [filters]);
 
     if (isLoading) {
-        return <div>Загрузка данных</div>
+        return <div>Загрузка фильтров...</div>
     }
 
-    function toggleAttributeHandler(checked: boolean, attribute: Attribute) {
+    function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
         setFilters((prev) => toggleAttribute(prev, attribute, checked))
     }
 
@@ -36,17 +37,18 @@ const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
             {Object.entries(attributes).map(([title, descriptions], index) => {
                 return <div key={index}>
                     <span>{title}</span>
-                    <div>{descriptions.map((description, index) => {
+                    <div className={cls.attributes}>
+                        {descriptions.map((description, index) => {
                         const checked = !!filters[title] && filters[title].includes(description);
                         return (
-                            <div key={index}>
-                                <input
-                                    type="checkbox"
-                                    onChange={(e) => toggleAttributeHandler(e.target.checked, {title, description})}
-                                    checked={checked}
-                                />
+                            <Button
+                                theme={buttonTheme.SMALLEST}
+                                key={index} 
+                                className={classNames(cls.attribute, {[cls.checked]: checked})}
+                                onClick={() => toggleAttributeHandler({title, description}, checked)}
+                                >
                                 <span>{description}</span>
-                            </div>
+                            </Button>
                         )
                     })}
                     </div>

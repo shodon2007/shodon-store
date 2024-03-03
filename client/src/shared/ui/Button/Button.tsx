@@ -4,13 +4,19 @@ import classNames from "src/shared/lib/classNames";
 
 import cls from "./Button.module.scss";
 
+export enum buttonTheme {
+    SMALLEST = 'smallest',
+};
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
+    theme?: buttonTheme;
 }
 
-const Button: FC<ButtonProps> = ({ children, className, ...props }) => {
+const Button: FC<ButtonProps> = ({ children, className, theme, ...props }) => {
+
     return (
-        <button {...props} className={classNames(cls.Button, {}, [className])}>
+        <button {...props} className={classNames(cls.Button, {}, [className, cls[theme]])}>
             {children}
         </button>
     );

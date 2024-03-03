@@ -1,4 +1,18 @@
 .Filter {
+	overflow: auto;
 	width: 200px;
-	background-color: white;
+}
+
+.attributes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.attribute.checked {
+	background-color: green;
+}
+
+.checkbox {
+	display: none;
 }

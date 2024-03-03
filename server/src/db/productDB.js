@@ -3,17 +3,17 @@ const fs = require("fs");
 
 class ProductDB extends Database {
 	async getAll(filters, type) {
-        let query = await this.query(`
-        SELECT device_id 
-        FROM attribute 
-        ${Object.keys(filters).length < 1 ? '' : 'WHERE'}
-            ${Object.entries(filters).map(([title, descs]) => {
-                if (descs.length <=0) {
-                    return ''
-                }
-                return `(title = "${title}" AND description in (${descs.map(desc => `"${desc}"`).join(',')}))`
-            }).join(' OR ')}
-        `);
+        // let query = await this.query(`
+        // SELECT device_id 
+        // FROM attribute 
+        // ${Object.keys(filters).length < 1 ? '' : 'WHERE'}
+        //     ${Object.entries(filters).map(([title, descs]) => {
+        //         if (descs.length <=0) {
+        //             return ''
+        //         }
+        //         return `(title = "${title}" AND description in (${descs.map(desc => `"${desc}"`).join(',')}))`
+        //     }).join(' OR ')}
+        // `);
 
 		let devices = await this.query(
 			`
@@ -35,12 +35,8 @@ class ProductDB extends Database {
         INNER JOIN type ON d.type_id = type.id
         WHERE 
             type.name = ? 
-            ${query.length < 1 ? '' : 'AND'}
-            d.id in (${query.map(el => el.device_id).join(' , ')})
-        GROUP BY d.id`,
+         GROUP BY d.id`,
         type);
-
-        console.log(devices);
 
 		devices = devices.map((el) => {
 			if (typeof el.attributes === "string") {
@@ -49,6 +45,24 @@ class ProductDB extends Database {
 
 			return el;
 		});
+
+        devices = devices.filter(device => {
+            for(let i in filters) {
+                const findAttributes = device.attributes.find(attribute => attribute.title === i && filters[i].includes(attribute.description));
+
+                if (!findAttributes || findAttributes.length < 1) {
+                    return false;
+                }
+
+                // for (let attribute of device.attributes) {
+                //     if (attribute.title === i && !filters[i].includes(attribute.description)) {
+                //         return false;
+                //     }
+                // }
+            }
+
+            return true;
+        })
 
 		return devices;
 	}
