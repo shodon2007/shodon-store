@@ -15,7 +15,7 @@
 git clone https://github.com/shodon2007/shodon-store.git
 ```
 
-дальше переходим во фронтенд и скачиваем node_modules
+Если хотим запустить frontend переходим в папку client, а если хотим server запустить то переходим в папку server
 
 ```
 npm i
@@ -24,7 +24,7 @@ npm i
 потом просто запускаем:
 
 ```
-npm run dev
+npm start
 ```
 
 ## Стек технологий:
