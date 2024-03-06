@@ -9,6 +9,7 @@ import { serverUrl } from "src/shared/api/generalApi";
 const Catalog: FC = () => {
 
     const { data: catalog, isLoading, error, isError } = useGetCatalog();
+    console.log(useGetCatalog());
 
     if (isLoading) {
         return <span>Загрузка каталога, подождите...</span>
@@ -18,10 +19,8 @@ const Catalog: FC = () => {
         return error.message;
     }
 
-    console.log(catalog);
-
     return (
-        <div className={cls.catalog}>
+        <div className={cls.catalog} data-testid='catalog-page'>
             {catalog.map(elem => {
                 return <Link to={`/${elem.name}`} className={cls.item} key={elem.id} data-testid='catalog-link'>
                     <div className={cls.img}>
