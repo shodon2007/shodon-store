@@ -12,7 +12,7 @@ const Catalog: FC = () => {
     console.log(useGetCatalog());
 
     if (isLoading) {
-        return <span>Загрузка каталога, подождите...</span>
+        return <span data-testid='loading-page'>Загрузка каталога, подождите...</span>
     }
 
     if (isError) {

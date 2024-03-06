@@ -24,8 +24,8 @@ describe('Testing Catalog.test.tsx', () => {
         isError: false,
     };
 
-    test('first testging', async () => {
-        const mock = jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(resp);
+    test('Testing Catalog links', async () => {
+        jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(resp);
         render(<MemoryRouter initialEntries={['/']}><ReactQuery><Catalog /></ReactQuery></MemoryRouter>)
         const CatalogItems = await screen.findAllByTestId('catalog-link');
         const CatalogPage = await screen.findByTestId('catalog-page');
@@ -33,5 +33,15 @@ describe('Testing Catalog.test.tsx', () => {
         expect(CatalogItems.length).toBe(2);
         expect(CatalogPage).toBeInTheDocument();
         expect(CatalogPage).toMatchSnapshot();
+    });
+
+    test('testing loading', async () => {
+        const loadingResp: any = {isLoading: true};
+        jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(loadingResp);
+        render(<MemoryRouter initialEntries={['/']}><ReactQuery><Catalog /></ReactQuery></MemoryRouter>);
+        const loadingPage = await screen.findByTestId('loading-page');
+
+        expect(loadingPage).toBeInTheDocument();
+        expect(loadingPage).toMatchSnapshot();
     })
 })

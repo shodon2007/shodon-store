@@ -47,7 +47,7 @@ const Devices: FC = () => {
     }
 
     return (
-        <div className={cls.devicesPage}>
+        <div className={cls.devicesPage} data-testid='devices-page'>
             <Filter filters={filters} setFilters={setFilters} />
             <div className={cls.devices}>
                 {data.map(device => {

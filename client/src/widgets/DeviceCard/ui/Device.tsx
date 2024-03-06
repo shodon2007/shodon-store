@@ -18,7 +18,7 @@ const Device: FC<DeviceProps> = ({ product }) => {
     } = product;
 
 
-    return <div className={cls.device}>
+    return <div className={cls.device} data-testid='device-item' >
         <div className={cls.left}>
             <img className={cls.image} src={`${serverUrl}/img${img}`} />
         </div>
