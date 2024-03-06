@@ -18,10 +18,12 @@ const Catalog: FC = () => {
         return error.message;
     }
 
+    console.log(catalog);
+
     return (
         <div className={cls.catalog}>
             {catalog.map(elem => {
-                return <Link to={`/${elem.name}`} className={cls.item} key={elem.id}>
+                return <Link to={`/${elem.name}`} className={cls.item} key={elem.id} data-testid='catalog-link'>
                     <div className={cls.img}>
                         <img src={`${serverUrl}/img${elem.img}`} alt={elem.name} />
                     </div>

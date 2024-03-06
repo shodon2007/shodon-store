@@ -120,7 +120,10 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,13 +162,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,6 +189,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { FilterType } from "src/shared/api/filterApi";
 import toggleAttribute from "../model/toggleAttribute";
 import { Attribute } from "src/shared/api/productApi";
+import Button, { buttonTheme } from "src/shared/ui/Button/Button";
 &nbsp;
 interface FilterProps {
     className?: string;
@@ -203,10 +208,10 @@ const Filter: FC&lt;FilterProps&gt; = <span class="fstat-no" title="function not
     }, [filters]);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;div&gt;Загрузка данных&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;div&gt;Загрузка фильтров...&lt;/div&gt;</span>
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >toggleAttributeHandler(</span>checked: boolean, attribute: Attribute) {
+    function <span class="fstat-no" title="function not covered" >toggleAttributeHandler(</span>attribute: Attribute, checked: boolean) {
 <span class="cstat-no" title="statement not covered" >        setFilters(<span class="fstat-no" title="function not covered" >(p</span>rev) =&gt; <span class="cstat-no" title="statement not covered" >toggleAttribute(prev, attribute, checked))</span></span>
     }
 &nbsp;
@@ -215,17 +220,18 @@ const Filter: FC&lt;FilterProps&gt; = <span class="fstat-no" title="function not
             {Object.entries(attributes).map(<span class="fstat-no" title="function not covered" >([</span>title, descriptions], index) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return &lt;div key={index}&gt;</span>
                     &lt;span&gt;{title}&lt;/span&gt;
-                    &lt;div&gt;{descriptions.map(<span class="fstat-no" title="function not covered" >(d</span>escription, index) =&gt; {
+                    &lt;div className={cls.attributes}&gt;
+                        {descriptions.map(<span class="fstat-no" title="function not covered" >(d</span>escription, index) =&gt; {
                         const checked = <span class="cstat-no" title="statement not covered" >!!filters[title] &amp;&amp; filters[title].includes(description);</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
-                            &lt;div key={index}&gt;
-                                &lt;input
-                                    type="checkbox"
-                                    onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >toggleAttributeHandler(e.target.checked, {title, description})}</span>
-                                    checked={checked}
-                                /&gt;
+                            &lt;Button
+                                theme={buttonTheme.SMALLEST}
+                                key={index} 
+                                className={classNames(cls.attribute, {[cls.checked]: checked})}
+                                onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >toggleAttributeHandler({title, description}, checked)}</span>
+                                &gt;
                                 &lt;span&gt;{description}&lt;/span&gt;
-                            &lt;/div&gt;
+                            &lt;/Button&gt;
                         )
                     })}
                     &lt;/div&gt;
@@ -241,7 +247,7 @@ export default Filter;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-03T07:35:10.517Z
+                at 2024-03-04T22:55:47.802Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
