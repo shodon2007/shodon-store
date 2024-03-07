@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709788075677" clover="3.2.0">
-  <project timestamp="1709788075677" name="All files">
+<coverage generated="1709788232682" clover="3.2.0">
+  <project timestamp="1709788232682" name="All files">
     <metrics statements="94" coveredstatements="68" conditionals="24" coveredconditionals="10" methods="38" coveredmethods="26" elements="156" coveredelements="104" complexity="0" loc="94" ncloc="94" packages="20" files="23" classes="23"/>
     <package name="app.providers.routes">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -12,9 +12,9 @@
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="AppRouter.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\providers\routes\ui\AppRouter.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
       </file>
     </package>
     <package name="app.providers.tanstack-query">
@@ -36,15 +36,15 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="renderWithRouter.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\tests\renderWithRouter\renderWithRouter.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="7" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
     </package>
     <package name="pages.Catalog">
       <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="Catalog.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\pages\Catalog\Catalog.tsx">
         <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
         <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
@@ -94,8 +94,8 @@
       <file name="generalApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\generalApi.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
       </file>
       <file name="productApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\productApi.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -108,8 +108,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="routeConfig.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\config\routeConfig\routeConfig.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
       </file>
     </package>
     <package name="shared.lib.classNames">
@@ -125,7 +125,7 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="useGetCatalog.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\useGetCatalog\useGetCatalog.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="12" count="2" type="stmt"/>

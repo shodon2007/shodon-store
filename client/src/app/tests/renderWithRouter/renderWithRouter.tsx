@@ -7,6 +7,7 @@ import { ReactQuery } from "src/app/providers/tanstack-query";
 const renderWithRouter = (initialEntrie: string = '/', component: ReactNode = <div></div>) => {
     return render(<MemoryRouter initialEntries={[initialEntrie]}>
         <ReactQuery>
+            {component}
             <AppRouter />
         </ReactQuery>
     </MemoryRouter>)

@@ -3,7 +3,7 @@ import * as useGetCatalogModule from "src/shared/lib/useGetCatalog/useGetCatalog
 import renderWithRouter from "src/app/tests/renderWithRouter/renderWithRouter";
 
 describe('Testing Catalog.test.tsx', () => {
-    let resp: any = {
+    const resp: any = {
         isLoading: false,
         data: [
             {
