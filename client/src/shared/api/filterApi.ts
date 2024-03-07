@@ -1,6 +1,6 @@
-import ApiGeneral from "./generalApi";
+import ApiGeneral from './generalApi'
 
-export type FilterType = Record<string, string[]>;
+export type FilterType = Record<string, string[]>
 
 class FilterApi extends ApiGeneral {
   async getFilter(type: string) {
@@ -8,8 +8,8 @@ class FilterApi extends ApiGeneral {
       params: {
         type,
       },
-    });
+    })
   }
 }
 
-export default new FilterApi();
+export default new FilterApi()

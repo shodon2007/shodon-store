@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC } from 'react'
 
 const Admin: FC = () => {
-  return <div>hello world</div>;
-};
+  return <div>hello world</div>
+}
 
-export default Admin;
+export default Admin

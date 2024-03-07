@@ -1,14 +1,14 @@
-import { AxiosError, AxiosResponse } from "axios";
-import ApiGeneral from "./generalApi";
+import { AxiosError, AxiosResponse } from 'axios'
+import ApiGeneral from './generalApi'
 
 interface Auth {
-  username: string;
-  message: string;
-  token: string;
+  username: string
+  message: string
+  token: string
 }
 
 interface AuthError {
-  message: string;
+  message: string
 }
 
 class AuthApi extends ApiGeneral {
@@ -19,9 +19,9 @@ class AuthApi extends ApiGeneral {
     try {
       return await this.api.get<Auth>(this.urls.auth, {
         params: { username, password },
-      });
+      })
     } catch (error) {
-      return error;
+      return error
     }
   }
   async registration(
@@ -29,11 +29,11 @@ class AuthApi extends ApiGeneral {
     password: string,
   ): Promise<AxiosResponse<Auth> | AxiosError<AuthError>> {
     try {
-      return await this.api.post<Auth>(this.urls.auth, { username, password });
+      return await this.api.post<Auth>(this.urls.auth, { username, password })
     } catch (e) {
-      return e;
+      return e
     }
   }
 }
 
-export default new AuthApi();
+export default new AuthApi()

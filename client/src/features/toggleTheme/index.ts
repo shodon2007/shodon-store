@@ -1,4 +1,4 @@
-import ThemeButton from "./ui/ThemeButton";
-import useTheme from "./model/useTheme";
+import ThemeButton from './ui/ThemeButton'
+import useTheme from './model/useTheme'
 
-export { ThemeButton, useTheme };
+export { ThemeButton, useTheme }
