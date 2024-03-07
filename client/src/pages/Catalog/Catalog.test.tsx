@@ -1,8 +1,6 @@
-import { render, screen } from "@testing-library/react"
-import Catalog from "./Catalog"
-import { ReactQuery } from "src/app/providers/tanstack-query";
+import {screen } from "@testing-library/react"
 import * as useGetCatalogModule from "src/shared/lib/useGetCatalog/useGetCatalog";
-import { MemoryRouter } from "react-router-dom";
+import renderWithRouter from "src/app/tests/renderWithRouter/renderWithRouter";
 
 describe('Testing Catalog.test.tsx', () => {
     let resp: any = {
@@ -26,7 +24,7 @@ describe('Testing Catalog.test.tsx', () => {
 
     test('Testing Catalog links', async () => {
         jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(resp);
-        render(<MemoryRouter initialEntries={['/']}><ReactQuery><Catalog /></ReactQuery></MemoryRouter>)
+        renderWithRouter();
         const CatalogItems = await screen.findAllByTestId('catalog-link');
         const CatalogPage = await screen.findByTestId('catalog-page');
 
@@ -38,7 +36,7 @@ describe('Testing Catalog.test.tsx', () => {
     test('testing loading', async () => {
         const loadingResp: any = {isLoading: true};
         jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(loadingResp);
-        render(<MemoryRouter initialEntries={['/']}><ReactQuery><Catalog /></ReactQuery></MemoryRouter>);
+        renderWithRouter();
         const loadingPage = await screen.findByTestId('loading-page');
 
         expect(loadingPage).toBeInTheDocument();
