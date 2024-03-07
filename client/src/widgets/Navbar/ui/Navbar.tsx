@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { Link } from "react-router-dom";
 
-import classNames from 'src/shared/lib/classNames';
+import classNames from 'src/shared/lib/classNames/classNames';
 import { Modal } from 'src/widgets/Modal';
 import Auth from 'src/pages/Auth/Auth';
 import { ThemeButton } from 'src/features/toggleTheme';

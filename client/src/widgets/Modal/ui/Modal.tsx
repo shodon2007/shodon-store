@@ -1,5 +1,5 @@
 import { Context, FC, MouseEvent, ReactNode, createContext } from "react";
-import classNames from "src/shared/lib/classNames";
+import classNames from "src/shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
 import { createPortal } from "react-dom";
 import {useTheme} from "src/features/toggleTheme";

@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
-import classNames from "src/shared/lib/classNames";
+import classNames from "src/shared/lib/classNames/classNames";
 import cls from "./Filter.module.scss";
-import { useGetFilter } from "src/shared/hooks/useGetFilter";
+import { useGetFilter } from "src/shared/lib/useGetFilter/useGetFilter";
 import { useParams, useSearchParams } from "react-router-dom";
 import { FilterType } from "src/shared/api/filterApi";
 import toggleAttribute from "../model/toggleAttribute";

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { useGetCatalog } from "src/shared/hooks/useGetCatalog";
+import { useGetCatalog } from "src/shared/lib/useGetCatalog/useGetCatalog";
 
 import cls from "./Catalog.module.scss";
 import { Link } from "react-router-dom";

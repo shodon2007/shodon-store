@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { ReactQuery } from 'src/app/providers/tanstack-query';
-import * as useGetDevicesModule from 'src/shared/hooks/useGetDevices'
+import * as useGetDevicesModule from 'src/shared/lib/useGetDevices/useGetDevices'
 import Devices from './Devices';
 
 describe('testing Devices.tsx', () => {

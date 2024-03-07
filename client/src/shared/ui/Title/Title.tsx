@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-import classNames from "src/shared/lib/classNames";
+import classNames from "src/shared/lib/classNames/classNames";
 import cls from "./Title.module.scss";
 
 interface TitleProps {

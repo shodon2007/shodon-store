@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useSearchParams } from "react-router-dom";
 
 import { FilterType } from "src/shared/api/filterApi";
-import { useGetDevices } from "src/shared/hooks/useGetDevices";
+import { useGetDevices } from "src/shared/lib/useGetDevices/useGetDevices";
 import { Filter } from "src/widgets/Filter";
 import Device from "src/widgets/DeviceCard/ui/Device";
 

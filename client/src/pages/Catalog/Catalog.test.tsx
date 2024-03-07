@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import Catalog from "./Catalog"
 import { ReactQuery } from "src/app/providers/tanstack-query";
-import * as useGetCatalogModule from "src/shared/hooks/useGetCatalog";
+import * as useGetCatalogModule from "src/shared/lib/useGetCatalog/useGetCatalog";
 import { MemoryRouter } from "react-router-dom";
 
 describe('Testing Catalog.test.tsx', () => {
@@ -43,5 +43,5 @@ describe('Testing Catalog.test.tsx', () => {
 
         expect(loadingPage).toBeInTheDocument();
         expect(loadingPage).toMatchSnapshot();
-    })
+    });
 })

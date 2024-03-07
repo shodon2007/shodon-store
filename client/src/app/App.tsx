@@ -1,7 +1,7 @@
 import {useTheme} from "src/features/toggleTheme";
 import AppRouter from "src/app/providers/routes/ui/AppRouter";
 import { Navbar } from "src/widgets/Navbar";
-import classNames from "src/shared/lib/classNames";
+import classNames from "src/shared/lib/classNames/classNames";
 
 const App = () => {
     const { theme } = useTheme();
