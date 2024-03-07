@@ -2,9 +2,9 @@ import { AxiosError, AxiosResponse } from "axios";
 import ApiGeneral from "./generalApi";
 
 interface Auth {
-	username: string;
-	message: string;
-	token: string;
+  username: string;
+  message: string;
+  token: string;
 }
 
 interface AuthError {
@@ -12,7 +12,10 @@ interface AuthError {
 }
 
 class AuthApi extends ApiGeneral {
-	async login(username: string, password: string): Promise<AxiosResponse<Auth>|AxiosError<AuthError>> {
+  async login(
+    username: string,
+    password: string,
+  ): Promise<AxiosResponse<Auth> | AxiosError<AuthError>> {
     try {
       return await this.api.get<Auth>(this.urls.auth, {
         params: { username, password },
@@ -20,14 +23,17 @@ class AuthApi extends ApiGeneral {
     } catch (error) {
       return error;
     }
-	}
-	async registration(username: string, password: string): Promise<AxiosResponse<Auth>|AxiosError<AuthError>> {
-		try {
+  }
+  async registration(
+    username: string,
+    password: string,
+  ): Promise<AxiosResponse<Auth> | AxiosError<AuthError>> {
+    try {
       return await this.api.post<Auth>(this.urls.auth, { username, password });
-    } catch(e) {
+    } catch (e) {
       return e;
     }
-	}
+  }
 }
 
 export default new AuthApi();

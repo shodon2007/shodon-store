@@ -9,52 +9,59 @@ import { Attribute } from "src/shared/api/productApi";
 import Button, { buttonTheme } from "src/shared/ui/Button/Button";
 
 interface FilterProps {
-    className?: string;
-    filters: FilterType;
-    setFilters: Dispatch<SetStateAction<FilterType>>
+  className?: string;
+  filters: FilterType;
+  setFilters: Dispatch<SetStateAction<FilterType>>;
 }
 
 const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
-    const [, setSearchParams] = useSearchParams();
-    const { type } = useParams();
+  const [, setSearchParams] = useSearchParams();
+  const { type } = useParams();
 
-    const { data: attributes, isLoading } = useGetFilter(type);
+  const { data: attributes, isLoading } = useGetFilter(type);
 
-    useEffect(() => {
-        setSearchParams(filters);
-    }, [filters]);
+  useEffect(() => {
+    setSearchParams(filters);
+  }, [filters]);
 
-    if (isLoading) {
-        return <div>Загрузка фильтров...</div>
-    }
+  if (isLoading) {
+    return <div>Загрузка фильтров...</div>;
+  }
 
-    function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
-        setFilters((prev) => toggleAttribute(prev, attribute, checked))
-    }
+  function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
+    setFilters((prev) => toggleAttribute(prev, attribute, checked));
+  }
 
-    return (
-        <div className={classNames(cls.Filter, {}, [])}>
-            {Object.entries(attributes).map(([title, descriptions], index) => {
-                return <div key={index}>
-                    <span>{title}</span>
-                    <div className={cls.attributes}>
-                        {descriptions.map((description, index) => {
-                        const checked = !!filters[title] && filters[title].includes(description);
-                        return (
-                            <Button
-                                theme={buttonTheme.SMALLEST}
-                                key={index} 
-                                className={classNames(cls.attribute, {[cls.checked]: checked})}
-                                onClick={() => toggleAttributeHandler({title, description}, checked)}
-                                >
-                                <span>{description}</span>
-                            </Button>
-                        )
+  return (
+    <div className={classNames(cls.Filter, {}, [])}>
+      {Object.entries(attributes).map(([title, descriptions], index) => {
+        return (
+          <div key={index}>
+            <span>{title}</span>
+            <div className={cls.attributes}>
+              {descriptions.map((description, index) => {
+                const checked =
+                  !!filters[title] && filters[title].includes(description);
+                return (
+                  <Button
+                    theme={buttonTheme.SMALLEST}
+                    key={index}
+                    className={classNames(cls.attribute, {
+                      [cls.checked]: checked,
                     })}
-                    </div>
-                </div>
-            })}
-        </div>
-    );
+                    onClick={() =>
+                      toggleAttributeHandler({ title, description }, checked)
+                    }
+                  >
+                    <span>{description}</span>
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 export default Filter;

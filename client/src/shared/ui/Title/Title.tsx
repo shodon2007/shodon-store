@@ -4,14 +4,12 @@ import classNames from "src/shared/lib/classNames/classNames";
 import cls from "./Title.module.scss";
 
 interface TitleProps {
-    className?: string;
-    children: ReactNode
+  className?: string;
+  children: ReactNode;
 }
 const Title: FC<TitleProps> = ({ className, children }) => {
-    return (
-        <span className={classNames(cls.Title, {}, [className])}>
-            {children}
-        </span>
-    );
+  return (
+    <span className={classNames(cls.Title, {}, [className])}>{children}</span>
+  );
 };
 export default Title;

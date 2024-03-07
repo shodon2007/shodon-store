@@ -28,10 +28,13 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        'jsx-a11y',
+        'prettier',
     ],
     "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "react/react-in-jsx-scope": "off",
+        'prettier/prettier': 'error',
     }
 }
