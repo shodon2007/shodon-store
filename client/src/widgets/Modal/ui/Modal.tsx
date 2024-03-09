@@ -1,35 +1,35 @@
-import { Context, FC, MouseEvent, ReactNode, createContext } from 'react'
-import classNames from 'src/shared/lib/classNames/classNames'
-import cls from './Modal.module.scss'
-import { createPortal } from 'react-dom'
-import { useTheme } from 'src/features/toggleTheme'
+import { Context, FC, MouseEvent, ReactNode, createContext } from 'react';
+import classNames from 'src/shared/lib/classNames/classNames';
+import cls from './Modal.module.scss';
+import { createPortal } from 'react-dom';
+import { useTheme } from 'src/features/toggleTheme';
 
 interface ModalProps {
-  className?: string
-  children: ReactNode
-  open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  className?: string;
+  children: ReactNode;
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ModalContextInterface {
-  closeModal?: () => void
+  closeModal?: () => void;
 }
 
-export const ModalContext: Context<ModalContextInterface> = createContext({})
+export const ModalContext: Context<ModalContextInterface> = createContext({});
 
 const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   function closeModal() {
-    setOpen(false)
+    setOpen(false);
   }
 
   const mods = {
     [cls.isOpen]: open,
-  }
+  };
 
   function contentClick(e: MouseEvent<HTMLDivElement>) {
-    e.stopPropagation()
+    e.stopPropagation();
   }
 
   return createPortal(
@@ -43,6 +43,6 @@ const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
       </div>
     </div>,
     document.getElementById('modal'),
-  )
-}
-export default Modal
+  );
+};
+export default Modal;

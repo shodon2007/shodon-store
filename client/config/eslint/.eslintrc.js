@@ -39,7 +39,7 @@ module.exports = {
         'prettier/prettier': 'error',
         "indent": ["error", 2],
         "quotes": ["error", "single", { "avoidEscape": true }],
-        "semi": ["error", "never"],
+        "semi": ["error", "always"],
         "comma-dangle": ["error", "always-multiline"],
         "object-curly-spacing": ["error", "always"],
         "array-bracket-spacing": ["error", "never"],

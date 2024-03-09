@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react'
-import { ReactNode } from 'react'
-import { MemoryRouter } from 'react-router-dom'
-import { AppRouter } from 'src/app/providers/routes'
-import { ReactQuery } from 'src/app/providers/tanstack-query'
+import { render } from '@testing-library/react';
+import { ReactNode } from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import { AppRouter } from 'src/app/providers/routes';
+import { ReactQuery } from 'src/app/providers/tanstack-query';
 
 const renderWithRouter = (
   initialEntrie: string = '/',
@@ -15,7 +15,7 @@ const renderWithRouter = (
         <AppRouter />
       </ReactQuery>
     </MemoryRouter>,
-  )
-}
+  );
+};
 
-export default renderWithRouter
+export default renderWithRouter;

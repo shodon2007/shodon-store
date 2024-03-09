@@ -1,18 +1,18 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react';
 
-import Tab from 'src/shared/ui/Tab/Tab'
-import Login from './Login'
-import Registration from './Registration'
+import Tab from 'src/shared/ui/Tab/Tab';
+import Login from './Login';
+import Registration from './Registration';
 
-import cls from './Auth.module.scss'
+import cls from './Auth.module.scss';
 
 const Auth = () => {
-  const [tabValue, setTabValue] = useState('войти')
+  const [tabValue, setTabValue] = useState('войти');
 
   const tabComponents: Record<string, ReactNode> = {
     войти: <Login />,
     зарегестрироваться: <Registration />,
-  }
+  };
 
   return (
     <div className={cls.auth}>
@@ -23,7 +23,7 @@ const Auth = () => {
       />
       {tabComponents[tabValue]}
     </div>
-  )
-}
+  );
+};
 
-export default Auth
+export default Auth;

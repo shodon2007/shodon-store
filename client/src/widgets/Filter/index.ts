@@ -1,3 +1,3 @@
-import Filter from './ui/Filter'
+import Filter from './ui/Filter';
 
-export { Filter }
+export { Filter };

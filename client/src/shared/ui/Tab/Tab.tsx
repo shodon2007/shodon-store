@@ -1,21 +1,21 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import classNames from 'src/shared/lib/classNames/classNames'
-import Button from 'src/shared/ui/Button/Button'
+import classNames from 'src/shared/lib/classNames/classNames';
+import Button from 'src/shared/ui/Button/Button';
 
-import cls from './Tab.module.scss'
+import cls from './Tab.module.scss';
 
 interface TabProps {
-  tabs: string[]
-  tab: string
-  changeTab: React.Dispatch<React.SetStateAction<string>>
+  tabs: string[];
+  tab: string;
+  changeTab: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Tab: FC<TabProps> = props => {
-  const { tabs, tab, changeTab } = props
+  const { tabs, tab, changeTab } = props;
 
   function setTab(newValue: string) {
-    changeTab(newValue)
+    changeTab(newValue);
   }
 
   return (
@@ -31,10 +31,10 @@ const Tab: FC<TabProps> = props => {
           >
             {elem}
           </Button>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default Tab
+export default Tab;

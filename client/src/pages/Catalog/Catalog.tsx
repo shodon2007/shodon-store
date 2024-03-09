@@ -1,23 +1,23 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import { useGetCatalog } from 'src/shared/lib/useGetCatalog/useGetCatalog'
+import { useGetCatalog } from 'src/shared/lib/useGetCatalog/useGetCatalog';
 
-import cls from './Catalog.module.scss'
-import { Link } from 'react-router-dom'
-import { serverUrl } from 'src/shared/api/generalApi'
+import cls from './Catalog.module.scss';
+import { Link } from 'react-router-dom';
+import { serverUrl } from 'src/shared/api/generalApi';
 
 const Catalog: FC = () => {
-  const { data: catalog, isLoading, error, isError } = useGetCatalog()
-  console.log(useGetCatalog())
+  const { data: catalog, isLoading, error, isError } = useGetCatalog();
+  console.log(useGetCatalog());
 
   if (isLoading) {
     return (
       <span data-testid='loading-page'>Загрузка каталога, подождите...</span>
-    )
+    );
   }
 
   if (isError) {
-    return error.message
+    return error.message;
   }
 
   return (
@@ -35,10 +35,10 @@ const Catalog: FC = () => {
             </div>
             <span className={cls.name}>{elem.name_ru}</span>
           </Link>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default Catalog
+export default Catalog;

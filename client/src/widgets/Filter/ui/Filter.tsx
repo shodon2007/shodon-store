@@ -1,35 +1,35 @@
-import { Dispatch, FC, SetStateAction, useEffect } from 'react'
-import classNames from 'src/shared/lib/classNames/classNames'
-import cls from './Filter.module.scss'
-import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter'
-import { useParams, useSearchParams } from 'react-router-dom'
-import { FilterType } from 'src/shared/api/filterApi'
-import toggleAttribute from '../model/toggleAttribute'
-import { Attribute } from 'src/shared/api/productApi'
-import Button, { buttonTheme } from 'src/shared/ui/Button/Button'
+import { Dispatch, FC, SetStateAction, useEffect } from 'react';
+import classNames from 'src/shared/lib/classNames/classNames';
+import cls from './Filter.module.scss';
+import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
+import { useParams, useSearchParams } from 'react-router-dom';
+import { FilterType } from 'src/shared/api/filterApi';
+import toggleAttribute from '../model/toggleAttribute';
+import { Attribute } from 'src/shared/api/productApi';
+import Button, { buttonTheme } from 'src/shared/ui/Button/Button';
 
 interface FilterProps {
-  className?: string
-  filters: FilterType
-  setFilters: Dispatch<SetStateAction<FilterType>>
+  className?: string;
+  filters: FilterType;
+  setFilters: Dispatch<SetStateAction<FilterType>>;
 }
 
 const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
-  const [, setSearchParams] = useSearchParams()
-  const { type } = useParams()
+  const [, setSearchParams] = useSearchParams();
+  const { type } = useParams();
 
-  const { data: attributes, isLoading } = useGetFilter(type)
+  const { data: attributes, isLoading } = useGetFilter(type);
 
   useEffect(() => {
-    setSearchParams(filters)
-  }, [filters])
+    setSearchParams(filters);
+  }, [filters]);
 
   if (isLoading) {
-    return <div>Загрузка фильтров...</div>
+    return <div>Загрузка фильтров...</div>;
   }
 
   function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
-    setFilters(prev => toggleAttribute(prev, attribute, checked))
+    setFilters(prev => toggleAttribute(prev, attribute, checked));
   }
 
   return (
@@ -41,7 +41,7 @@ const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
             <div className={cls.attributes}>
               {descriptions.map((description, index) => {
                 const checked =
-                  !!filters[title] && filters[title].includes(description)
+                  !!filters[title] && filters[title].includes(description);
                 return (
                   <Button
                     theme={buttonTheme.SMALLEST}
@@ -55,13 +55,13 @@ const Filter: FC<FilterProps> = ({ filters, setFilters }) => {
                   >
                     <span>{description}</span>
                   </Button>
-                )
+                );
               })}
             </div>
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
-export default Filter
+  );
+};
+export default Filter;
