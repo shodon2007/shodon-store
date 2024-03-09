@@ -27,11 +27,3 @@ exports[`testing Button.tsx testing empty children 2`] = `
   class="Button "
 />
 `;
-
-exports[`testing button tsx 1`] = `
-<button
-  class="Button "
->
-  hello world
-</button>
-`;
