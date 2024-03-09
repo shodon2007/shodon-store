@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import * as useGetDevicesModule from 'src/shared/lib/useGetDevices/useGetDevices';
-import renderWithRouter from 'src/app/tests/renderWithRouter/renderWithRouter';
+import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 
 describe('testing Devices.tsx', () => {
 	let devices: any = {
@@ -54,7 +54,7 @@ describe('testing Devices.tsx', () => {
 
 	test('testing Device List', async () => {
 		jest.spyOn(useGetDevicesModule, 'useGetDevices').mockReturnValue(devices);
-		renderWithRouter('/phones');
+		renderTestApp('/phones');
 		const devicesPage = await screen.findByTestId('devices-page');
 		const deviceItem = await screen.findAllByTestId('device-item');
 		expect(devicesPage).toBeInTheDocument();

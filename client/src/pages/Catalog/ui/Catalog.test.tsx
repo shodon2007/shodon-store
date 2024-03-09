@@ -1,6 +1,7 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import * as useGetCatalogModule from 'src/shared/lib/useGetCatalog/useGetCatalog';
-import renderWithRouter from 'src/app/tests/renderWithRouter/renderWithRouter';
+import * as useGetDevicesModule from 'src/shared/lib/useGetDevices/useGetDevices';
+import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 
 describe('Testing Catalog.test.tsx', () => {
 	const resp: any = {
@@ -24,7 +25,7 @@ describe('Testing Catalog.test.tsx', () => {
 
 	test('Testing Catalog links', async () => {
 		jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(resp);
-		renderWithRouter();
+		renderTestApp();
 		const CatalogItems = await screen.findAllByTestId('catalog-link');
 		const CatalogPage = await screen.findByTestId('catalog-page');
 
@@ -38,10 +39,30 @@ describe('Testing Catalog.test.tsx', () => {
 		jest
 			.spyOn(useGetCatalogModule, 'useGetCatalog')
 			.mockReturnValue(loadingResp);
-		renderWithRouter();
+		renderTestApp();
 		const loadingPage = await screen.findByTestId('loading-page');
 
 		expect(loadingPage).toBeInTheDocument();
 		expect(loadingPage).toMatchSnapshot();
+	});
+
+	test('testing catalog links onClick', () => {
+		const devicesResp: any = {
+			data: [],
+			isError: false,
+			refetch: () => {},
+		};
+		jest.spyOn(useGetCatalogModule, 'useGetCatalog').mockReturnValue(resp);
+		jest
+			.spyOn(useGetDevicesModule, 'useGetDevices')
+			.mockReturnValue(devicesResp);
+		renderTestApp('/');
+		const devicesLinks = screen.getAllByTestId('catalog-link');
+
+		fireEvent.click(devicesLinks[0]);
+
+		screen.debug();
+
+		expect(screen.getByTestId('devices-page')).toBeInTheDocument();
 	});
 });

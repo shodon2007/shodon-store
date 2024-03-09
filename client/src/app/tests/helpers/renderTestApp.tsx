@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { AppRouter } from 'src/app/providers/routes';
 import { ReactQuery } from 'src/app/providers/tanstack-query';
 
-const renderWithRouter = (
+const renderTestApp = (
 	initialEntrie: string = '/',
 	component: ReactNode = <div></div>,
 ) => {
@@ -18,4 +18,4 @@ const renderWithRouter = (
 	);
 };
 
-export default renderWithRouter;
+export default renderTestApp;
