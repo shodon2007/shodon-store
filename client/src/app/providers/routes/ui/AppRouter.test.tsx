@@ -4,13 +4,13 @@ import { ReactQuery } from '../../tanstack-query';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('testing AppRouter.tsx', () => {
-  test('Router test', async () => {
-    await render(
-      <MemoryRouter>
-        <ReactQuery>
-          <AppRouter />
-        </ReactQuery>
-      </MemoryRouter>,
-    );
-  });
+	test('Router test', async () => {
+		await render(
+			<MemoryRouter>
+				<ReactQuery>
+					<AppRouter />
+				</ReactQuery>
+			</MemoryRouter>,
+		);
+	});
 });

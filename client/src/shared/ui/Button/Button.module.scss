@@ -11,7 +11,11 @@
 .Button.smallest {
 	padding: 5px 10px;
 	font-size: var(--font-size-s);
-	background-color: color-mix(in srgb, var(--primary-color) 50%, var(--bg-color));
+	background-color: color-mix(
+		in srgb,
+		var(--primary-color) 50%,
+		var(--bg-color)
+	);
 }
 
 .Button:hover {

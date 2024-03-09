@@ -13,13 +13,13 @@ import './app/styles/index.scss';
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <ThemeProvider>
-        <ReactQuery>
-          <App />
-        </ReactQuery>
-      </ThemeProvider>
-    </Provider>
-  </BrowserRouter>,
+	<BrowserRouter>
+		<Provider store={store}>
+			<ThemeProvider>
+				<ReactQuery>
+					<App />
+				</ReactQuery>
+			</ThemeProvider>
+		</Provider>
+	</BrowserRouter>,
 );

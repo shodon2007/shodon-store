@@ -2,15 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	background-color: var(--bg-color);
+	justify-content: center;
+	width: 100dvw;
+	align-items: center;
 	padding: 20px 30px;
-	width: 300px;
 	gap: 20px;
+}
+
+.content {
+	align-items: center;
+	padding: 20px 30px;
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 300px;
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 100%;
 }
 
 .inputs {
