@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Catalog.test.tsx Testing Catalog links 1`] = `
+<div
+  class="catalog"
+  data-testid="catalog-page"
+>
+  <a
+    class="item"
+    data-testid="catalog-link"
+    href="/hello"
+  >
+    <div
+      class="img"
+    >
+      <img
+        alt="hello"
+        src="https://store-server.shodon.ru/imghedfsdkf"
+      />
+    </div>
+    <span
+      class="name"
+    >
+      прив
+    </span>
+  </a>
+  <a
+    class="item"
+    data-testid="catalog-link"
+    href="/Телефончики"
+  >
+    <div
+      class="img"
+    >
+      <img
+        alt="Телефончики"
+        src="https://store-server.shodon.ru/imghttps://hedfsdkf.png"
+      />
+    </div>
+    <span
+      class="name"
+    >
+      Phones
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Testing Catalog.test.tsx testing loading 1`] = `
+<span
+  data-testid="loading-page"
+>
+  Загрузка каталога, подождите...
+</span>
+`;

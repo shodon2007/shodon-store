@@ -49,11 +49,8 @@ describe('testing Devices.tsx', () => {
 		],
 		isLoading: false,
 		isError: false,
+		refetch: Function,
 	};
-
-	beforeAll(() => {
-		devices = {};
-	});
 
 	test('testing Device List', async () => {
 		jest.spyOn(useGetDevicesModule, 'useGetDevices').mockReturnValue(devices);
@@ -61,6 +58,7 @@ describe('testing Devices.tsx', () => {
 		const devicesPage = await screen.findByTestId('devices-page');
 		const deviceItem = await screen.findAllByTestId('device-item');
 		expect(devicesPage).toBeInTheDocument();
+		expect(devicesPage).toMatchSnapshot();
 		expect(deviceItem.length).toBe(2);
 	});
 });

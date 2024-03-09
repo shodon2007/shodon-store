@@ -9,7 +9,7 @@
 		"start": "webpack serve --env mode=development",
 		"lint:ts": "npx eslint -c ./config/eslint/.eslintrc.js src/**/*.{ts,tsx}",
 		"lint:ts:fix": "npx eslint -c ./config/eslint/.eslintrc.js src/**/*.{ts,tsx} --fix",
-		"unit": "jest --config ./config/jest/jest.config.ts"
+		"test:unit": "jest --config ./config/jest/jest.config.ts"
 	},
 	"author": "",
 	"license": "ISC",

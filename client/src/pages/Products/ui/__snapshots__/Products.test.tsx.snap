@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Devices.tsx testing Device List 1`] = `
+<div
+  class="devicesPage"
+  data-testid="devices-page"
+>
+  <div>
+    Загрузка фильтров...
+  </div>
+  <div
+    class="devices"
+  >
+    <div
+      class="device"
+      data-testid="device-item"
+    >
+      <div
+        class="left"
+      >
+        <img
+          class="image"
+          src="https://store-server.shodon.ru/imgdsfdsfsfsf"
+        />
+      </div>
+      <div
+        class="center"
+      >
+        <span
+          class="Title "
+        >
+          shodon store
+        </span>
+        <div
+          class="attributes"
+        >
+          <div
+            class="attribute"
+          >
+            <span
+              class="attribute_title"
+            >
+              ОЗУ
+            </span>
+            :
+            <span
+              class="attribute_description"
+            >
+              15gb
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="right"
+      >
+        <span
+          class="Title "
+        >
+          150000
+          ₽
+        </span>
+        <button
+          class="Button "
+        >
+          В корзину
+        </button>
+      </div>
+    </div>
+    <div
+      class="device"
+      data-testid="device-item"
+    >
+      <div
+        class="left"
+      >
+        <img
+          class="image"
+          src="https://store-server.shodon.ru/imgdsfdsfsfsf"
+        />
+      </div>
+      <div
+        class="center"
+      >
+        <span
+          class="Title "
+        >
+          superdfjklsdjf
+        </span>
+        <div
+          class="attributes"
+        >
+          <div
+            class="attribute"
+          >
+            <span
+              class="attribute_title"
+            >
+              ОЗУ
+            </span>
+            :
+            <span
+              class="attribute_description"
+            >
+              15gb
+            </span>
+          </div>
+          <div
+            class="attribute"
+          >
+            <span
+              class="attribute_title"
+            >
+              память
+            </span>
+            :
+            <span
+              class="attribute_description"
+            >
+              12gb
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="right"
+      >
+        <span
+          class="Title "
+        >
+          150000
+          ₽
+        </span>
+        <button
+          class="Button "
+        >
+          В корзину
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
