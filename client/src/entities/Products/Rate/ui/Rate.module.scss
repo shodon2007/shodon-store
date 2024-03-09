@@ -1,0 +1,28 @@
+.rate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: max-content;
+	position: relative;
+}
+
+.container {
+	// display: none;
+	height: max-content;
+	position: absolute;
+	left: 0;
+	background-color: var(--bg-color);
+}
+
+.stars {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	overflow: hidden;
+	height: max-content;
+}
+
+.star {
+	min-width: 30px;
+	min-height: 30px;
+}

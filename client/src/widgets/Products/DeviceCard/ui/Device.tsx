@@ -23,10 +23,14 @@ const Device: FC<DeviceProps> = ({ product }) => {
 				<img className={cls.image} src={`${serverUrl}/img${img}`} />
 			</div>
 			<div className={cls.center}>
-				<Title>{name}</Title>
-				<Attributes attributes={attributes} />
-				<Reviews reviews={+reviews} />
-				<Rate rate={+rate} />
+				<div className={cls.top}>
+					<Title>{name}</Title>
+					<Attributes attributes={attributes} />
+				</div>
+				<div className={cls.bottom}>
+					<Reviews reviews={+reviews} />
+					<Rate rate={+rate} />
+				</div>
 			</div>
 			<div className={cls.right}>
 				<Title>{price}₽</Title>

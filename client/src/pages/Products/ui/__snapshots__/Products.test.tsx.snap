@@ -26,39 +26,84 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       <div
         class="center"
       >
-        <span
-          class="Title "
-        >
-          shodon store
-        </span>
         <div
-          class="attributes"
+          class="top"
         >
-          <div
-            class="attribute"
+          <span
+            class="Title "
           >
-            <span
-              class="attribute_title"
+            shodon store
+          </span>
+          <div
+            class="attributes"
+          >
+            <div
+              class="attribute"
             >
-              ОЗУ
-            </span>
-            :
-            <span
-              class="attribute_description"
-            >
-              15gb
-            </span>
+              <span
+                class="attribute_title"
+              >
+                ОЗУ
+              </span>
+              :
+              <span
+                class="attribute_description"
+              >
+                15gb
+              </span>
+            </div>
           </div>
         </div>
-        <div>
-          NaN
-           отзыва
-        </div>
-        <div>
-          <img
-            alt="оценка"
-            src="hello world"
-          />
+        <div
+          class="bottom"
+        >
+          <div>
+            NaN
+             отзывов
+          </div>
+          <div
+            class="rate"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="stars"
+                style="width: 100%;"
+              >
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+              </div>
+            </div>
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -92,54 +137,99 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       <div
         class="center"
       >
-        <span
-          class="Title "
-        >
-          superdfjklsdjf
-        </span>
         <div
-          class="attributes"
+          class="top"
         >
-          <div
-            class="attribute"
+          <span
+            class="Title "
           >
-            <span
-              class="attribute_title"
-            >
-              ОЗУ
-            </span>
-            :
-            <span
-              class="attribute_description"
-            >
-              15gb
-            </span>
-          </div>
+            superdfjklsdjf
+          </span>
           <div
-            class="attribute"
+            class="attributes"
           >
-            <span
-              class="attribute_title"
+            <div
+              class="attribute"
             >
-              память
-            </span>
-            :
-            <span
-              class="attribute_description"
+              <span
+                class="attribute_title"
+              >
+                ОЗУ
+              </span>
+              :
+              <span
+                class="attribute_description"
+              >
+                15gb
+              </span>
+            </div>
+            <div
+              class="attribute"
             >
-              12gb
-            </span>
+              <span
+                class="attribute_title"
+              >
+                память
+              </span>
+              :
+              <span
+                class="attribute_description"
+              >
+                12gb
+              </span>
+            </div>
           </div>
         </div>
-        <div>
-          NaN
-           отзыва
-        </div>
-        <div>
-          <img
-            alt="оценка"
-            src="hello world"
-          />
+        <div
+          class="bottom"
+        >
+          <div>
+            NaN
+             отзывов
+          </div>
+          <div
+            class="rate"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="stars"
+                style="width: 100%;"
+              >
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+                <svgrurl
+                  class="star"
+                />
+              </div>
+            </div>
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+            <svgrurl
+              class="star"
+            />
+          </div>
         </div>
       </div>
       <div

@@ -5,7 +5,7 @@ interface ReviewsProps {
 }
 
 const Reviews: FC<ReviewsProps> = ({ reviews }) => {
-	return <div>{reviews} отзыва</div>;
+	return <div>{reviews} отзывов</div>;
 };
 
 export default Reviews;
