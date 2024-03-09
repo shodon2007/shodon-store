@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { FilterType } from 'src/shared/api/filterApi';
 import { useGetDevices } from 'src/shared/lib/useGetDevices/useGetDevices';
 import { Sidebar } from 'src/widgets/Sidebar';
-import Device from 'src/widgets/DeviceCard/ui/Device';
+import { Device } from 'src/widgets/Products/DeviceCard';
 
 import cls from './Products.module.scss';
 

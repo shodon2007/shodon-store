@@ -4,7 +4,9 @@
 @import 'themes/dark';
 
 * {
+	scrollbar-width: thin;
 	box-sizing: border-box;
+	// scrollbar-gutter: stable both-edges;
 }
 
 .app {
@@ -17,7 +19,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100dvh;
-		max-width: 1200px;
+		max-width: var(--body-width);
 		margin: 0 auto;
 	}
 

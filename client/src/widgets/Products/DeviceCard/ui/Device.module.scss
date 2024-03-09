@@ -1,13 +1,23 @@
 .device {
+	width: calc(1200px - var(--sidebar-width) - 40px);
 	height: 300px;
 	padding: 10px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
 	display: grid;
-	grid-template-columns: 300px auto max-content;
+	grid-template-columns: 300px 1fr max-content;
 	gap: 5px;
 	cursor: pointer;
 	transition: all 0.3s ease;
+}
+
+.attributes {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.attribute {
+	width: max-content;
 }
 
 .device:hover {

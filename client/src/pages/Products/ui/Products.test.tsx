@@ -3,7 +3,7 @@ import * as useGetDevicesModule from 'src/shared/lib/useGetDevices/useGetDevices
 import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 
 describe('testing Devices.tsx', () => {
-	let devices: any = {
+	const devices: any = {
 		data: [
 			{
 				name_ru: 'hello baby ',

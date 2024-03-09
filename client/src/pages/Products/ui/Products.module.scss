@@ -6,7 +6,7 @@
 
 .devices {
 	flex: 1 1 auto;
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr;

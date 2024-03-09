@@ -1,6 +1,6 @@
 .Filter {
 	overflow: auto;
-	width: 200px;
+	width: var(--sidebar-width);
 }
 
 .attributes {
