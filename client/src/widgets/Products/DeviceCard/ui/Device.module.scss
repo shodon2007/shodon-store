@@ -11,17 +11,8 @@
 	transition: all 0.3s ease;
 }
 
-.attributes {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.attribute {
-	width: max-content;
-}
-
 .device:hover {
-	background-color: var(--primary-focus-color);
+	background-color: var(--primary-hover-color);
 }
 
 .center {
@@ -39,8 +30,4 @@
 .image {
 	max-width: 300px;
 	height: 280px;
-}
-
-.attribute_title {
-	color: var(--secondary-color);
 }

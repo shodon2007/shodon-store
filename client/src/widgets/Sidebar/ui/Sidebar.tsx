@@ -37,7 +37,7 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 	}
 
 	return (
-		<div className={classNames(cls.Filter, {}, [])}>
+		<div className={classNames(cls.Sidebar, {}, [])}>
 			{Object.entries(attributes).map(([title, descriptions], index) => {
 				return (
 					<div key={index}>

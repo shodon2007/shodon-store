@@ -1,0 +1,17 @@
+.attributes {
+	column-gap: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.attribute_title {
+	color: var(--secondary-color);
+}
+
+.attribute_description {
+	color: var(--primary-color);
+}
+
+.attribute {
+	width: max-content;
+}

@@ -4,7 +4,7 @@
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	background-color: var(--primary-color);
+	background-color: var(--primary-focus-color);
 	color: var(--bg-color);
 }
 
@@ -19,5 +19,5 @@
 }
 
 .Button:hover {
-	background-color: var(--primary-focus-color);
+	background-color: var(--primary-color);
 }

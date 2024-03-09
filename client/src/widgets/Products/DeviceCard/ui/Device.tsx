@@ -6,13 +6,15 @@ import Button from 'src/shared/ui/Button/Button';
 import { serverUrl } from 'src/shared/api/generalApi';
 
 import cls from './Device.module.scss';
+import { Attributes } from 'src/entities/Products/Attributes';
+import { Reviews } from 'src/entities/Products/Reviews';
 
 interface DeviceProps {
 	product: Product;
 }
 
 const Device: FC<DeviceProps> = ({ product }) => {
-	const { img, name, price, attributes } = product;
+	const { img, name, price, attributes, reviews, rate } = product;
 
 	return (
 		<div className={cls.device} data-testid='device-item'>
@@ -21,18 +23,8 @@ const Device: FC<DeviceProps> = ({ product }) => {
 			</div>
 			<div className={cls.center}>
 				<Title>{name}</Title>
-				<div className={cls.attributes}>
-					{attributes.map(elem => {
-						return (
-							<div key={elem.id} className={cls.attribute}>
-								<span className={cls.attribute_title}>{elem.title}</span>:
-								<span className={cls.attribute_description}>
-									{elem.description}
-								</span>
-							</div>
-						);
-					})}
-				</div>
+				<Attributes attributes={attributes} />
+				<Reviews reviews={+reviews} />
 			</div>
 			<div className={cls.right}>
 				<Title>{price}₽</Title>
