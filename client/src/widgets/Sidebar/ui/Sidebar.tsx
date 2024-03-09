@@ -5,7 +5,6 @@ import { FilterType } from 'src/shared/api/filterApi';
 import { Attribute } from 'src/shared/api/productApi';
 import classNames from 'src/shared/lib/classNames/classNames';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
-import Button, { buttonTheme } from 'src/shared/ui/Button/Button';
 
 import toggleAttribute from '../../../features/toggleFilterButton/model/toggleAttribute';
 

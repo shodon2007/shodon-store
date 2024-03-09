@@ -1,5 +1,3 @@
-import CatalogPage from "./ui/Catalog";
+import CatalogPage from './ui/Catalog';
 
-export {
-    CatalogPage,
-}
+export { CatalogPage };

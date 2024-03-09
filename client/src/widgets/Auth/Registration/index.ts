@@ -1,5 +1,3 @@
-import Registration from "./ui/Registration";
+import Registration from './ui/Registration';
 
-export {
-    Registration,
-}
+export { Registration };
