@@ -24,6 +24,10 @@ function buildRules(options: Options) {
 			use: ['@svgr/webpack'],
 		},
 		{
+			test: /\.(png|jpe?g|gif)$/i,
+			use: [{ loader: 'file-loader' }],
+		},
+		{
 			test: /\.scss$/i,
 			use: [
 				options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
