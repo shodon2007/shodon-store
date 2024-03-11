@@ -2,27 +2,46 @@ import { ReactNode, useState } from 'react';
 
 import { Login } from 'src/widgets/Auth/Login';
 import { Registration } from 'src/widgets/Auth/Registration';
-import Tab from 'src/shared/ui/Tab/Tab';
+import Tab, { TabElements } from 'src/shared/ui/Tab/Tab';
 
 import cls from './Auth.module.scss';
+import { useSearchParams } from 'react-router-dom';
 
 const Auth = () => {
-	const [tabValue, setTabValue] = useState('войти');
+	const [searchParams, setSearchParams] = useSearchParams({ tab: 'login' });
 
-	const tabComponents: Record<string, ReactNode> = {
-		войти: <Login />,
-		зарегестрироваться: <Registration />,
+	const changeTab = (newValue: string) => {
+		setSearchParams({ tab: newValue });
+	};
+
+	const tabComponents: TabElements = {
+		login: {
+			component: <Login />,
+			name: 'войти',
+		},
+		registration: {
+			component: <Registration />,
+			name: 'зарегестрироваться',
+		},
 	};
 
 	return (
 		<div className={cls.auth}>
 			<div className={cls.content}>
 				<Tab
-					tabs={Object.keys(tabComponents)}
-					tab={tabValue}
-					changeTab={setTabValue}
+					tabs={tabComponents}
+					tab={searchParams.get('tab')}
+					changeTab={changeTab}
 				/>
-				<form className={cls.form}>{tabComponents[tabValue]}</form>
+				<form className={cls.form}>
+					{
+						tabComponents[
+							searchParams.get('tab') in tabComponents
+								? searchParams.get('tab')
+								: 'login'
+						].component
+					}
+				</form>
 			</div>
 		</div>
 	);

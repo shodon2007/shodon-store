@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710143286545" clover="3.2.0">
-  <project timestamp="1710143286545" name="All files">
+<coverage generated="1710143996778" clover="3.2.0">
+  <project timestamp="1710143996779" name="All files">
     <metrics statements="174" coveredstatements="54" conditionals="42" coveredconditionals="6" methods="64" coveredmethods="13" elements="280" coveredelements="73" complexity="0" loc="174" ncloc="174" packages="41" files="46" classes="46"/>
     <package name="config.jest">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -385,9 +385,9 @@
         <line num="27" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.widgets.Products.DeviceCard">

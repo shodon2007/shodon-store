@@ -1,14 +1,21 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import classNames from 'src/shared/lib/classNames/classNames';
 import Button from 'src/shared/ui/Button/Button';
 
 import cls from './Tab.module.scss';
 
+export interface TabElement {
+	name: string;
+	component: ReactNode;
+}
+
+export type TabElements = Record<string, TabElement>;
+
 interface TabProps {
-	tabs: string[];
+	tabs: TabElements;
 	tab: string;
-	changeTab: React.Dispatch<React.SetStateAction<string>>;
+	changeTab: (newValue: string) => void;
 }
 
 const Tab: FC<TabProps> = props => {
@@ -20,16 +27,16 @@ const Tab: FC<TabProps> = props => {
 
 	return (
 		<div className={cls.tab}>
-			{tabs.map(elem => {
+			{Object.entries(tabs).map(([key, tabElement]) => {
 				return (
 					<Button
 						className={classNames(cls.btn, {
-							[cls.selected]: tab === elem,
+							[cls.selected]: tab === key,
 						})}
-						key={elem}
-						onClick={() => setTab(elem)}
+						key={key}
+						onClick={() => setTab(key)}
 					>
-						{elem}
+						{tabElement.name}
 					</Button>
 				);
 			})}

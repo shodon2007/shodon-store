@@ -30,12 +30,12 @@ const Login = () => {
 					username: res.data.username,
 				}),
 			);
+
+			setUsername('');
+			setPassword('');
+			alert(res.data.message);
+			navigate(-1);
 		}
-
-		setUsername('');
-		setPassword('');
-
-		navigate(-1);
 	}
 
 	return (

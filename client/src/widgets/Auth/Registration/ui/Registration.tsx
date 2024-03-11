@@ -30,18 +30,19 @@ const Registration = () => {
 					username: res.data.username,
 				}),
 			);
+			alert(res.data.message);
+			navigate('/');
 		}
-
-		navigate(-1);
 	}
 
 	return (
 		<>
-			<div className={cls.inputs}>
+			<div className={cls.inputs} data-testid='registration-page'>
 				<Input
 					type='text'
 					placeholder='login'
 					value={username}
+					data-testid='registration-input'
 					onChange={(e: ChangeEvent<HTMLInputElement>) =>
 						setUsername(e.target.value)
 					}
@@ -51,13 +52,18 @@ const Registration = () => {
 					minLength={8}
 					placeholder='password'
 					required
+					data-testid='registration-input'
 					value={password}
 					onChange={(e: ChangeEvent<HTMLInputElement>) => {
 						setPassword(e.target.value);
 					}}
 				/>
 			</div>
-			<Button className={cls.button} onClick={e => registrationClick(e)}>
+			<Button
+				className={cls.button}
+				onClick={e => registrationClick(e)}
+				data-testid='registration-button'
+			>
 				Зарегестрироваться
 			</Button>
 		</>
