@@ -26,7 +26,7 @@ const Auth = () => {
 	};
 
 	return (
-		<div className={cls.auth}>
+		<div className={cls.auth} data-testid='auth-page'>
 			<div className={cls.content}>
 				<Tab
 					tabs={tabComponents}

@@ -22,7 +22,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 
 	return (
 		<div className={classNames(cls.Navbar, {}, [className])}>
-			<Link to={'/'} className={cls.title}>
+			<Link to={'/'} className={cls.title} data-testid='title-link'>
 				shodon store
 			</Link>
 			<nav className={cls.nav}>
@@ -38,7 +38,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 					<>
 						<div></div>
 						<ThemeButton />
-						<Link to={'/auth'}>
+						<Link to={'/auth'} data-testid='auth-link'>
 							<ProfileSvg className={cls.svg} />
 						</Link>
 					</>
