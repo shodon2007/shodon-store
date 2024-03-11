@@ -1,5 +1,3 @@
-import { ReactNode, useState } from 'react';
-
 import { Login } from 'src/widgets/Auth/Login';
 import { Registration } from 'src/widgets/Auth/Registration';
 import Tab, { TabElements } from 'src/shared/ui/Tab/Tab';

@@ -23,4 +23,19 @@ describe('testing Navbar.tsx', () => {
 			expect(authPage).toBeInTheDocument();
 		});
 	});
+
+	test('testing toggleButton click', async () => {
+		renderTestApp('/auth');
+		const themeButton = await screen.findByTestId('theme-button');
+
+		expect(await screen.findByTestId('app')).toHaveClass('normal');
+
+		fireEvent.click(themeButton);
+
+		expect(await screen.findByTestId('app')).toHaveClass('dark');
+
+		fireEvent.click(themeButton);
+
+		expect(await screen.findByTestId('app')).toHaveClass('normal');
+	});
 });

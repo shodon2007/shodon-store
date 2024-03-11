@@ -28,7 +28,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 			<nav className={cls.nav}>
 				{userSlice.token ? (
 					<>
-						<ThemeButton />
+						<ThemeButton data-testid='theme-button' />
 						<Link to={'/basket'} className={cls.link}>
 							<BasketSvg className={cls.svg} />
 						</Link>
@@ -37,7 +37,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 				) : (
 					<>
 						<div></div>
-						<ThemeButton />
+						<ThemeButton data-testid='theme-button' />
 						<Link to={'/auth'} data-testid='auth-link'>
 							<ProfileSvg className={cls.svg} />
 						</Link>

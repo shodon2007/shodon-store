@@ -7,7 +7,7 @@ const App = () => {
 	const { theme } = useTheme();
 
 	return (
-		<div className={classNames('app', {}, [theme])}>
+		<div className={classNames('app', {}, [theme])} data-testid='app'>
 			<div className='body'>
 				<Navbar />
 				<div className='content'>

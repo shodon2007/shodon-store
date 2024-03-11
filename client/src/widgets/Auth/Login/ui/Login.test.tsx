@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 import '@testing-library/jest-dom/jest-globals';
 
