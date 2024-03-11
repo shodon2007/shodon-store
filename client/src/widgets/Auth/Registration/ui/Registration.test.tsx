@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/jest-globals';
 
 describe('jest testing registration.test.tsx', () => {
 	test('testing elements in document', () => {
-		renderTestApp('/auth');
+		renderTestApp('/auth?tab=registration');
 
 		const registrationPage = screen.getByTestId('registration-page');
 		const registrationButton = screen.getByTestId('registration-button');
@@ -16,10 +16,16 @@ describe('jest testing registration.test.tsx', () => {
 	});
 
 	test('testing snapshopts', () => {
-		renderTestApp('/auth');
+		renderTestApp('/auth?tab=registration');
 
 		const registrationPage = screen.getByTestId('registration-page');
 
 		expect(registrationPage).toMatchSnapshot();
+	});
+
+	test('testing headers', () => {
+		const page1 = renderTestApp('/auth?tab=dfjksdjflsdfk');
+
+		expect(page1.queryByTestId('registration-page')).not.toBeInTheDocument();
 	});
 });

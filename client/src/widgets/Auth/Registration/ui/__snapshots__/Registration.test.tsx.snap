@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jest testing registration.test.tsx testing snapshopts 1`] = `
+<div
+  class="inputs"
+  data-testid="registration-page"
+>
+  <input
+    class="Input "
+    data-testid="registration-input"
+    placeholder="login"
+    type="text"
+    value=""
+  />
+  <input
+    class="Input "
+    data-testid="registration-input"
+    minlength="8"
+    placeholder="password"
+    required=""
+    type="password"
+    value=""
+  />
+</div>
+`;

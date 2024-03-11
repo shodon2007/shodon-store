@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 import '@testing-library/jest-dom/jest-globals';
 
@@ -21,5 +21,11 @@ describe('jest testing Login.tet.tsx', () => {
 		const loginPage = screen.getByTestId('login-page');
 
 		expect(loginPage).toMatchSnapshot();
+	});
+
+	test('testing headers', () => {
+		const page1 = renderTestApp('/auth?tab=dfjksdjflsdfk');
+
+		expect(page1.getByTestId('login-page')).toBeInTheDocument();
 	});
 });
