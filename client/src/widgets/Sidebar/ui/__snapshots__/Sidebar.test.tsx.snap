@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing sidebar testing attributes 1`] = `
+<div
+  class="Sidebar"
+  data-testid="sidebar"
+>
+  <div>
+    <span>
+      NFC
+    </span>
+    <div
+      class="attributes"
+    >
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          ЕСТЬ
+        </span>
+      </button>
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          НЕТ
+        </span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <span>
+      Камера
+    </span>
+    <div
+      class="attributes"
+    >
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          8mp
+        </span>
+      </button>
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          12mp
+        </span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <span>
+      Озу
+    </span>
+    <div
+      class="attributes"
+    >
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          6gb
+        </span>
+      </button>
+      <button
+        class="Button smallest attribute"
+        data-testid="attribute-button"
+      >
+        <span>
+          8gb
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

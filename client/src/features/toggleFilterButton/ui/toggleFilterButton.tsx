@@ -23,6 +23,7 @@ const ToggleFilterButton: FC<ToggleFilterButtonProps> = props => {
 			onClick={() => {
 				toggleAttributeHandler({ title, description }, checked);
 			}}
+			data-testid='attribute-button'
 		>
 			<span>{description}</span>
 		</Button>

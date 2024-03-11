@@ -24,6 +24,8 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 
 	const { data: attributes, isLoading } = useGetFilter(type);
 
+	console.log(attributes);
+
 	useEffect(() => {
 		setSearchParams(filters);
 	}, [filters]);
@@ -37,7 +39,7 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 	}
 
 	return (
-		<div className={classNames(cls.Sidebar, {}, [])}>
+		<div className={classNames(cls.Sidebar, {}, [])} data-testid='sidebar'>
 			{Object.entries(attributes).map(([title, descriptions], index) => {
 				return (
 					<div key={index}>
