@@ -40,8 +40,9 @@ const Login = () => {
 
 	return (
 		<>
-			<div className={cls.inputs}>
+			<div className={cls.inputs} data-testid='login-page'>
 				<Input
+					data-testid='login-input'
 					type='text'
 					placeholder='login'
 					value={username}
@@ -50,6 +51,7 @@ const Login = () => {
 					}
 				/>
 				<Input
+					data-testid='login-input'
 					type='password'
 					minLength={8}
 					placeholder='password'
@@ -60,7 +62,11 @@ const Login = () => {
 					}}
 				/>
 			</div>
-			<Button className={cls.button} onClick={e => loginClick(e)}>
+			<Button
+				className={cls.button}
+				onClick={e => loginClick(e)}
+				data-testid='login-button'
+			>
 				Войти
 			</Button>
 		</>

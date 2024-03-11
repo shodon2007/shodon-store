@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jest testing Login.tet.tsx testing snapshopts 1`] = `
+<div
+  class="inputs"
+  data-testid="login-page"
+>
+  <input
+    class="Input "
+    data-testid="login-input"
+    placeholder="login"
+    type="text"
+    value=""
+  />
+  <input
+    class="Input "
+    data-testid="login-input"
+    minlength="8"
+    placeholder="password"
+    required=""
+    type="password"
+    value=""
+  />
+</div>
+`;
