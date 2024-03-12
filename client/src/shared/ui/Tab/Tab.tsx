@@ -14,27 +14,28 @@ export type TabElements = Record<string, TabElement>;
 
 interface TabProps {
 	tabs: TabElements;
-	tab: string;
+	activeTab: string;
 	changeTab: (newValue: string) => void;
 }
 
 const Tab: FC<TabProps> = props => {
-	const { tabs, tab, changeTab } = props;
+	const { tabs, activeTab, changeTab } = props;
 
 	function setTab(newValue: string) {
 		changeTab(newValue);
 	}
 
 	return (
-		<div className={cls.tab}>
+		<div className={cls.tab} data-testid='tab'>
 			{Object.entries(tabs).map(([key, tabElement]) => {
 				return (
 					<Button
 						className={classNames(cls.btn, {
-							[cls.selected]: tab === key,
+							[cls.selected]: activeTab === key,
 						})}
 						key={key}
 						onClick={() => setTab(key)}
+						data-testid='button'
 					>
 						{tabElement.name}
 					</Button>

@@ -28,7 +28,7 @@ const Auth = () => {
 			<div className={cls.content}>
 				<Tab
 					tabs={tabComponents}
-					tab={searchParams.get('tab')}
+					activeTab={searchParams.get('tab')}
 					changeTab={changeTab}
 				/>
 				<form className={cls.form}>

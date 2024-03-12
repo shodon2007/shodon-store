@@ -31,6 +31,7 @@ exports[`testing Devices.tsx testing Device List 1`] = `
         >
           <span
             class="Title "
+            data-testid="title"
           >
             shodon store
           </span>
@@ -111,6 +112,7 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       >
         <span
           class="Title "
+          data-testid="title"
         >
           150000
           ₽
@@ -142,6 +144,7 @@ exports[`testing Devices.tsx testing Device List 1`] = `
         >
           <span
             class="Title "
+            data-testid="title"
           >
             superdfjklsdjf
           </span>
@@ -237,6 +240,7 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       >
         <span
           class="Title "
+          data-testid="title"
         >
           150000
           ₽

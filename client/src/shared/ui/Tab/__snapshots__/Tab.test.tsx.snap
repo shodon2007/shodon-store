@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Tab.tsx testing Tabs length 1`] = `
+<div
+  class="tab"
+  data-testid="tab"
+>
+  <button
+    class="Button btn selected"
+    data-testid="button"
+  >
+    войти
+  </button>
+  <button
+    class="Button btn"
+    data-testid="button"
+  >
+    зарегестрироваться
+  </button>
+</div>
+`;

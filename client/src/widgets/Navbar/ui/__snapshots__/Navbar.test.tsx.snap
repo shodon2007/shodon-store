@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Navbar.tsx testing links testing "auth" link 1`] = `
+<div
+  class="auth"
+  data-testid="auth-page"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="tab"
+      data-testid="tab"
+    >
+      <button
+        class="Button btn"
+        data-testid="button"
+      >
+        войти
+      </button>
+      <button
+        class="Button btn"
+        data-testid="button"
+      >
+        зарегестрироваться
+      </button>
+    </div>
+    <form
+      class="form"
+    >
+      <div
+        class="inputs"
+        data-testid="login-page"
+      >
+        <input
+          class="Input "
+          data-testid="login-input"
+          placeholder="login"
+          type="text"
+          value=""
+        />
+        <input
+          class="Input "
+          data-testid="login-input"
+          minlength="8"
+          placeholder="password"
+          required=""
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        class="Button button"
+        data-testid="login-button"
+      >
+        Войти
+      </button>
+    </form>
+  </div>
+</div>
+`;

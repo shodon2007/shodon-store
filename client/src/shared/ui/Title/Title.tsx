@@ -9,7 +9,12 @@ interface TitleProps {
 }
 const Title: FC<TitleProps> = ({ className, children }) => {
 	return (
-		<span className={classNames(cls.Title, {}, [className])}>{children}</span>
+		<span
+			className={classNames(cls.Title, {}, [className])}
+			data-testid='title'
+		>
+			{children}
+		</span>
 	);
 };
 export default Title;

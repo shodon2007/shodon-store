@@ -21,6 +21,7 @@ describe('testing Navbar.tsx', () => {
 			const authPage = await screen.findByTestId('auth-page');
 
 			expect(authPage).toBeInTheDocument();
+			expect(authPage).toMatchSnapshot();
 		});
 	});
 

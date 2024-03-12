@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Input.tsx testing input className 1`] = `
+<input
+  class="Input hello world"
+  data-testid="input"
+/>
+`;
