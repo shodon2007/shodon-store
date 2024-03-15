@@ -1,3 +1,3 @@
-import Modal, { ModalContext, type ModalContextInterface } from './ui/Modal';
+import Modal, { ModalContext } from './ui/Modal';
 
-export { type ModalContextInterface, ModalContext, Modal };
+export { ModalContext, Modal };

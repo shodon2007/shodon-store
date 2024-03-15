@@ -4,13 +4,14 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import classNames from 'src/shared/lib/classNames/classNames';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
 
-import toggleAttribute from '../../../features/toggleFilterButton/model/toggleAttribute';
+import toggleAttribute from 'src/features/toggleFilterButton/model/toggleAttribute';
 
 import cls from './Sidebar.module.scss';
 import checkFilterStatus from '../model/checkFilterStatus';
 import ToggleFilterButton from 'src/features/toggleFilterButton/ui/toggleFilterButton';
 import { FilterType } from 'src/app/types/filter';
 import { Attribute } from 'src/app/types/product';
+import { Sort } from 'src/entities/Filter/Sort';
 
 interface FilterProps {
 	className?: string;
@@ -38,6 +39,7 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 
 	return (
 		<div className={classNames(cls.Sidebar, {}, [])} data-testid='sidebar'>
+			<Sort setFilter={setFilters} />
 			{Object.entries(attributes).map(([title, descriptions], index) => {
 				return (
 					<div key={index}>
@@ -60,7 +62,6 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 					</div>
 				);
 			})}
-			{}
 		</div>
 	);
 };

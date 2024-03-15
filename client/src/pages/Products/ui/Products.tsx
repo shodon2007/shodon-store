@@ -7,8 +7,8 @@ import { Sidebar } from 'src/widgets/Sidebar';
 import { Device } from 'src/widgets/Products/DeviceCard';
 
 import cls from './Products.module.scss';
-import getAllFilterSettings from '../model/getAllFilterSettings';
 import { FilterType } from 'src/app/types/filter';
+import { getAllFilterSettings } from '../model/getAllFilterSettings';
 
 type Params = {
 	type: string;
@@ -18,8 +18,8 @@ const ProductsPage: FC = () => {
 	const [searchParams] = useSearchParams();
 	const { type } = useParams<Params>();
 
-	const filtersSettings = getAllFilterSettings(searchParams);
-	const [filters, setFilters] = useState<FilterType>(filtersSettings);
+	const defaultSettings = getAllFilterSettings(searchParams);
+	const [filters, setFilters] = useState<FilterType>(defaultSettings);
 
 	const { data, isLoading, isError, error, refetch } = useGetDevices(
 		filters,

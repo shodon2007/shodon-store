@@ -3,17 +3,18 @@ const fs = require("fs");
 
 class ProductDB extends Database {
 	async getAll(filters, type) {
-        // let query = await this.query(`
-        // SELECT device_id 
-        // FROM attribute 
-        // ${Object.keys(filters).length < 1 ? '' : 'WHERE'}
-        //     ${Object.entries(filters).map(([title, descs]) => {
-        //         if (descs.length <=0) {
-        //             return ''
-        //         }
-        //         return `(title = "${title}" AND description in (${descs.map(desc => `"${desc}"`).join(',')}))`
-        //     }).join(' OR ')}
-        // `);
+        const sort = filters.sort[0] ?? 'datedesc'; 
+        delete filters.sort;
+
+        const sortingQueries = {
+            'datedesc': 'd.id DESC',
+            'dateasc': 'd.id ASC',
+            'pricedesc': 'd.price DESC',
+            'priceasc': 'd.price ASC',
+            'name': 'd.name ASC',
+        }
+
+        console.log(sortingQueries[sort])
 
 		let devices = await this.query(
 			`
@@ -35,7 +36,9 @@ class ProductDB extends Database {
         INNER JOIN type ON d.type_id = type.id
         WHERE 
             type.name = ? 
-         GROUP BY d.id`,
+         GROUP BY d.id
+         ORDER BY ${sortingQueries[sort] ?? 'd.name DESC'}
+         `,
         type);
 
 		devices = devices.map((el) => {

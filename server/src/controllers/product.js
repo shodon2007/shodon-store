@@ -3,6 +3,7 @@ const productDB = require("../db/productDB");
 class ProductController {
     async getAll(req, res) {
         const {filters = {}, type} = req.query;
+
         const data = await productDB.getAll(filters, type);
 
         if (data) {

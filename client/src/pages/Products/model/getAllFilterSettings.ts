@@ -12,4 +12,4 @@ function getAllFilterSettings(searchParams: URLSearchParams): FilterType {
 	return res;
 }
 
-export default getAllFilterSettings;
+export { getAllFilterSettings };
