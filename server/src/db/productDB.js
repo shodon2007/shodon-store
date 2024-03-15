@@ -3,7 +3,7 @@ const fs = require("fs");
 
 class ProductDB extends Database {
 	async getAll(filters, type) {
-        const sort = filters.sort[0] ?? 'datedesc'; 
+        const sort = (filters.sort && filters.sort[0]) ?? 'datedesc'; 
         delete filters.sort;
 
         const sortingQueries = {
