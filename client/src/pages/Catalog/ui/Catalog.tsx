@@ -19,6 +19,10 @@ const CatalogPage: FC = () => {
 		return error.message;
 	}
 
+	if (!catalog || catalog.length === 0) {
+		return <span data-testid='no-products'>В каталоге нет товаров</span>;
+	}
+
 	return (
 		<div className={cls.catalog} data-testid='catalog-page'>
 			{catalog.map(elem => {

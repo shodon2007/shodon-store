@@ -1,23 +1,25 @@
-const sortValues = [
+import { SortType, SortValues } from 'src/app/types/filter';
+
+const sortValues: SortType[] = [
 	{
 		title: 'Сначала новые',
-		value: 'datedesc',
+		value: SortValues.DATEDESC,
 	},
 	{
 		title: 'Сначала старые',
-		value: 'dateasc',
+		value: SortValues.DATEASC,
 	},
 	{
 		title: 'По убыванию цены',
-		value: 'pricedesc',
+		value: SortValues.PRICEDESC,
 	},
 	{
 		title: 'По возрастанию цены',
-		value: 'priceasc',
+		value: SortValues.PRICEASC,
 	},
 	{
 		title: 'По названию',
-		value: 'name',
+		value: SortValues.NAME,
 	},
 ];
 

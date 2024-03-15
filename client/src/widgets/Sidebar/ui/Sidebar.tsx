@@ -39,7 +39,7 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 
 	return (
 		<div className={classNames(cls.Sidebar, {}, [])} data-testid='sidebar'>
-			<Sort setFilter={setFilters} />
+			<Sort filter={filters} setFilter={setFilters} />
 			{Object.entries(attributes).map(([title, descriptions], index) => {
 				return (
 					<div key={index}>

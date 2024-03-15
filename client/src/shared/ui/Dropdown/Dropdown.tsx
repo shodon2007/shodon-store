@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, memo, useEffect, useMemo } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { DropdownElement } from 'src/app/types/dropdown';
 
 interface DropdownProps {
@@ -7,7 +7,7 @@ interface DropdownProps {
 	setValue: Dispatch<SetStateAction<string>>;
 }
 
-const Dropdown: FC<DropdownProps> = memo(({ values, value, setValue }) => {
+const Dropdown: FC<DropdownProps> = ({ values, value, setValue }) => {
 	return (
 		<div>
 			<select
@@ -16,11 +16,15 @@ const Dropdown: FC<DropdownProps> = memo(({ values, value, setValue }) => {
 				onChange={e => setValue(e.target.value)}
 			>
 				{values.map(({ value: itemValue, title }) => {
-					return <option value={itemValue}>{title}</option>;
+					return (
+						<option key={itemValue} value={itemValue}>
+							{title}
+						</option>
+					);
 				})}
 			</select>
 		</div>
 	);
-});
+};
 
 export default Dropdown;

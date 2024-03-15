@@ -1,27 +1,31 @@
-import { Dispatch, FC, SetStateAction, memo, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import Dropdown from 'src/shared/ui/Dropdown/Dropdown';
 import sortValues from '../model/sortValues';
-import { FilterType } from 'src/app/types/filter';
+import { FilterType, SortValues } from 'src/app/types/filter';
+import { memo } from 'src/app/types/memo';
 
 interface SortProps {
 	setFilter: Dispatch<SetStateAction<FilterType>>;
+	filter: FilterType;
 }
 
-const Sort: FC<SortProps> = memo(({ setFilter }) => {
-	const [dropdownValue, setDropdownValue] = useState('date');
+const Sort: FC<SortProps> = memo(({ filter, setFilter }) => {
+	const [dropdownValue, setDropdownValue] = useState<SortValues>(
+		filter.sort?.[0] ?? SortValues.NAME,
+	);
 
-	setFilter(element => {
-		const copyElement = { ...element };
+	useEffect(() => {
+		setFilter(element => {
+			const copyElement = { ...element };
 
-		copyElement.sort = [dropdownValue];
+			copyElement.sort = [dropdownValue];
 
-		return copyElement;
-	});
-
+			return copyElement;
+		});
+	}, [dropdownValue]);
 	return (
 		<div>
-			<h1>{dropdownValue}</h1>
+			<h1>Сортировка</h1>
 			<Dropdown
 				setValue={setDropdownValue}
 				value={dropdownValue}

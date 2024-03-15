@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import renderTestApp from 'src/app/tests/helpers/renderTestApp';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
 import Sidebar from './Sidebar';
 import { MemoryRouter } from 'react-router-dom';

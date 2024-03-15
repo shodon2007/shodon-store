@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import classNames from 'src/shared/lib/classNames/classNames';
@@ -16,7 +16,7 @@ interface NavbarProps {
 	className?: string;
 }
 
-const Navbar: FC<NavbarProps> = memo(({ className }) => {
+const Navbar: FC<NavbarProps> = ({ className }) => {
 	const userSlice = useSelector((state: RootState) => state.userSlice);
 	const dispatch = useDispatch();
 
@@ -46,6 +46,6 @@ const Navbar: FC<NavbarProps> = memo(({ className }) => {
 			</nav>
 		</div>
 	);
-});
+};
 
 export default Navbar;
