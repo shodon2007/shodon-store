@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
+import { FilterType } from 'src/app/types/filter';
 import productApi from 'src/shared/api/productApi';
-import { FilterType } from '../../api/filterApi';
 
 const useGetDevices = (filters: FilterType, type: string) => {
 	const query = useQuery({

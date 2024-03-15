@@ -1,6 +1,5 @@
+import { type FilterType } from 'src/app/types/filter';
 import ApiGeneral from './generalApi';
-
-export type FilterType = Record<string, string[]>;
 
 class FilterApi extends ApiGeneral {
 	async getFilter(type: string) {

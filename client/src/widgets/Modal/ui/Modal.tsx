@@ -3,16 +3,13 @@ import classNames from 'src/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import { createPortal } from 'react-dom';
 import { useTheme } from 'src/features/toggleTheme';
+import { ModalContextInterface } from 'src/app/types/modal';
 
 interface ModalProps {
 	className?: string;
 	children: ReactNode;
 	open: boolean;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export interface ModalContextInterface {
-	closeModal?: () => void;
 }
 
 export const ModalContext: Context<ModalContextInterface> = createContext({});

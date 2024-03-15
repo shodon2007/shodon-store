@@ -1,4 +1,4 @@
-import { FilterType } from 'src/shared/api/filterApi';
+import { FilterType } from 'src/app/types/filter';
 
 export default function checkFilterStatus(
 	filters: FilterType,

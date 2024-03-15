@@ -1,5 +1,5 @@
+import { CatalogItem } from 'src/app/types/product';
 import ApiGeneral from './generalApi';
-import { CatalogItem } from './productApi';
 
 class CatalogApi extends ApiGeneral {
 	async getCatalog() {

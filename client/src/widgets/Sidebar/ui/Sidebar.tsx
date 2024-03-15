@@ -1,8 +1,6 @@
 import { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
-import { FilterType } from 'src/shared/api/filterApi';
-import { Attribute } from 'src/shared/api/productApi';
 import classNames from 'src/shared/lib/classNames/classNames';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
 
@@ -11,6 +9,8 @@ import toggleAttribute from '../../../features/toggleFilterButton/model/toggleAt
 import cls from './Sidebar.module.scss';
 import checkFilterStatus from '../model/checkFilterStatus';
 import ToggleFilterButton from 'src/features/toggleFilterButton/ui/toggleFilterButton';
+import { FilterType } from 'src/app/types/filter';
+import { Attribute } from 'src/app/types/product';
 
 interface FilterProps {
 	className?: string;
@@ -23,8 +23,6 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 	const { type } = useParams();
 
 	const { data: attributes, isLoading } = useGetFilter(type);
-
-	console.log(attributes);
 
 	useEffect(() => {
 		setSearchParams(filters);
@@ -62,6 +60,7 @@ const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 					</div>
 				);
 			})}
+			{}
 		</div>
 	);
 };

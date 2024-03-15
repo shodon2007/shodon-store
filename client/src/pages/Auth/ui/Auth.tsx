@@ -1,9 +1,10 @@
 import { Login } from 'src/widgets/Auth/Login';
 import { Registration } from 'src/widgets/Auth/Registration';
-import Tab, { TabElements } from 'src/shared/ui/Tab/Tab';
+import Tab from 'src/shared/ui/Tab/Tab';
 
 import cls from './Auth.module.scss';
 import { useSearchParams } from 'react-router-dom';
+import { TabElements } from 'src/app/types/tab';
 
 const Auth = () => {
 	const [searchParams, setSearchParams] = useSearchParams({ tab: 'login' });

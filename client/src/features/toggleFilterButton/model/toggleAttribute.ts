@@ -1,5 +1,5 @@
-import { FilterType } from 'src/shared/api/filterApi';
-import { Attribute } from 'src/shared/api/productApi';
+import { FilterType } from 'src/app/types/filter';
+import { Attribute } from 'src/app/types/product';
 
 type toggleAttributeFn = (
 	filters: FilterType,

@@ -33,3 +33,9 @@
 #modal {
 	font: var(--font-m);
 }
+
+@media (max-width: 1200px) {
+	.app > .body {
+		padding: 0 10px;
+	}
+}

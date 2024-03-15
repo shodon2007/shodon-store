@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import { Product } from 'src/shared/api/productApi';
 import Title from 'src/shared/ui/Title/Title';
 import Button from 'src/shared/ui/Button/Button';
 import { serverUrl } from 'src/shared/api/generalApi';
@@ -9,6 +8,7 @@ import cls from './Device.module.scss';
 import { Attributes } from 'src/entities/Products/Attributes';
 import { Reviews } from 'src/entities/Products/Reviews';
 import Rate from 'src/entities/Products/Rate';
+import { Product } from 'src/app/types/product';
 
 interface DeviceProps {
 	product: Product;

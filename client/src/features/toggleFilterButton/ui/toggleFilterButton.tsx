@@ -2,7 +2,7 @@ import { FC } from 'react';
 import classNames from 'src/shared/lib/classNames/classNames';
 import Button, { buttonTheme } from 'src/shared/ui/Button/Button';
 import cls from './toggleFilterButton.module.scss';
-import { Attribute } from 'src/shared/api/productApi';
+import { Attribute } from 'src/app/types/product';
 
 interface ToggleFilterButtonProps {
 	title: string;

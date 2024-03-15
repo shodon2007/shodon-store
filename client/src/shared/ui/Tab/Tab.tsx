@@ -1,16 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
 import classNames from 'src/shared/lib/classNames/classNames';
 import Button from 'src/shared/ui/Button/Button';
 
 import cls from './Tab.module.scss';
-
-export interface TabElement {
-	name: string;
-	component: ReactNode;
-}
-
-export type TabElements = Record<string, TabElement>;
+import { TabElements } from 'src/app/types/tab';
 
 interface TabProps {
 	tabs: TabElements;

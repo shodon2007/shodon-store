@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Attribute } from 'src/shared/api/productApi';
 import cls from './Attributes.module.scss';
+import { Attribute } from 'src/app/types/product';
 
 interface AttributesProps {
 	attributes: Attribute[];

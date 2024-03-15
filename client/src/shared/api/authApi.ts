@@ -1,15 +1,6 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import ApiGeneral from './generalApi';
-
-export interface Auth {
-	username: string;
-	message: string;
-	token: string;
-}
-
-interface AuthError {
-	message: string;
-}
+import { Auth, AuthError } from 'src/app/types/auth';
 
 class AuthApi extends ApiGeneral {
 	async login(
