@@ -13,7 +13,7 @@ exports[`testing Navbar.tsx testing links testing "auth" link 1`] = `
       data-testid="tab"
     >
       <button
-        class="Button btn"
+        class="Button btn selected"
         data-testid="button"
       >
         войти

@@ -6,6 +6,42 @@ exports[`testing sidebar testing attributes 1`] = `
   data-testid="sidebar"
 >
   <div>
+    <h1>
+      Сортировка
+    </h1>
+    <div>
+      <select
+        name="dropdown"
+      >
+        <option
+          value="datedesc"
+        >
+          Сначала новые
+        </option>
+        <option
+          value="dateasc"
+        >
+          Сначала старые
+        </option>
+        <option
+          value="pricedesc"
+        >
+          По убыванию цены
+        </option>
+        <option
+          value="priceasc"
+        >
+          По возрастанию цены
+        </option>
+        <option
+          value="name"
+        >
+          По названию
+        </option>
+      </select>
+    </div>
+  </div>
+  <div>
     <span>
       NFC
     </span>

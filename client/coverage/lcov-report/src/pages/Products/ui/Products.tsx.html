@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/20</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/20</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -116,18 +116,7 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,17 +130,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
@@ -159,8 +137,8 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -195,36 +173,25 @@
 import { useParams } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 &nbsp;
-import { FilterType } from 'src/shared/api/filterApi';
 import { useGetDevices } from 'src/shared/lib/useGetDevices/useGetDevices';
 import { Sidebar } from 'src/widgets/Sidebar';
 import { Device } from 'src/widgets/Products/DeviceCard';
 &nbsp;
 import cls from './Products.module.scss';
+import { FilterType } from 'src/app/types/filter';
+import { getAllFilterSettings } from '../model/getAllFilterSettings';
 &nbsp;
 type Params = {
 	type: string;
 };
 &nbsp;
-function getAllFilterSettings(searchParams: URLSearchParams): FilterType {
-	const res: FilterType = {};
-	searchParams.forEach(<span class="fstat-no" title="function not covered" >(v</span>alue, key) =&gt; {
-<span class="cstat-no" title="statement not covered" >		if (res[key]) {</span>
-<span class="cstat-no" title="statement not covered" >			res[key].push(value);</span>
-		} else {
-<span class="cstat-no" title="statement not covered" >			res[key] = [value];</span>
-		}
-	});
-	return res;
-}
-&nbsp;
 const ProductsPage: FC = () =&gt; {
 	const [searchParams] = useSearchParams();
 	const { type } = useParams&lt;Params&gt;();
 &nbsp;
-	const filtersSettings = getAllFilterSettings(searchParams);
+	const defaultSettings = getAllFilterSettings(searchParams);
+	const [filters, setFilters] = useState&lt;FilterType&gt;(defaultSettings);
 &nbsp;
-	const [filters, setFilters] = useState&lt;FilterType&gt;(filtersSettings);
 	const { data, isLoading, isError, error, refetch } = useGetDevices(
 		filters,
 		type,
@@ -262,7 +229,7 @@ export default ProductsPage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-11T23:33:43.749Z
+                at 2024-03-15T06:17:30.048Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
