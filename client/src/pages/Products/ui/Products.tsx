@@ -9,6 +9,7 @@ import { Device } from 'src/widgets/Products/DeviceCard';
 import cls from './Products.module.scss';
 import { FilterType } from 'src/app/types/filter';
 import { getAllFilterSettings } from '../model/getAllFilterSettings';
+import Spinner from 'src/shared/ui/Spinner/Spinner';
 
 type Params = {
 	type: string;
@@ -21,7 +22,7 @@ const ProductsPage: FC = () => {
 	const defaultSettings = getAllFilterSettings(searchParams);
 	const [filters, setFilters] = useState<FilterType>(defaultSettings);
 
-	const { data, isLoading, isError, error, refetch } = useGetDevices(
+	const { data, isFetching, isError, error, refetch } = useGetDevices(
 		filters,
 		type,
 	);
@@ -30,10 +31,6 @@ const ProductsPage: FC = () => {
 		refetch();
 	}, [filters]);
 
-	if (isLoading) {
-		return 'загрузка...';
-	}
-
 	if (isError) {
 		return error.message;
 	}
@@ -41,11 +38,15 @@ const ProductsPage: FC = () => {
 	return (
 		<div className={cls.devicesPage} data-testid='devices-page'>
 			<Sidebar filters={filters} setFilters={setFilters} />
-			<div className={cls.devices}>
-				{data.map(device => {
-					return <Device product={device} key={device.id} />;
-				})}
-			</div>
+			{isFetching ? (
+				<Spinner />
+			) : (
+				<div className={cls.devices}>
+					{data.map(device => {
+						return <Device product={device} key={device.id} />;
+					})}
+				</div>
+			)}
 		</div>
 	);
 };
