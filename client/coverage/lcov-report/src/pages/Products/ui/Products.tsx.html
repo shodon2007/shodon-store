@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
@@ -116,7 +116,8 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,39 +130,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,6 +182,7 @@ import { Device } from 'src/widgets/Products/DeviceCard';
 import cls from './Products.module.scss';
 import { FilterType } from 'src/app/types/filter';
 import { getAllFilterSettings } from '../model/getAllFilterSettings';
+import Spinner from 'src/shared/ui/Spinner/Spinner';
 &nbsp;
 type Params = {
 	type: string;
@@ -192,7 +195,7 @@ const ProductsPage: FC = () =&gt; {
 	const defaultSettings = getAllFilterSettings(searchParams);
 	const [filters, setFilters] = useState&lt;FilterType&gt;(defaultSettings);
 &nbsp;
-	const { data, isLoading, isError, error, refetch } = useGetDevices(
+	const { data, isFetching, isError, error, refetch } = useGetDevices(
 		filters,
 		type,
 	);
@@ -201,10 +204,6 @@ const ProductsPage: FC = () =&gt; {
 		refetch();
 	}, [filters]);
 &nbsp;
-	if (isLoading) {
-		return 'загрузка...';
-	}
-&nbsp;
 	<span class="missing-if-branch" title="if path not taken" >I</span>if (isError) {
 <span class="cstat-no" title="statement not covered" >		return error.message;</span>
 	}
@@ -212,11 +211,15 @@ const ProductsPage: FC = () =&gt; {
 	return (
 		&lt;div className={cls.devicesPage} data-testid='devices-page'&gt;
 			&lt;Sidebar filters={filters} setFilters={setFilters} /&gt;
-			&lt;div className={cls.devices}&gt;
-				{data.map(device =&gt; {
-					return &lt;Device product={device} key={device.id} /&gt;;
-				})}
-			&lt;/div&gt;
+			{isFetching ? (
+				&lt;Spinner /&gt;
+			) : (
+				&lt;div className={cls.devices}&gt;
+					{data.map(device =&gt; {
+						return &lt;Device product={device} key={device.id} /&gt;;
+					})}
+				&lt;/div&gt;
+			)}
 		&lt;/div&gt;
 	);
 };
@@ -229,7 +232,7 @@ export default ProductsPage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-15T06:17:30.048Z
+                at 2024-03-17T06:08:23.274Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

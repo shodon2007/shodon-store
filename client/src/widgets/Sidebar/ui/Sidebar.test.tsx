@@ -2,11 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
 import Sidebar from './Sidebar';
 import { MemoryRouter } from 'react-router-dom';
+import { Modal } from 'src/widgets/Modal';
+
+jest.mock('src/widgets/Modal');
 
 jest.mock('src/shared/lib/useGetFilter/useGetFilter');
 
 describe('testing sidebar', () => {
 	test('testing attributes', () => {
+		(Modal as jest.Mock).mockReturnValue(<div></div>);
 		(useGetFilter as jest.Mock).mockReturnValue({
 			data: {
 				NFC: ['ЕСТЬ', 'НЕТ'],

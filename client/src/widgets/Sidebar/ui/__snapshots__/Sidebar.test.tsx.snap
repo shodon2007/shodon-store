@@ -5,115 +5,129 @@ exports[`testing sidebar testing attributes 1`] = `
   class="Sidebar"
   data-testid="sidebar"
 >
-  <div>
-    <h1>
-      Сортировка
-    </h1>
+  <h1
+    class="title"
+  >
+    Сортировка
+  </h1>
+  <select
+    name="dropdown"
+  >
+    <option
+      value="datedesc"
+    >
+      Сначала новые
+    </option>
+    <option
+      value="dateasc"
+    >
+      Сначала старые
+    </option>
+    <option
+      value="pricedesc"
+    >
+      По убыванию цены
+    </option>
+    <option
+      value="priceasc"
+    >
+      По возрастанию цены
+    </option>
+    <option
+      value="name"
+    >
+      По названию
+    </option>
+  </select>
+  <button
+    class="Button attributesBtn"
+  >
+    <div />
+  </button>
+  <div />
+  <div
+    class="attributeList attributesDesctop"
+  >
     <div>
-      <select
-        name="dropdown"
+      <span
+        class="attributeTitle"
       >
-        <option
-          value="datedesc"
+        NFC
+      </span>
+      <div
+        class="attributes"
+      >
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
         >
-          Сначала новые
-        </option>
-        <option
-          value="dateasc"
+          <span>
+            ЕСТЬ
+          </span>
+        </button>
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
         >
-          Сначала старые
-        </option>
-        <option
-          value="pricedesc"
-        >
-          По убыванию цены
-        </option>
-        <option
-          value="priceasc"
-        >
-          По возрастанию цены
-        </option>
-        <option
-          value="name"
-        >
-          По названию
-        </option>
-      </select>
+          <span>
+            НЕТ
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div>
-    <span>
-      NFC
-    </span>
-    <div
-      class="attributes"
-    >
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
+    <div>
+      <span
+        class="attributeTitle"
       >
-        <span>
-          ЕСТЬ
-        </span>
-      </button>
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
+        Камера
+      </span>
+      <div
+        class="attributes"
       >
-        <span>
-          НЕТ
-        </span>
-      </button>
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
+        >
+          <span>
+            8mp
+          </span>
+        </button>
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
+        >
+          <span>
+            12mp
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div>
-    <span>
-      Камера
-    </span>
-    <div
-      class="attributes"
-    >
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
+    <div>
+      <span
+        class="attributeTitle"
       >
-        <span>
-          8mp
-        </span>
-      </button>
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
+        Озу
+      </span>
+      <div
+        class="attributes"
       >
-        <span>
-          12mp
-        </span>
-      </button>
-    </div>
-  </div>
-  <div>
-    <span>
-      Озу
-    </span>
-    <div
-      class="attributes"
-    >
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
-      >
-        <span>
-          6gb
-        </span>
-      </button>
-      <button
-        class="Button smallest attribute"
-        data-testid="attribute-button"
-      >
-        <span>
-          8gb
-        </span>
-      </button>
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
+        >
+          <span>
+            6gb
+          </span>
+        </button>
+        <button
+          class="Button smallest attribute"
+          data-testid="attribute-button"
+        >
+          <span>
+            8gb
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>

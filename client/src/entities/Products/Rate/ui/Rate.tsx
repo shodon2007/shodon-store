@@ -10,7 +10,7 @@ const Rate: FC<RateProps> = ({ rate }) => {
 	const stars = [];
 
 	for (let i = 0; i < 5; i++) {
-		stars.push(<StarSvg className={cls.star} />);
+		stars.push(<StarSvg key={i} className={cls.star} />);
 	}
 
 	return (

@@ -61,8 +61,6 @@ describe('Testing Catalog.test.tsx', () => {
 
 		fireEvent.click(devicesLinks[0]);
 
-		screen.debug();
-
 		expect(screen.getByTestId('devices-page')).toBeInTheDocument();
 	});
 });

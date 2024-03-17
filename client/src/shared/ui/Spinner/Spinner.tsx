@@ -8,7 +8,10 @@ interface SpinnerProps {
 
 const Spinner: FC<SpinnerProps> = ({ className }) => {
 	return (
-		<div className={classNames(cls.spinner, {}, [className])}>
+		<div
+			className={classNames(cls.spinner, {}, [className])}
+			data-testid='spinner'
+		>
 			<div className={cls.body}>
 				<div></div>
 			</div>

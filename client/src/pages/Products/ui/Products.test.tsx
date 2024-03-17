@@ -61,4 +61,17 @@ describe('testing Devices.tsx', () => {
 		expect(devicesPage).toMatchSnapshot();
 		expect(deviceItem.length).toBe(2);
 	});
+
+	test('testing spinner', async () => {
+		const mockDevices: any = {
+			isFetching: true,
+			refetch: (): any => null,
+		};
+		jest
+			.spyOn(useGetDevicesModule, 'useGetDevices')
+			.mockReturnValue(mockDevices);
+		renderTestApp('/phones');
+
+		expect(screen.getByTestId('spinner')).toBeInTheDocument();
+	});
 });

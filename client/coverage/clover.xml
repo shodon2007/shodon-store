@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710483450222" clover="3.2.0">
-  <project timestamp="1710483450222" name="All files">
-    <metrics statements="229" coveredstatements="173" conditionals="56" coveredconditionals="37" methods="82" coveredmethods="60" elements="367" coveredelements="270" complexity="0" loc="229" ncloc="229" packages="53" files="60" classes="60"/>
+<coverage generated="1710655703413" clover="3.2.0">
+  <project timestamp="1710655703413" name="All files">
+    <metrics statements="249" coveredstatements="187" conditionals="56" coveredconditionals="37" methods="92" coveredmethods="65" elements="397" coveredelements="289" complexity="0" loc="249" ncloc="249" packages="56" files="64" classes="64"/>
     <package name="config.jest">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="svg.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\config\jest\svg.ts">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="7" type="stmt"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="svg.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\config\jest\svg.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="111" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.app">
@@ -14,8 +15,8 @@
       <file name="App.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\App.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="6" type="stmt"/>
-        <line num="7" count="22" type="stmt"/>
-        <line num="9" count="16" type="stmt"/>
+        <line num="7" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
       </file>
     </package>
     <package name="src.app.providers.redux">
@@ -52,8 +53,8 @@
       <file name="AppRouter.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\providers\routes\ui\AppRouter.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="7" type="stmt"/>
-        <line num="6" count="19" type="stmt"/>
-        <line num="10" count="76" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="10" count="72" type="stmt"/>
       </file>
     </package>
     <package name="src.app.providers.tanstack-query">
@@ -68,32 +69,34 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="7" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
-        <line num="17" count="15" type="stmt"/>
+        <line num="17" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.app.tests.helpers">
-      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="renderTestApp.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\tests\helpers\renderTestApp.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="14" count="14" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.app.theme">
       <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="ThemeContext.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\theme\ThemeContext.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
+        <line num="13" count="14" type="stmt"/>
+        <line num="15" count="14" type="stmt"/>
       </file>
       <file name="ThemeProvider.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\app\theme\ThemeProvider.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="5" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="6" type="stmt"/>
-        <line num="12" count="16" type="stmt"/>
-        <line num="13" count="16" type="stmt"/>
-        <line num="14" count="16" type="stmt"/>
-        <line num="17" count="16" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="13" count="17" type="stmt"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="17" count="17" type="stmt"/>
       </file>
     </package>
     <package name="src.app.types">
@@ -120,17 +123,17 @@
       </file>
     </package>
     <package name="src.entities.Filter.Sort.ui">
-      <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="Sort.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\entities\Filter\Sort\ui\Sort.tsx">
-        <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="27" count="11" type="stmt"/>
       </file>
     </package>
     <package name="src.entities.Products.Attributes">
@@ -144,8 +147,8 @@
       <file name="Attributes.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\entities\Products\Attributes\ui\Attributes.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="9" count="7" type="stmt"/>
-        <line num="10" count="18" type="stmt"/>
-        <line num="13" count="52" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.entities.Products.Rate">
@@ -155,16 +158,16 @@
       </file>
     </package>
     <package name="src.entities.Products.Rate.ui">
-      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="Rate.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\entities\Products\Rate\ui\Rate.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="9" count="7" type="stmt"/>
-        <line num="10" count="18" type="stmt"/>
-        <line num="12" count="18" type="stmt"/>
-        <line num="13" count="90" type="stmt"/>
-        <line num="16" count="18" type="stmt"/>
-        <line num="23" count="90" type="stmt"/>
-        <line num="26" count="90" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="30" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="23" count="30" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.entities.Products.Reviews">
@@ -178,7 +181,7 @@
       <file name="Reviews.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\entities\Products\Reviews\ui\Reviews.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="7" type="stmt"/>
-        <line num="8" count="18" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.features.toggleFilterButton.model">
@@ -207,8 +210,8 @@
       <file name="toggleFilterButton.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\features\toggleFilterButton\ui\toggleFilterButton.tsx">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="14" count="8" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
+        <line num="15" count="72" type="stmt"/>
+        <line num="17" count="72" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
       </file>
     </package>
@@ -222,23 +225,23 @@
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="useTheme.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\features\toggleTheme\model\useTheme.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="38" type="stmt"/>
-        <line num="15" count="32" type="stmt"/>
+        <line num="13" count="14" type="stmt"/>
+        <line num="14" count="34" type="stmt"/>
+        <line num="15" count="34" type="stmt"/>
         <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="21" count="32" type="stmt"/>
+        <line num="21" count="34" type="stmt"/>
       </file>
     </package>
     <package name="src.features.toggleTheme.ui">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="ThemeButton.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\features\toggleTheme\ui\ThemeButton.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="16" type="stmt"/>
-        <line num="19" count="16" type="stmt"/>
-        <line num="24" count="16" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
+        <line num="17" count="17" type="stmt"/>
+        <line num="19" count="17" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Auth">
@@ -288,39 +291,37 @@
       </file>
     </package>
     <package name="src.pages.Products.model">
-      <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="getAllFilterSettings.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\pages\Products\model\getAllFilterSettings.ts">
-        <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="4" count="15" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="6" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="12" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Products.ui">
-      <metrics statements="14" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="Products.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\pages\Products\ui\Products.tsx">
-        <metrics statements="14" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
-        <line num="22" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="33" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="37" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="41" count="6" type="stmt"/>
-        <line num="46" count="18" type="stmt"/>
+        <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+        <line num="20" count="15" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="30" count="15" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="34" count="15" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="15" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.api">
-      <metrics statements="14" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="authApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\authApi.ts">
         <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
@@ -336,7 +337,7 @@
       </file>
       <file name="filterApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\filterApi.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
       </file>
       <file name="generalApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\generalApi.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -345,10 +346,9 @@
         <line num="13" count="29" type="stmt"/>
       </file>
       <file name="productApi.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\api\productApi.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="3" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="4" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.config.routeConfig">
@@ -363,9 +363,9 @@
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="classNames.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\classNames\classNames.ts">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="8" count="243" type="stmt"/>
-        <line num="11" count="127" type="stmt"/>
-        <line num="12" count="26" type="stmt"/>
+        <line num="8" count="377" type="stmt"/>
+        <line num="11" count="253" type="stmt"/>
+        <line num="12" count="86" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.lib.useGetCatalog">
@@ -383,29 +383,29 @@
       <file name="useGetDevices.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\useGetDevices\useGetDevices.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="7" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.lib.useGetFilter">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="useGetFilter.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\lib\useGetFilter\useGetFilter.tsx">
-        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="8" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.ui.Button">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Button.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\ui\Button\Button.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="16" count="10" type="stmt"/>
-        <line num="17" count="86" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
+        <line num="17" count="152" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.ui.Dropdown">
@@ -413,9 +413,9 @@
       <file name="Dropdown.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\ui\Dropdown\Dropdown.tsx">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="10" count="8" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="55" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.ui.Input">
@@ -424,6 +424,14 @@
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="8" count="8" type="stmt"/>
         <line num="9" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.Spinner">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Spinner.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\ui\Spinner\Spinner.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.ui.Tab">
@@ -443,7 +451,7 @@
       <file name="Title.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\shared\ui\Title\Title.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="10" count="8" type="stmt"/>
-        <line num="11" count="39" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.widgets.Auth.Login">
@@ -506,6 +514,32 @@
         <line num="64" count="0" type="stmt"/>
       </file>
     </package>
+    <package name="src.widgets.Modal">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Modal\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.widgets.Modal.ui">
+      <metrics statements="14" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="Modal.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Modal\ui\Modal.tsx">
+        <metrics statements="14" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="src.widgets.Navbar">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Navbar\index.ts">
@@ -517,9 +551,9 @@
       <file name="Navbar.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Navbar\ui\Navbar.tsx">
         <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <line num="19" count="6" type="stmt"/>
-        <line num="20" count="30" type="stmt"/>
-        <line num="21" count="16" type="stmt"/>
-        <line num="23" count="16" type="stmt"/>
+        <line num="20" count="32" type="stmt"/>
+        <line num="21" count="17" type="stmt"/>
+        <line num="23" count="17" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
       </file>
     </package>
@@ -534,8 +568,8 @@
       <file name="Device.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Products\DeviceCard\ui\Device.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="17" count="7" type="stmt"/>
-        <line num="18" count="18" type="stmt"/>
-        <line num="20" count="18" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.widgets.Sidebar">
@@ -548,26 +582,33 @@
       <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="checkFilterStatus.ts" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Sidebar\model\checkFilterStatus.ts">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="8" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="75" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
     <package name="src.widgets.Sidebar.ui">
-      <metrics statements="13" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+      <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="5"/>
+      <file name="Attributes.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Sidebar\ui\Attributes.tsx">
+        <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="23" count="17" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
+        <line num="37" count="27" type="stmt"/>
+        <line num="42" count="72" type="stmt"/>
+        <line num="44" count="72" type="stmt"/>
+      </file>
       <file name="Sidebar.tsx" path="C:\Users\asror\OneDrive\Рабочий стол\shodon-store\client\src\widgets\Sidebar\ui\Sidebar.tsx">
-        <metrics statements="13" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="26" count="8" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="29" count="4" type="stmt"/>
-        <line num="32" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="33" count="6" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="44" count="6" type="stmt"/>
-        <line num="49" count="12" type="stmt"/>
-        <line num="51" count="12" type="stmt"/>
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="17" type="stmt"/>
+        <line num="22" count="17" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="28" count="17" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
       </file>
     </package>
   </project>

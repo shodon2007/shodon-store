@@ -16,7 +16,7 @@ const config: Config = {
 		'\\.(css|scss)$': 'identity-obj-proxy',
 		'\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 			'<rootDir>/config/jest/empty.tsx',
-		'\\.svg': '<rootDir>/config/jest/svg.ts',
+		'\\.svg': '<rootDir>/config/jest/svg.tsx',
 	},
 	setupFilesAfterEnv: ['<rootDir>/config/jest/jestSetup.ts'],
 };

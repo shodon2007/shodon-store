@@ -5,8 +5,53 @@ exports[`testing Devices.tsx testing Device List 1`] = `
   class="devicesPage"
   data-testid="devices-page"
 >
-  <div>
-    Загрузка фильтров...
+  <div
+    class="Sidebar"
+    data-testid="sidebar"
+  >
+    <h1
+      class="title"
+    >
+      Сортировка
+    </h1>
+    <select
+      name="dropdown"
+    >
+      <option
+        value="datedesc"
+      >
+        Сначала новые
+      </option>
+      <option
+        value="dateasc"
+      >
+        Сначала старые
+      </option>
+      <option
+        value="pricedesc"
+      >
+        По убыванию цены
+      </option>
+      <option
+        value="priceasc"
+      >
+        По возрастанию цены
+      </option>
+      <option
+        value="name"
+      >
+        По названию
+      </option>
+    </select>
+    <button
+      class="Button attributesBtn"
+    >
+      <div />
+    </button>
+    <div />
+    <div>
+      Загрузка фильтров...
+    </div>
   </div>
   <div
     class="devices"
@@ -15,14 +60,10 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       class="device"
       data-testid="device-item"
     >
-      <div
-        class="left"
-      >
-        <img
-          class="image"
-          src="https://store-server.shodon.ru/imgdsfdsfsfsf"
-        />
-      </div>
+      <img
+        class="image"
+        src="https://store-server.shodon.ru/imgdsfdsfsfsf"
+      />
       <div
         class="center"
       >
@@ -72,38 +113,18 @@ exports[`testing Devices.tsx testing Device List 1`] = `
                 class="stars"
                 style="width: 100%;"
               >
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
               </div>
             </div>
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
           </div>
         </div>
       </div>
@@ -128,14 +149,10 @@ exports[`testing Devices.tsx testing Device List 1`] = `
       class="device"
       data-testid="device-item"
     >
-      <div
-        class="left"
-      >
-        <img
-          class="image"
-          src="https://store-server.shodon.ru/imgdsfdsfsfsf"
-        />
-      </div>
+      <img
+        class="image"
+        src="https://store-server.shodon.ru/imgdsfdsfsfsf"
+      />
       <div
         class="center"
       >
@@ -200,38 +217,18 @@ exports[`testing Devices.tsx testing Device List 1`] = `
                 class="stars"
                 style="width: 100%;"
               >
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
-                <svgrurl
-                  class="star"
-                />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
               </div>
             </div>
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
-            <svgrurl
-              class="star"
-            />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
           </div>
         </div>
       </div>

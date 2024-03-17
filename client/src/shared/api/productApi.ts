@@ -10,7 +10,6 @@ class ProductApi extends ApiGeneral {
 				type,
 			},
 		});
-		console.log(res);
 		return res;
 	}
 }
