@@ -9,21 +9,19 @@ interface DropdownProps {
 
 const Dropdown: FC<DropdownProps> = ({ values, value, setValue }) => {
 	return (
-		<div>
-			<select
-				name='dropdown'
-				value={value}
-				onChange={e => setValue(e.target.value)}
-			>
-				{values.map(({ value: itemValue, title }) => {
-					return (
-						<option key={itemValue} value={itemValue}>
-							{title}
-						</option>
-					);
-				})}
-			</select>
-		</div>
+		<select
+			name='dropdown'
+			value={value}
+			onChange={e => setValue(e.target.value)}
+		>
+			{values.map(({ value: itemValue, title }) => {
+				return (
+					<option key={itemValue} value={itemValue}>
+						{title}
+					</option>
+				);
+			})}
+		</select>
 	);
 };
 

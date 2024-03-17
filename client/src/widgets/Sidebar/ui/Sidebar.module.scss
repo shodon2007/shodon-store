@@ -3,8 +3,37 @@
 	width: var(--sidebar-width);
 }
 
+.attributeList {
+	background-color: var(--bg-color);
+
+	display: flex;
+	flex-direction: column;
+}
+
 .attributes {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 5px;
+}
+
+.attributesBtn {
+	display: none;
+}
+
+.attributeTitle {
+	color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+	.Sidebar {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.attributesDesctop {
+		display: none;
+	}
+	.attributesBtn {
+		display: block;
+	}
 }

@@ -4,6 +4,8 @@ import cls from './Modal.module.scss';
 import { createPortal } from 'react-dom';
 import { useTheme } from 'src/features/toggleTheme';
 import { ModalContextInterface } from 'src/app/types/modal';
+import Title from 'src/shared/ui/Title/Title';
+import Button from 'src/shared/ui/Button/Button';
 
 interface ModalProps {
 	className?: string;
@@ -33,6 +35,11 @@ const Modal: FC<ModalProps> = ({ children, open, setOpen }) => {
 		<div className={classNames(cls.Modal, mods, [theme])}>
 			<div className={cls.overview} onClick={closeModal}>
 				<div className={cls.content} onClick={e => contentClick(e)}>
+					<div className={cls.header}>
+						<Button className={cls.close} onClick={closeModal}>
+							x
+						</Button>
+					</div>
 					<ModalContext.Provider value={{ closeModal: closeModal }}>
 						{children}
 					</ModalContext.Provider>

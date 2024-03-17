@@ -3,6 +3,7 @@ import Dropdown from 'src/shared/ui/Dropdown/Dropdown';
 import sortValues from '../model/sortValues';
 import { FilterType, SortValues } from 'src/app/types/filter';
 import { memo } from 'src/app/types/memo';
+import cls from './Sort.module.scss';
 
 interface SortProps {
 	setFilter: Dispatch<SetStateAction<FilterType>>;
@@ -24,14 +25,14 @@ const Sort: FC<SortProps> = memo(({ filter, setFilter }) => {
 		});
 	}, [dropdownValue]);
 	return (
-		<div>
-			<h1>Сортировка</h1>
+		<>
+			<h1 className={cls.title}>Сортировка</h1>
 			<Dropdown
 				setValue={setDropdownValue}
 				value={dropdownValue}
 				values={sortValues}
 			/>
-		</div>
+		</>
 	);
 });
 

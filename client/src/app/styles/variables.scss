@@ -17,4 +17,13 @@
 
 	--body-width: 1200px;
 	--sidebar-width: 200px;
+
+	--main-padding: 0px;
+}
+
+@media (max-width: 1200px) {
+	:root {
+		--sidebar-width: 100%;
+		--main-padding: 10px;
+	}
 }

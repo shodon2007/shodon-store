@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useEffect } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 import classNames from 'src/shared/lib/classNames/classNames';
@@ -12,6 +12,10 @@ import ToggleFilterButton from 'src/features/toggleFilterButton/ui/toggleFilterB
 import { FilterType } from 'src/app/types/filter';
 import { Attribute } from 'src/app/types/product';
 import { Sort } from 'src/entities/Filter/Sort';
+import Button from 'src/shared/ui/Button/Button';
+import FilterSvg from './filterButton.svg';
+import { Modal } from 'src/widgets/Modal';
+import AttributesFilter from './Attributes';
 
 interface FilterProps {
 	className?: string;
@@ -21,47 +25,26 @@ interface FilterProps {
 
 const Sidebar: FC<FilterProps> = ({ filters, setFilters }) => {
 	const [, setSearchParams] = useSearchParams();
-	const { type } = useParams();
-
-	const { data: attributes, isLoading } = useGetFilter(type);
+	const [modal, setModal] = useState(false);
 
 	useEffect(() => {
 		setSearchParams(filters);
 	}, [filters]);
 
-	if (isLoading) {
-		return <div>Загрузка фильтров...</div>;
-	}
-
-	function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
-		setFilters(prev => toggleAttribute(prev, attribute, checked));
-	}
-
 	return (
 		<div className={classNames(cls.Sidebar, {}, [])} data-testid='sidebar'>
 			<Sort filter={filters} setFilter={setFilters} />
-			{Object.entries(attributes).map(([title, descriptions], index) => {
-				return (
-					<div key={index}>
-						<span>{title}</span>
-						<div className={cls.attributes}>
-							{descriptions.map((description, index) => {
-								const checked = checkFilterStatus(filters, title, description);
-
-								return (
-									<ToggleFilterButton
-										checked={checked}
-										description={description}
-										title={title}
-										toggleAttributeHandler={toggleAttributeHandler}
-										key={index}
-									/>
-								);
-							})}
-						</div>
-					</div>
-				);
-			})}
+			<Button className={cls.attributesBtn} onClick={() => setModal(true)}>
+				<FilterSvg />
+			</Button>
+			<Modal open={modal} setOpen={setModal}>
+				<AttributesFilter filters={filters} setFilters={setFilters} />
+			</Modal>
+			<AttributesFilter
+				filters={filters}
+				setFilters={setFilters}
+				className={cls.attributesDesctop}
+			/>
 		</div>
 	);
 };
