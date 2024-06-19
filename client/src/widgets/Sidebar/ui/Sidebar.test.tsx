@@ -21,7 +21,7 @@ describe('testing sidebar', () => {
 		});
 		render(
 			<MemoryRouter initialEntries={['']}>
-				<Sidebar filters={{}} setFilters={() => false} />
+				<Sidebar />
 			</MemoryRouter>,
 		);
 

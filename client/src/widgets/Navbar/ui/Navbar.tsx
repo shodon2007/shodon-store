@@ -17,7 +17,7 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ className }) => {
-	const userSlice = useSelector((state: RootState) => state.userSlice);
+	const userSlice = useSelector((state: RootState) => state.user);
 	const dispatch = useDispatch();
 
 	return (

@@ -9,16 +9,17 @@ import { Attributes } from 'src/entities/Products/Attributes';
 import { Reviews } from 'src/entities/Products/Reviews';
 import Rate from 'src/entities/Products/Rate';
 import { Product } from 'src/app/types/product';
+import { Link } from 'react-router-dom';
 
 interface DeviceProps {
 	product: Product;
 }
 
 const Device: FC<DeviceProps> = ({ product }) => {
-	const { img, name, price, attributes, reviews, rate } = product;
+	const { img, name, price, attributes, reviews, rate, id } = product;
 
 	return (
-		<div className={cls.device} data-testid='device-item'>
+		<Link to={`${id}`} className={cls.device} data-testid='device-item'>
 			<img className={cls.image} src={`${serverUrl}/img${img}`} />
 			<div className={cls.center}>
 				<div className={cls.top}>
@@ -34,7 +35,7 @@ const Device: FC<DeviceProps> = ({ product }) => {
 				<Title>{price}₽</Title>
 				<Button>В корзину</Button>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

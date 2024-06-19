@@ -9,6 +9,7 @@ const useGetDevices = (filters: FilterType, type: string) => {
 			const res = await productApi.getAllProducts(filters, type);
 			return res.data;
 		},
+		retry: 1,
 	});
 
 	return query;

@@ -7,20 +7,19 @@ import { Sidebar } from 'src/widgets/Sidebar';
 import { Device } from 'src/widgets/Products/DeviceCard';
 
 import cls from './Products.module.scss';
-import { FilterType } from 'src/app/types/filter';
-import { getAllFilterSettings } from '../model/getAllFilterSettings';
 import Spinner from 'src/shared/ui/Spinner/Spinner';
+import { useAppSelector } from 'src/shared/lib/state/stateHooks';
 
 type Params = {
 	type: string;
 };
 
 const ProductsPage: FC = () => {
-	const [searchParams] = useSearchParams();
+	const [, setSearchParams] = useSearchParams();
 	const { type } = useParams<Params>();
 
-	const defaultSettings = getAllFilterSettings(searchParams);
-	const [filters, setFilters] = useState<FilterType>(defaultSettings);
+	const filters = useAppSelector(state => state.filter.values);
+	const [isInitRender, setIsInitRender] = useState(true);
 
 	const { data, isFetching, isError, error, refetch } = useGetDevices(
 		filters,
@@ -28,7 +27,12 @@ const ProductsPage: FC = () => {
 	);
 
 	useEffect(() => {
-		refetch();
+		if (!isInitRender) {
+			setSearchParams(filters);
+			refetch();
+		} else {
+			setIsInitRender(false);
+		}
 	}, [filters]);
 
 	if (isError) {
@@ -37,7 +41,7 @@ const ProductsPage: FC = () => {
 
 	return (
 		<div className={cls.devicesPage} data-testid='devices-page'>
-			<Sidebar filters={filters} setFilters={setFilters} />
+			<Sidebar />
 			{isFetching ? (
 				<Spinner />
 			) : (

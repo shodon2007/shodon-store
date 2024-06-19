@@ -9,4 +9,5 @@ export interface Options {
 	paths: paths;
 	mode: 'development' | 'production';
 	isDev: boolean;
+	port: number;
 }

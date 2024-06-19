@@ -4,7 +4,7 @@ import { Options } from './types/buildTypes';
 import buildResolves from './buildResolves';
 import buildRules from './buildRules';
 import buildPlugins from './buildPlugins';
-import axios from 'axios';
+import buildServer from './buildServer';
 
 function buildConfig(options: Options) {
 	const config: webpack.Configuration = {
@@ -21,9 +21,7 @@ function buildConfig(options: Options) {
 			rules: buildRules(options),
 		},
 		plugins: buildPlugins(options),
-		devServer: {
-			historyApiFallback: true,
-		},
+		devServer: buildServer(options),
 	};
 
 	return config;

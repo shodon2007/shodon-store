@@ -1,30 +1,30 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import ToggleFilterButton from 'src/features/toggleFilterButton/ui/toggleFilterButton';
 import { useGetFilter } from 'src/shared/lib/useGetFilter/useGetFilter';
 import cls from './Sidebar.module.scss';
-import { FilterType } from 'src/app/types/filter';
 import toggleAttribute from 'src/features/toggleFilterButton/model/toggleAttribute';
 import { Attribute } from 'src/app/types/product';
 import checkFilterStatus from '../model/checkFilterStatus';
 import classNames from 'src/shared/lib/classNames/classNames';
+import {
+	useAppDispatch,
+	useAppSelector,
+} from 'src/shared/lib/state/stateHooks';
+import { updateFilter } from 'src/entities/Filter';
 
 interface AttributesFilterProps {
-	filters: FilterType;
-	setFilters: Dispatch<SetStateAction<FilterType>>;
 	className?: string;
 }
 
-const AttributesFilter: FC<AttributesFilterProps> = ({
-	filters,
-	setFilters,
-	className,
-}) => {
+const AttributesFilter: FC<AttributesFilterProps> = ({ className }) => {
 	const { type } = useParams();
 	const { data: attributes, isLoading } = useGetFilter(type);
+	const filters = useAppSelector(store => store.filter.values);
+	const dispatch = useAppDispatch();
 
 	function toggleAttributeHandler(attribute: Attribute, checked: boolean) {
-		setFilters(prev => toggleAttribute(prev, attribute, checked));
+		dispatch(updateFilter(toggleAttribute(filters, attribute, checked)));
 	}
 
 	if (isLoading) {

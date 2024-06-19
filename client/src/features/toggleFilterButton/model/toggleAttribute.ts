@@ -22,7 +22,7 @@ function addNewAttribute(
 	key: string,
 	newValue: string,
 ): FilterType {
-	const newFilter = { ...filters };
+	const newFilter = structuredClone(filters);
 
 	if (newFilter[key]) {
 		newFilter[key].push(newValue);
